@@ -1,0 +1,113 @@
+\section{Per-benchmark scores and reporting status}
+\label{app:result-details}
+Table~\ref{tab:all-results} records the selected direct-Codex measurements after checking
+the updated Hugging Face results and local source artifacts on
+2026-09-18. Run-level provenance distinguishes reruns, planned subsets, and earlier
+variants. A completed Codex result does not require a completed comparator run.
+Figure~\ref{fig:main-results} uses paper scores; locally regraded reference outputs are
+distinguished in the notes below. The comparator campaign remains in progress.
+CRAG retains its native signed truthfulness scale in the table and is multiplied by 100
+only for display in the figure. All other scores are on a 0--100 scale.
+The main suite has 20 benchmarks: SSTQA replaces LongBench-v2, whose measurement is
+preserved as supplementary evidence below. Suite membership is frozen separately from
+result availability in \texttt{data/study\_suite.json}.
+The reference is the selected comparison system, which need not be the highest reported
+system when that system cannot be executed (e.g., RARG versus RARG+).
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{.20\textwidth}p{.16\textwidth}rrrp{.22\textwidth}@{}}
+\caption{Selected Codex scores and published references. S: planned subset; R/V: variant;
+J: scorer mismatch; I/P: pending primary score; N: no matching published aggregate.
+Codex-result validity and inclusion in the published-score summary are separate, with the per-row
+qualifications below. $n$ is the reported evaluation denominator; scheduled versus graded
+coverage is specified per row.}
+\label{tab:all-results}\\
+\toprule
+Benchmark & Metric & $n$ & Codex & Paper & Reference system \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & Metric & $n$ & Codex & Paper & Reference system \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+STaRK-PRIME & Hit@1 & 2801 & 73.97 & 48.20 & ARK \\
+bright & nDCG@10 & 423 & 61.09 & 51.75 & RARG \\
+SSTQA [V] & Judge accuracy & 764 & 77.23 & 81.90 & ASTRA \\
+CRAG (KG subset) [V] & Truthfulness & 578 & 0.5692 & 0.7110 & CacheRAG \\
+OOLONG [J] & Labels-off score & 192 & 73.44 & 71.84 & EnSI-RAG \\
+SciTab & Accuracy & 1224 & 72.88 & 70.60 & CoT + MiPROv2 (DSPy) \\
+LLM-SRBench & Acc. at 0.1 & 129 & 89.92 & 87.60 & FunctionEvolve \\
+EarthBench & Answer acc. & 247 & 59.11 & 65.99 & Earth-Agent \\
+MatSciBench [V] & Text accuracy & 1025 & 73.37 & 82.90 & S1-NexusAgent \\
+ChemBench [S] & Overall score & 150 & 75.33 & 86.05 & S1-NexusAgent \\
+FrontierScience [V] & Rubric pass rate & 59 & 50.85 & 63.30 & FrontierAgent (Agent Team) \\
+ELAIPBench & Accuracy & 403 & 37.47 & 43.70 & AgentSPEX \\
+Biomni-Eval1 [V] & Task macro & 433 & 59.76 & 76.07 & S1-NexusAgent \\
+MedAgentsBench [N] & Subset macro & 862 & 50.51 & -- & -- \\
+RareBench (LIRICAL) [I] & Recall@1 & 370 & -- & 55.95 & DeepRare \\
+IndustryOR & Accuracy & 100 & 73.00 & 68.00 & ReLoop \\
+FinanceMath & Accuracy & 200 & 79.00 & 76.00 & MoCA-Agent \\
+MultiHiertt & Answer acc. & 1044 & 71.26 & 71.17 & MoCA-Agent \\
+InsightBench [V] & Insight score & 91 & 53.68 & 61.90 & DataSTORM \\
+Test of Time & Accuracy & 280 & 88.57 & 93.10 & REMem-I \\
+\end{longtable}
+\endgroup
+
+\paragraph{Interpretation of the aggregate.}
+19 of 20 benchmarks have retained Codex measurements: 13 primary/scoped results and 6 specified protocol variants.
+11 settings enter the descriptive published-score count: 7/11 (63.6\%) higher, 4/11 (36.4\%) lower, and 0 exactly equal.
+Using all 20 study benchmarks as the denominator gives 7/20 (35.0\%) higher, 4/20 (20.0\%) lower, and 9/20 (45.0\%) not yet classified.
+This is not a significance or equivalence classification. A missing compatible paper
+aggregate, unfinished judging, or an unfinished comparator does not automatically
+invalidate an independently scored Codex measurement; the relevant status is recorded
+separately. Only comparison-eligible rows contribute to the external tally.
+Even retained rows can differ in published backbone, sampling protocol, and measured
+denominator; no pooled performance or population-level win rate is estimated.
+
+\paragraph{Per-row provenance and qualifications.}
+\paragraph{STaRK-PRIME.} Seven recovered trials are merged by task ID with the original run: 2072/2801 = 73.97. The original timeout is counted as a scheduled-task failure. ARK 48.20 is the selected published reference; tool and backbone differences remain. Reference backbone: GPT-4.1. Selected run: \_rerun\_stark7\_\_2026-09-12\_\_13-42-18. HF branch: backup/stark\_rerun7. Revision: d6fa654f93a1.
+\paragraph{bright.} Current executable comparator is RARG (51.75), replacing RARG+ (53.36); the RARG+ entry-point implementation was not released. Published sampling protocol is unstated. Reference backbone: GPT-5.4-mini. The higher reported RARG+ score is 53.36, versus the selected executable RARG score of 51.75.
+\paragraph{SSTQA.} English 764-question result, 590/764 = 77.23, using the ST-Raptor benchmark T/F prompt with a gpt-5.6-luna judge. The September 17 owner decision selects the Chinese split as the primary condition to align with ASTRA. This English result remains a declared language/judge variant; the Chinese primary run and aligned grading are pending. SSTQA replaces LongBench-v 2 in the 20-benchmark main suite. Reference backbone: DeepSeek-V3. Selected run: sstqa\_\_2026-09-12\_\_18-40-51. HF branch: backup/sstqa. Revision: 610e821527c5.
+\paragraph{CRAG (KG subset).} Retained pre-retrieved-KG variant: truthfulness 329/578 = 0.5692 (435 correct, 106 hallucinations, 37 missing). The old 577 denominator wrongly excluded a valid empty-answer zero. The benchmark mock-API arm and aligned-judge comparison remain pending; paper 0.711 is not the local regrade 0.3893. Reference backbone: DeepSeek-chat. Selected run: crag\_\_2026-09-04\_\_12-15-01. Figure 1 shows the paper truthfulness 0.711, not the locally regraded 0.3893; no direct gap is interpreted.
+\paragraph{OOLONG.} Completed 192-question labels-off, in-prompt test-split rerun at context length 262144 (first 192 in dataset order), score 73.44. This replaces the incompatible labels-on staged-file 99.00. EnSI-RAG 71.84 uses an LLM soft judge for nonnumeric answers, while this Codex run uses the official exact/substring scorer. The Codex result is retained; the aggregate paper comparison remains pending aligned regrading or a numeric-only join. Fractional credit makes a binomial interval inappropriate. Reference backbone: GPT-4.1-mini / GPT-4.1. Selected run: oolong\_\_2026-09-15\_\_10-29-16. HF branch: backup/oolong\_labels\_off\_192. Revision: 4d02711425f9.
+\paragraph{SciTab.} Published result uses optimized prompts; no same-backbone completed comparator result in this score snapshot. Reference backbone: GPT-4o.
+\paragraph{LLM-SRBench.} The scheduled 129-task denominator gives 116/129 = 89.92, including two unmeasured/failed tasks as zero credit. The earlier 91.34 is conditional on 127 measured tasks. Both denominators are disclosed; the paper reference 87.60 uses 129. Reference backbone: Claude Opus 4.6. Selected run: llm\_srbench\_\_2026-09-01\_\_13-27-32. HF branch: backup/llm\_srbench. Revision: 77afbd61b95e.
+\paragraph{EarthBench.} 162/247 reproduces 65.59 from released reference outputs; camera-ready 65.99 conflicts with those outputs. Gold-version and modality findings require separate analysis; historical verdict used a 3-SE threshold. Reference backbone: GPT-5. Figure 1 and the table show the paper value 65.99; the locally reconstructed 65.59 remains an audit discrepancy, not a silent correction to the paper. A separate same-key regrade on 246 records gives Codex 59.35 versus released-output 65.04; restricting to 218 agreeing answer keys gives 65.60 versus 70.64. These are sensitivity comparisons, not the paper table cell.
+\paragraph{MatSciBench.} Retained text-only 73.37 measurement over 1025 questions under the documented retired 15-host prompt and disabled built-in web search. This is a scored variant while the newly chosen open-web condition remains pending; it does not enter the primary published-score tally. Reference backbone: Claude-4.5-Sonnet.
+\paragraph{ChemBench.} Completed, planned 150-question open-web subset, 113/150 = 75.33, with no execution errors. This is a scoped pilot against the full-benchmark paper reference, not completion of the 2785-question open-web evaluation. The earlier closed-web 71.89 is preserved in the history. Gold-source trajectory-scan verification remains pending in this working draft. Reference backbone: Claude-4.5-Sonnet. Selected run: \_sample\_chembench\_s1\_150\_\_2026-09-15\_\_16-42-23. HF branch: backup/chembench\_openweb\_150. Revision: 2566f62f6198.
+\paragraph{FrontierScience.} Retained closed-book, older-judge variant 30/59 = 50.85; the planned-set denominator 60 would give 50.00. The current target is open-book with the pinned GPT-5 judge, so it remains outside the primary published-score tally. FrontierAgent 63.3 is the external reference. Reference backbone: Apodex 1.1 (unreleased weights).
+\paragraph{ELAIPBench.} Four previously failed launches were re-executed and graded (0/4), yielding 151/403 = 37.47. Both the published-score row and the updated paired comparator table now use all 403 instances. Published AgentSPEX used high effort; Codex and the shared-backbone medium comparator use medium. Reference backbone: GPT-5, high effort. Selected run: \_rerun\_elaipbench\_4\_\_2026-09-15\_\_14-41-04. HF branch: backup/elaipbench\_rerun4. Revision: 5ca90175dae2.
+\paragraph{Biomni-Eval1.} Completed September 11 433-task rerun on the historical 15-host tool surface. The ten-task macro is 59.76; the job micro 61.89 is not the Table 1 metric. This is a retained scored variant: the official E 1/data-lake arm remains pending. It is excluded only from the primary published-score tally, not removed from the score table. Reference backbone: Claude-4.5-Sonnet. Selected run: biomni\_eval1\_\_2026-09-11\_\_11-01-07. HF branch: backup/biomni\_eval1\_tool\_hosts. Revision: 9e2784b82f2e.
+\paragraph{MedAgentsBench.} All 862 native grades contribute to the nine-subset macro 50.51. The old 860-row selection dropped two valid failures. This is a retained standalone Codex result; GSEM has no published nine-subset aggregate, so no aggregate reference is invented. Selected run: medagentsbench\_\_2026-08-31\_\_18-31-56. HF branch: backup/medagentsbench. Revision: 390cb18a92f3.
+\paragraph{RareBench (LIRICAL).} No new repaired-network result was found in the current HF branches. The old 161/370 = 43.51 run had no successful retrieval and is retained only as diagnostic history. The primary score remains pending rather than being carried forward as a valid result. Reference backbone: DeepSeek-V3.
+\paragraph{IndustryOR.} 73.0 is on the original paper answer key; revised-key score is 80.0 and must not be compared to the original 68.0 bar. Reference backbone: Claude Opus 4.6.
+\paragraph{FinanceMath.} Published-backbone comparison; a separate completed same-backbone reproduction is available. Reference backbone: Qwen3.6-27B.
+\paragraph{MultiHiertt.} Registered denominator 1044, as explicitly selected in the September 17 owner decision:744/1044 = 71.26. The old 1042 denominator is retired. Answer accuracy is the comparison metric, not the separate F 1 column. Reference backbone: Qwen3.6-27B via vLLM. Selected run: multihiertt\_\_2026-09-02\_\_16-13-10. HF branch: backup/multihiertt. Revision: fb004c9b77c9.
+\paragraph{InsightBench.} Retained conditional 53.68 score on 91 graded questions of 100 under the older closed-web/old-judge setting. The new open-web 100-question job has grader failures; its zero summary is not promoted to a performance result. The pinned-judge rescore remains pending. Reference backbone: gpt-5-2025-08-07.
+\paragraph{Test of Time.} 280 balanced instances of a 2800-instance population. Current paper bar is 93.1, not the unsupported 99.0 prose value. Format-instruction ablation 274/280 is an ablation; original 248/280 is not post-corrected. Reference backbone: GPT-4.1-mini-2025-04-14.
+
+\subsection{Supplementary measurements outside the main suite}
+\label{app:supplementary-results}
+These measurements are preserved for reference and do not change the 20-benchmark
+study denominator, Figure~\ref{fig:main-results}, or the abstract counts.
+\paragraph{LongBench-v2.} SSTQA (ASTRA) takes the LongBench-v2 slot because DeLM's evaluation code is unreleased; preserve LongBench-v2 measurements as supplementary evidence. Codex 61.54 on 125 instances; published reference 60.10 (DeLM). Five-domain macro on 125 Multi-Doc QA rows; paper bar is a mean over three runs, with no released benchmark driver.
+
+\paragraph{Machine-readable provenance.}
+\texttt{data/results\_snapshot.json} records source paths, SHA-256 hashes, metric
+descriptions, intervals, reference metadata, and inclusion decisions.
+\texttt{scripts/build\_paper\_results.py} regenerates this appendix and Figure~\ref{fig:main-results}
+from that frozen file. Extraction from the source repository is a separate operation:
+\texttt{scripts/refresh\_results\_snapshot.py} merges the verified HF update while
+preserving the previous snapshot. The historical dashboard extractor writes only the
+historical snapshot and cannot overwrite the current result file.
+\todo{Freeze the final benchmark source manifest before submission.}
+
+Paired outcomes and inference settings are exported in \texttt{data/paired\_results.json};
+\texttt{scripts/paired\_results.py --replay data/paired\_results.json} recomputes the
+statistics without the original run directories. The bounded trace observations in
+Section~\ref{sec:analysis} are recorded with source hashes and case identifiers in
+\texttt{data/trace\_evidence.json}.

@@ -1,0 +1,25 @@
+{
+ "benchmark": "elaipbench",
+ "instance": 43,
+ "reward": 0.0,
+ "answer": {
+  "final_answer": "The correct answers are (A, C, D)",
+  "reasoning": "In Table 5, the screenshot-only agent baselines include GPT-4V, Claude-3-Opus, and Gemini-Pro-1.5. Qwen-Max is evaluated only with the accessibility-tree input, not the screenshot-only setting."
+ },
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "pattern": "official-parse-exact-match",
+   "scorer_source": "ScaleML/AgentSPEX @b36677cee53eb5f2557f13bdf25dfb906b862fd1 src/benchmarks/elaipbench/evaluate.py::parse_answer, vendored verbatim",
+   "question_type": "MA-MCQ",
+   "gold": "AC",
+   "parsed_answer": "ACD",
+   "status": "ok",
+   "paper_id": "17",
+   "instance_index": 43,
+   "raw_len": 33
+  },
+  "detail": "MA-MCQ: parsed 'ACD' vs gold 'AC' -> no match (status=ok)"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "benchmark": "elaipbench",
+ "instance": 42,
+ "reward": 0.0,
+ "answer": {},
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "pattern": "official-parse-exact-match",
+   "scorer_source": "ScaleML/AgentSPEX @b36677cee53eb5f2557f13bdf25dfb906b862fd1 src/benchmarks/elaipbench/evaluate.py::parse_answer, vendored verbatim",
+   "question_type": "SA-MCQ",
+   "gold": "B",
+   "parsed_answer": null,
+   "status": "empty",
+   "paper_id": "17",
+   "instance_index": 42,
+   "raw_len": 0
+  },
+  "detail": "SA-MCQ: parsed None vs gold 'B' -> no match (status=empty)"
+ }
+}

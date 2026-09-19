@@ -1,0 +1,34 @@
+{
+ "benchmark": "sstqa",
+ "instance": 58,
+ "reward": 0.0,
+ "answer": {
+  "answer": "1.3235294118"
+ },
+ "ungraded_guard": {
+  "covered": true,
+  "headline_metric": "accuracy",
+  "headline_value_is_none": false,
+  "record_error": false
+ },
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "pattern": "sstqa-official-llm-judge",
+   "scorer_source": "weAIDB/ST-Raptor ai_evaluate.py::is_equal + utils/prompt_template.py::evaluation_prompt_en, vendored verbatim as _official_sstqa_eval.py",
+   "source_url": "https://huggingface.co/datasets/13515257315Tzr/SSTQA",
+   "headline_metric": "accuracy",
+   "sstqa_id": 59,
+   "table_id": 9,
+   "judge_model": "azure/gpt-5.6-luna",
+   "answer_key_used": "answer",
+   "answer_missing": false,
+   "accuracy": 0,
+   "judge_called": true,
+   "judge_raw": "F",
+   "prediction_chars": 12
+  },
+  "detail": "sstqa id=59 accuracy=0 judge=azure/gpt-5.6-luna"
+ }
+}

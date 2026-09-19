@@ -1,0 +1,81 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2027_conference}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{longtable}
+\usepackage{booktabs} % Professional-looking tables
+\usepackage{amsmath,amssymb}
+\input{fonts}
+\input{data/result_summary}
+
+% \todo{...} marks a number or claim that is not yet settled. Every one must be
+% resolved or deleted before submission; grep for "todo" and for "TODO:" keys.
+\usepackage{xcolor}
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+
+\title{Beyond Code:\\ When Do Coding Agents Rival Domain Specialists?}
+
+\author{Anonymous authors}
+
+% Show authors in this working draft; comment out for anonymous review.
+\iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+\ificlrfinal
+  \lhead{Working draft}
+\fi
+
+\begin{abstract}
+\input{1_abstract}
+\end{abstract}
+
+\input{2_introduction}
+\input{6_related_work}
+\input{3_method}
+\input{4_experiments}
+\input{5_conclusion}
+\input{7_limitations}
+
+% ---------------------------------------------------------------------------
+% The three statements below go at the end of the main text, before the
+% references, and do not count toward the page limit.
+% ---------------------------------------------------------------------------
+
+\subsection*{AI use statement}
+Generative AI tools assisted benchmark screening, extraction of published results, adapter and
+scorer implementation, alignment audits and adversarial checks, and manuscript preparation.
+Quantitative results are derived from recorded evaluation artifacts and accompanying analysis
+scripts. AI-assisted audit findings remain subject to independent review; agreement between an
+auditor and a verifier is not a measurement of audit accuracy. The authors are responsible for
+the final claims and artifacts.
+
+\subsection*{Ethics statement}
+\todo{Complete the ethics statement, including clinical-benchmark scope and data access.}
+
+\subsection*{Reproducibility statement}
+The evaluation records specify task inputs, scoring functions, dataset versions, model settings,
+and departures from published comparator implementations. The paper's data snapshot and analysis
+scripts record the sources of its figures and statistics; unfinished evaluations are marked
+explicitly. Full execution settings and the audit protocol appear in the appendix. Benchmark
+specifications, comparator patches, and per-instance artifacts will accompany the release:
+\todo{repository URL, anonymized for review; verify artifact release and access restrictions}.
+
+\subsubsection*{Acknowledgments}
+% Camera-ready only. All acknowledgments, including funding, go here.
+
+\bibliography{references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{8_appendix}
+\input{9_audit_details}
+\input{10_result_details}
+
+\end{document}

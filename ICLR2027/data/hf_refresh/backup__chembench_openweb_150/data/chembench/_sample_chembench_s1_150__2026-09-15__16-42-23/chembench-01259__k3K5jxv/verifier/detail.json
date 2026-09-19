@@ -1,0 +1,32 @@
+{
+ "benchmark": "chembench",
+ "instance": 1259,
+ "reward": 1.0,
+ "answer": {
+  "answer": "A",
+  "rationale": "In BH3, boron forms three sigma bonds and has no lone pairs, giving a trigonal-planar arrangement and sp2 hybridization. BeH2 is linear (sp), while the central atoms in H3O+ and NH3 each have four electron domains and are sp3 hybridized."
+ },
+ "evaluator_record": {
+  "correct": true,
+  "score": 1.0,
+  "metrics": {
+   "pattern": "chembench-official-all-correct",
+   "scorer_source": "lamalab-org/chembench pypi 0.3.0 src/chembench/metrics.py::all_correct (+ mae, exact_str_match), vendored verbatim as _official_chembench_metrics.py; the micro average is the leaderboard Space's own src/submission/submit.py::compute_topic_scores, overall_score = total_correct / total_questions",
+   "source_url": "https://huggingface.co/datasets/jablonkagroup/ChemBench/tree/6e1d25748952393f44e35b8e85bbe567246a6430",
+   "headline_metric": "overall_score",
+   "uuid": "b58ac34d-a2ad-64de-7aaa-214ba5d5f70b",
+   "question_name": "organic_chemistry_okuyama_maskill",
+   "topic": "general_chemistry",
+   "subfield": "oup",
+   "kind": "multiple_choice",
+   "preferred_score": "multiple_choice_grade",
+   "ground_truth": "{'A': 1.0, 'B': 0.0, 'C': 0.0, 'D': 0.0}",
+   "raw_prediction": "A",
+   "answer_key_used": "answer",
+   "answer_missing": false,
+   "scorer_error": null,
+   "instance_index": 1259
+  },
+  "detail": "chembench[general_chemistry/multiple_choice] all_correct=True"
+ }
+}

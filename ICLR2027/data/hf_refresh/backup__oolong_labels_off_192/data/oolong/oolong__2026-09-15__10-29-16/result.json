@@ -1,0 +1,276 @@
+{
+    "id": "fecd2e09-e757-425c-a77f-00ecd9d5d3e0",
+    "started_at": "2026-09-15T10:29:17.604877",
+    "updated_at": "2026-09-15T13:31:39.069367",
+    "finished_at": "2026-09-15T13:31:39.069367",
+    "n_total_trials": 192,
+    "stats": {
+        "n_completed_trials": 192,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "codex__gpt-5.6-sol__oolong": {
+                "n_trials": 192,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.7344131670007862
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "oolong-00011__MiUaq4G",
+                            "oolong-00016__ozEAose",
+                            "oolong-00027__ZLFN9wN",
+                            "oolong-00018__gsAxh2g",
+                            "oolong-00073__DCv6gsx",
+                            "oolong-00087__ZkzEfqr",
+                            "oolong-00089__yecauEe",
+                            "oolong-00045__Q2VWq7C",
+                            "oolong-00026__Mmi7EQ8",
+                            "oolong-00021__yhG5JzL",
+                            "oolong-00017__6CXJZqD",
+                            "oolong-00044__SBz3gCQ",
+                            "oolong-00088__eD9xXaK",
+                            "oolong-00075__cLvJCE4",
+                            "oolong-00081__RuS3i8R",
+                            "oolong-00086__MvqjvvJ",
+                            "oolong-00072__BukxdaW",
+                            "oolong-00107__o44dazx",
+                            "oolong-00138__Ro8L6Jh",
+                            "oolong-00131__E9WmkhB",
+                            "oolong-00165__5c5LtYJ",
+                            "oolong-00137__Tqm3vBX",
+                            "oolong-00108__Cdjb8TG",
+                            "oolong-00130__559LhAh",
+                            "oolong-00106__r6LvzXU",
+                            "oolong-00139__DWa4f4s",
+                            "oolong-00155__jsEKaXE",
+                            "oolong-00164__nFJRiXZ",
+                            "oolong-00190__X8SJ4zS",
+                            "oolong-00163__V3yXsGM",
+                            "oolong-00179__2xQCEUX",
+                            "oolong-00184__xnA39Hn",
+                            "oolong-00183__JAudHU3",
+                            "oolong-00177__7oLStpq",
+                            "oolong-00148__pdBSKhP",
+                            "oolong-00124__LWBgSTX",
+                            "oolong-00112__VvggDAY",
+                            "oolong-00176__eXFDbUZ",
+                            "oolong-00182__3YPiGiC",
+                            "oolong-00149__gNWLNbw",
+                            "oolong-00185__R7d9A9t",
+                            "oolong-00171__c7mTk5b",
+                            "oolong-00147__JLmNMrT",
+                            "oolong-00178__7n7g4Mu",
+                            "oolong-00140__DteX4Cy",
+                            "oolong-00114__ot444BT",
+                            "oolong-00113__7qcKTxo",
+                            "oolong-00125__vNHHkLA",
+                            "oolong-00050__e97pvCq",
+                            "oolong-00095__ewUWMTN",
+                            "oolong-00092__QRrxQkD",
+                            "oolong-00066__nGb5rWQ",
+                            "oolong-00032__SnKNWrt",
+                            "oolong-00035__gxZSCrJ",
+                            "oolong-00093__z7ib77L",
+                            "oolong-00058__3GfCt6a",
+                            "oolong-00094__aGrF2fT",
+                            "oolong-00056__JtHQd7u",
+                            "oolong-00051__4VDkVab",
+                            "oolong-00005__A79gbC4",
+                            "oolong-00002__bzJNdLe",
+                            "oolong-00034__7JXXuYi",
+                            "oolong-00033__UULCaSC",
+                            "oolong-00083__wkZcSpq",
+                            "oolong-00084__q7hE65D",
+                            "oolong-00046__LfBmsCq",
+                            "oolong-00041__9GHzJeG",
+                            "oolong-00015__Mj3GHh3",
+                            "oolong-00012__PgJF55x",
+                            "oolong-00023__vbMR6oo",
+                            "oolong-00040__moSQV72",
+                            "oolong-00085__7vK8wcZ",
+                            "oolong-00071__UY8U6R3",
+                            "oolong-00049__SJG5skF",
+                            "oolong-00076__rcoB8ro",
+                            "oolong-00022__UsSYQec",
+                            "oolong-00025__goHSpKX",
+                            "oolong-00013__UCVnhJp",
+                            "oolong-00014__pYeM9HH",
+                            "oolong-00166__ibuY4UQ",
+                            "oolong-00168__aNfj33w",
+                            "oolong-00157__M4RwSHX",
+                            "oolong-00150__DtYVwgK",
+                            "oolong-00135__CFEAYfz",
+                            "oolong-00132__PfwqV9W",
+                            "oolong-00151__U638FZh",
+                            "oolong-00156__4Rzn54P",
+                            "oolong-00167__NkhJHwd",
+                            "oolong-00133__tnKKYeX",
+                            "oolong-00134__HqHqa3r",
+                            "oolong-00105__cPwRtSg",
+                            "oolong-00127__emaWkCg",
+                            "oolong-00120__9gSUNDs",
+                            "oolong-00116__ZBUjFpM",
+                            "oolong-00111__bzMow6R",
+                            "oolong-00142__9YH372q",
+                            "oolong-00174__XsskyW3",
+                            "oolong-00187__JYcpduQ",
+                            "oolong-00110__zNEqTP8",
+                            "oolong-00117__7et2q2o",
+                            "oolong-00121__WmanZvn",
+                            "oolong-00119__EkFEBxd",
+                            "oolong-00126__WTZCcoN",
+                            "oolong-00186__xt7BT8r",
+                            "oolong-00181__e9qJF7J",
+                            "oolong-00143__GjMAa9D",
+                            "oolong-00188__8RvrvPT",
+                            "oolong-00144__29XiHWH",
+                            "oolong-00009__6Tio8dP",
+                            "oolong-00031__oT5DcPq",
+                            "oolong-00007__Tgk6PxM",
+                            "oolong-00000__EgteH7v",
+                            "oolong-00098__MK36WzV",
+                            "oolong-00065__7aaZvSo",
+                            "oolong-00062__ULdCnpf",
+                            "oolong-00096__A24dQn3",
+                            "oolong-00001__GEgApdM",
+                            "oolong-00039__sUmDHke",
+                            "oolong-00030__YxUx8ao",
+                            "oolong-00008__dt9KKPJ",
+                            "oolong-00037__RMSmYKv",
+                            "oolong-00097__VDUw746",
+                            "oolong-00063__GqY5xPk",
+                            "oolong-00064__3MnL2Gz",
+                            "oolong-00090__BX8Gmes",
+                            "oolong-00052__o69c3PY",
+                            "oolong-00099__rbn5N8G",
+                            "oolong-00055__tX4SiHQ"
+                        ],
+                        "1.853580436875315e-37": [
+                            "oolong-00029__LL3o6LE"
+                        ],
+                        "0.75": [
+                            "oolong-00020__GtZ7ysD",
+                            "oolong-00042__gAgNh3c",
+                            "oolong-00010__xZnkF9S",
+                            "oolong-00043__QtXpcRV",
+                            "oolong-00136__BFxix2N",
+                            "oolong-00141__wEgcDhc",
+                            "oolong-00123__rpkxmsF",
+                            "oolong-00122__KwiL4iC",
+                            "oolong-00061__ceeTanR",
+                            "oolong-00060__pzKcU5e",
+                            "oolong-00047__D9LiHFn",
+                            "oolong-00038__w4GpjK3"
+                        ],
+                        "0.0": [
+                            "oolong-00080__avfXr2i",
+                            "oolong-00100__pfZUdCw",
+                            "oolong-00109__B9eR4Np",
+                            "oolong-00162__t8QGGCk",
+                            "oolong-00191__xEK4LEg",
+                            "oolong-00101__sa9VfpA",
+                            "oolong-00152__VaTPD7R",
+                            "oolong-00115__PGc22eU",
+                            "oolong-00057__KbTb3Na",
+                            "oolong-00068__eEFGrvk",
+                            "oolong-00059__YaoM4bL",
+                            "oolong-00077__q3vf3oB",
+                            "oolong-00082__PUTVMpr",
+                            "oolong-00161__qaUorXf",
+                            "oolong-00158__uHEvfXb",
+                            "oolong-00102__Nq5CLrq",
+                            "oolong-00118__sChHjyE",
+                            "oolong-00189__P2ruySB",
+                            "oolong-00180__YPqQF5b",
+                            "oolong-00175__qDv7eMD",
+                            "oolong-00036__sUPt2kP",
+                            "oolong-00091__zXvJrUN",
+                            "oolong-00006__KzZdabx"
+                        ],
+                        "2.402688642217218e-12": [
+                            "oolong-00074__77oHXXQ"
+                        ],
+                        "0.2373046875": [
+                            "oolong-00019__PQ8WT5E"
+                        ],
+                        "3.3104567730738015e-296": [
+                            "oolong-00028__qfvQEJm"
+                        ],
+                        "7.568017374869511e-09": [
+                            "oolong-00153__t9CLZcn",
+                            "oolong-00154__tc3SsMp"
+                        ],
+                        "0.07508468627929688": [
+                            "oolong-00146__hrkDsZj",
+                            "oolong-00070__9DL7g89",
+                            "oolong-00145__XXgcmzV"
+                        ],
+                        "0.056313514709472656": [
+                            "oolong-00170__xgfcqcy"
+                        ],
+                        "5.650448946785623e-05": [
+                            "oolong-00003__Q9nxa5i"
+                        ],
+                        "1.793900414783884e-08": [
+                            "oolong-00004__ZwBMJnL"
+                        ],
+                        "0.5625": [
+                            "oolong-00067__xqb5vwM",
+                            "oolong-00159__N7aCj3w",
+                            "oolong-00103__gZH78sC"
+                        ],
+                        "0.13348388671875": [
+                            "oolong-00069__M4xLSXM",
+                            "oolong-00169__Z5ciC2k"
+                        ],
+                        "2.389169488051143e-07": [
+                            "oolong-00048__GaSrKB5"
+                        ],
+                        "0.017817948013544083": [
+                            "oolong-00079__oFVQ6Vk"
+                        ],
+                        "2.4547627869778224e-31": [
+                            "oolong-00024__8NCm2Ld"
+                        ],
+                        "0.421875": [
+                            "oolong-00078__JrxNXuX",
+                            "oolong-00160__bPeKLkt"
+                        ],
+                        "0.177978515625": [
+                            "oolong-00104__tELhVnq",
+                            "oolong-00173__TiHSjZ8"
+                        ],
+                        "3.236288248491558e-21": [
+                            "oolong-00129__3kz97yF"
+                        ],
+                        "2.3918672197118455e-08": [
+                            "oolong-00128__mFhuuwi"
+                        ],
+                        "0.31640625": [
+                            "oolong-00172__QeWx9te"
+                        ],
+                        "4.403599981755559e-39": [
+                            "oolong-00054__ww6EE9X"
+                        ],
+                        "2.410836826277219e-15": [
+                            "oolong-00053__WoN8t7r"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 268962223,
+        "n_cache_tokens": 227257076,
+        "n_output_tokens": 553719,
+        "cost_usd": 390.87138675
+    }
+}

@@ -1,0 +1,42 @@
+{
+ "benchmark": "stark",
+ "instance": 2017,
+ "reward": 1.0,
+ "answer": {
+  "ranked_ids": [
+   29534,
+   30104
+  ]
+ },
+ "ungraded_guard": {
+  "covered": false,
+  "headline_metric": null,
+  "headline_value_is_none": null,
+  "record_error": false
+ },
+ "evaluator_record": {
+  "correct": true,
+  "score": 1.0,
+  "metrics": {
+   "official_metric": "hit@1",
+   "scorer_source": "snap-stanford/stark @b246b9490b1dc216892ce78303140014506932c1 stark_qa/evaluator.py::Evaluator.evaluate, vendored verbatim as _stark_qa_evaluator.py and called, not reimplemented",
+   "leaderboard_source": "hf-space snap-stanford/stark-leaderboard @a4853d13040afec21215dfa629a7683825c46041 app.py lines 166, 181-185, 207",
+   "dataset": "prime",
+   "query_id": 442,
+   "instance_index": 2017,
+   "n_candidates": 129375,
+   "n_gold": 4,
+   "n_submitted": 2,
+   "n_scored": 2,
+   "n_out_of_pool": 0,
+   "n_duplicate_ids": 0,
+   "parse_mode": "list",
+   "note": null,
+   "hit@1": 1.0,
+   "hit@5": 1.0,
+   "recall@20": 0.5,
+   "mrr": 1.0
+  },
+  "detail": "prime query 442: hit@1=1.0000, hit@5=1.0000, recall@20=0.5000, mrr=1.0000 over 129375 candidates from 2 scored ids"
+ }
+}

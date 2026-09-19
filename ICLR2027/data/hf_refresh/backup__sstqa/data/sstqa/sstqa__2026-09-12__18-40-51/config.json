@@ -1,0 +1,27 @@
+{
+ "agents": [
+  {
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "model_name": "azure/gpt-5.6-sol",
+   "name": "codex"
+  }
+ ],
+ "datasets": [
+  {
+   "path": "quickstart/tasks/sstqa"
+  }
+ ],
+ "job_name": "sstqa__2026-09-12__18-40-51",
+ "n_concurrent_trials": 8,
+ "verifier": {
+  "env": {
+   "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+   "OPENAI_BASE_URL": "<ENDPOINT_URL>",
+   "SSTQA_JUDGE_MODEL": "azure/gpt-5.6-luna"
+  }
+ }
+}

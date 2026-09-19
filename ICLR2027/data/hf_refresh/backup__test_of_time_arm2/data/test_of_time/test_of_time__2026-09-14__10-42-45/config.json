@@ -1,0 +1,20 @@
+{
+ "agents": [
+  {
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "model_name": "azure/gpt-5.6-sol",
+   "name": "codex"
+  }
+ ],
+ "datasets": [
+  {
+   "path": "quickstart/tasks/test_of_time"
+  }
+ ],
+ "job_name": "test_of_time__2026-09-14__10-42-45",
+ "n_concurrent_trials": 8
+}

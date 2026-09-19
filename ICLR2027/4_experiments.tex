@@ -1,0 +1,299 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We first establish measurement fidelity, then compare direct Codex with published specialized
+systems and with their shared-backbone reproductions. The trace analysis follows the three
+findings in the abstract: whether additional workflow stages improve accuracy, how decomposition
+preserves or loses information, and when domain conventions, task conditions, and targeted
+verification help specialized systems. Figure~\ref{fig:main-results}
+summarizes \StudyBenchmarkCount{} benchmark records after checking the current HF branches
+on 2026-09-18. Published-reference eligibility, scored Codex variants, and paired-comparator
+completion are recorded separately. Ongoing comparator
+runs evaluate fixed 25\% subsets; their unfinished results remain \todo{pending}.
+The Codex configuration and per-benchmark operating conditions are given in
+Section~\ref{sec:setup} and Appendix~\ref{app:codex-setup}.
+
+\subsection{Experimental rigor}
+\label{sec:rigor}
+
+\paragraph{RQ1: How accurate is the benchmark SOTA finder?}
+The pipeline has audited 554 candidate benchmark records. Its historical screening artifacts
+contain an 83-entry evidence shortlist and a 30-task feasibility-review inventory; the current
+study includes \StudyBenchmarkCount{} benchmarks, with SSTQA replacing LongBench v2. These checkpoints
+reflect continuing selection by scope, comparator evidence, testability, and evaluation conditions
+(Table~\ref{tab:funnel}). They are coverage counts, not finder-accuracy estimates or counts of
+benchmarks cleared for execution. To measure finder accuracy, we require an independently
+adjudicated set of benchmark--system--score bindings, recording the metric, split, backbone,
+method variant, and source cell for each. Exact agreement on the full binding and correctness
+of each field will be reported separately, with unresolved and unavailable sources counted
+explicitly. \todo{Adjudicate a fixed sample; report sample size, binding accuracy, field-level
+accuracy, and uncertainty.} A high rate of evidence-backed records alone cannot establish that
+all stronger systems have been found.
+
+\paragraph{RQ2: How faithfully do the executions reproduce the intended evaluation?}
+\label{sec:audit}
+The 2026-09-11 alignment audit examined 25 bindings selected because they had not previously
+been verified. An auditor and an adversarial verifier reviewed each binding: 308 findings were
+raised, five refuted or dropped, and 303 retained, including 62 blocking, 145 material, and
+96 minor findings. Twenty-two of the 25 bindings had at least one mismatch. This 88\% rate
+characterizes the selected audit set; it does not estimate the fraction of published systems
+that are irreproducible. Protocol, metric, and stale-record findings account for 50, 38, and
+35 issues, respectively (Appendix~\ref{app:audit-breakdown}). These findings motivated repairs
+and explicit declarations rather than post hoc score corrections.
+
+Execution fidelity and reproduction of a paper's numerical result are separate measurements.
+For example, the completed AgentSPEX medium run was graded by the vendored official parser,
+which agreed with AgentSPEX's own verdict on all 403 questions. This verifies scorer agreement
+on that run, while changing its backbone still prevents interpreting the score difference as
+paper-reproduction error. \todo{Complete the per-system fidelity matrix: released components,
+patches, environment, judge, split, and agreement with the reference evaluator; report numerical
+reproduction error only where the paper's operating conditions are actually reproduced.}
+
+Evaluation-contract failures are reported as reproducibility findings. In the completed
+Test of Time format ablation, direct Codex scored 248/280 (88.57) without an extra answer-format
+sentence and 274/280 (97.86) with it, a paired gain of 9.29 percentage points (recorded exact
+McNemar $p=6.2\times10^{-6}$). A subsequent source check established that the sentence came
+from the TISER baseline rather than the selected REMem-I method. The added sentence therefore
+remains an ablation; 97.86 is not substituted for the main condition. The matched REMem-I evaluation on the original 280 questions is \todo{pending}. This case illustrates why a measured improvement must be attached
+to the protocol that produced it, rather than presented as a general advance in agent reasoning.
+
+\subsection{Main results}
+\label{sec:main-results}
+
+\paragraph{RQ3: Where does direct Codex stand relative to published systems?}
+Figure~\ref{fig:main-results} and Table~\ref{tab:all-results} cover \StudyBenchmarkCount{}
+benchmarks after incorporating the reruns. We retain \RetainedCodexCount{} scored Codex results:
+\PrimaryCodexCount{} primary or explicitly scoped settings and \VariantCodexCount{} labelled
+protocol variants. MedAgentsBench is a valid standalone result without a matching nine-subset
+published aggregate. A missing comparator run does not invalidate a Codex measurement.
+RareBench's failed-network run remains diagnostic, with its primary score pending.
+The LongBench v2 measurement is retained separately in Appendix~\ref{app:supplementary-results};
+it is outside the current suite and its aggregate counts.
+
+\PaperComparisonCount{} settings support descriptive published-score comparisons:
+\PaperHigherCount{} higher point estimates (\PaperHigherPercent\%) and
+\PaperLowerCount{} lower (\PaperLowerPercent\%), with no exact ties. This includes the completed
+150-question ChemBench open-web pilot, explicitly compared with a larger published evaluation;
+excluding that pilot yields seven higher and three lower estimates across 10 settings.
+These are not statistical win/loss/equivalence rates. Scored variants stay visible but do not
+enter this tally. Published backbones and settings still differ, so the gaps do not isolate
+scaffold effects. OOLONG's refreshed score is retained, but its paper reference uses a different
+non-numeric scorer; it stays outside the tally pending aligned regrading or a numeric-only join.
+Across the full \StudyBenchmarkCount{}-benchmark suite, the \PaperHigherCount{} higher and
+\PaperLowerCount{} lower estimates account for \SuiteHigherPercent\% and
+\SuiteLowerPercent\%, respectively; the remaining \PaperUnclassifiedCount{} benchmarks
+(\SuiteUnclassifiedPercent\%) are unclassified because
+their comparison requires an aligned protocol, a matching reference, or a valid primary run.
+Unclassified results are not evidence of parity.
+\todo{Refresh after the remaining primary runs; define a practically meaningful
+margin for final above/below/on-par reporting. Non-significance alone is not equivalence.}
+
+The update replaces OOLONG's incompatible staged-file result with its 192-question labels-off,
+in-prompt result (73.44), and incorporates the STaRK and ELAIPBench recovery runs by task ID.
+\todo{Verify the required gold-source trajectory scan for the open-web ChemBench pilot.}
+Aggregation is benchmark-specific: the Biomni rerun scores 59.76 as a ten-task macro, not the
+job-level micro score of 61.89; MedAgentsBench scores 50.51 across all 862 native grades.
+The new SSTQA result is 77.23 on 764 English-split questions, retained as a judge and language
+variant. Its primary evaluation uses the Chinese split and remains \todo{pending}; regrading
+the English predictions alone would not establish that primary result. None of these additions
+requires a completed specialized-system run.
+
+The preliminary pattern varies across tasks. Codex scores 73.97 versus ARK's published 48.20
+on STaRK-PRIME, and 61.09 versus RARG's 51.75 on the evaluated BRIGHT domains. Financial reasoning
+has much smaller external gaps: 79.00 versus 76.00 on FinanceMath and 71.26 versus 71.17 on
+MultiHiertt. Codex is below the selected published point estimates on EarthBench (59.11 versus
+65.99; 65.59 from released outputs), Test of Time (88.57 versus 93.10), and ELAIPBench (37.47 versus 43.70). Tool asymmetries,
+subset coverage, and missing trials remain attached to their rows, so a lower point estimate
+alone does not establish a capability deficit. EarthBench's answer-key revisions and the
+resulting sensitivity analysis remain separate from this historical-score comparison
+(Appendix~\ref{app:result-details}).
+
+\begin{table}[t]
+\caption{Task taxonomy of the \StudyBenchmarkCount{} reported benchmarks. These mutually exclusive
+presentation groups organize domain analysis; they do not replace the collection's overlapping
+33-label taxonomy. Counts include scored variants and the pending RareBench rerun. No average pools these
+heterogeneous metrics.}
+\label{tab:domain-taxonomy}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{3.1cm}rp{8.7cm}@{}}
+\toprule
+Task family & $n$ & Benchmarks \\
+\midrule
+Retrieval and long context & 5 & STaRK-PRIME, BRIGHT, SSTQA, CRAG, OOLONG \\
+Scientific reasoning & 7 & SciTab, LLM-SRBench, EarthBench, MatSciBench, ChemBench,
+FrontierScience Research, ELAIPBench \\
+Clinical and biomedical & 3 & Biomni Eval1, MedAgentsBench, RareBench \\
+Quantitative and data tasks & 4 & IndustryOR, FinanceMath, MultiHiertt, InsightBench \\
+Temporal reasoning & 1 & Test of Time \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:domain-taxonomy} defines the grouping for domain analysis. We additionally tag
+whether success requires corpus retrieval, executable mathematical models, domain APIs,
+multimodal perception, or long-context aggregation. \todo{Complete these capability tags and
+report within-family paired effects and failure rates once comparator samples finish.}
+The incomplete clinical and scientific rows preclude a current ranking of domain difficulty.
+
+\paragraph{RQ4: How do the differences change on a shared backbone?}
+\label{sec:likeforlike}
+Table~\ref{tab:l4l} joins three completed comparator evaluations to Codex by instance ID.
+FinanceMath and IndustryOR use all 200 and 100 questions. ELAIPBench now uses all 403:
+the mentor re-executed the four original pre-agent failures, obtaining four valid zero-credit
+outcomes, so Codex scores 151/403 and AgentSPEX-medium 184/403. The recovery records replace
+the failed trials by ID; they are not appended as additional questions.
+
+\begin{table}[t]
+\caption{Paired results on the shared \texttt{gpt-5.6-sol} backbone. Scores are percentages;
+$\Delta$ is Codex minus comparator in percentage points. $C$-only/$S$-only count questions
+solved exclusively by Codex/the specialized system. Intervals are 95\% paired bootstrap
+intervals, resampling papers for ELAIPBench and instances otherwise. $p_{\mathrm H}$ is the
+item-level exact two-sided McNemar $p$-value with Holm correction across these three comparisons.
+MoCA$^*$ denotes the released ablation without the unavailable baseline proposer, selector
+committee, and conflict arbiter.}
+\label{tab:l4l}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}llrrrrlrr@{}}
+\toprule
+Benchmark & Comparator & $n$ & Codex & System & $\Delta$ & 95\% interval & $C$/$S$-only & $p_{\mathrm H}$ \\
+\midrule
+FinanceMath & MoCA$^*$ & 200 & 79.00 & 79.00 & $0.00$ & $[-4.50,4.50]$ & 10/10 & 1.000 \\
+ELAIPBench & AgentSPEX-medium & 403 & 37.47 & 45.66 & $-8.19$ & $[-12.87,-3.42]$ & 34/67 & 0.0040 \\
+IndustryOR & ReLoop & 100 & 73.00 & 70.00 & $+3.00$ & $[-3.00,9.00]$ & 6/3 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On FinanceMath the published-score gain of 3.00 points becomes a tie in aggregate accuracy;
+on IndustryOR, the gain falls from 5.00 to 3.00 points. Neither paired interval establishes
+an advantage or equivalence. AgentSPEX retains an 8.19-point advantage at explicit medium effort.
+Its separate high-effort run scores 190/403, versus 184/403 at medium; 21 questions favor high
+and 15 favor medium (exact McNemar $p=0.405$). Thus the observed ELAIPBench gap persists when
+reasoning effort is explicitly matched; these measurements do not establish that effort has
+no effect. The FinanceMath run omitted the effort argument and is recorded under the project's
+endpoint-default-medium assumption. Both FinanceMath arms use its official numeric matcher,
+including its sign/scale tolerance, and both IndustryOR arms use the original answer key.
+
+We recomputed the paired statistics from saved per-instance verdicts. The three tests are
+exploratory, and benchmarks were not sampled randomly. The item-level McNemar tests do not account for within-paper dependence; Holm correction
+addresses the three comparisons, not that dependence. ELAIPBench has 137 source papers;
+its paper-cluster bootstrap interval remains below zero, while a cluster sign-flip check gives
+Monte Carlo $p=0.0015$. The export records all 703 paired outcomes, 20{,}000 bootstrap replicates,
+50{,}000 sign-flip draws, and seed 20260918. These intervals characterize variation across the
+observed tasks or papers, not repeated stochastic runs of each agent.
+
+\paragraph{Ongoing comparator evaluation.}
+Five full comparator executions are recorded (FinanceMath, IndustryOR, ELAIPBench, CRAG, and
+SSTQA); completion alone does not make every run eligible for a paired headline. For the remaining
+rows, the 25\% manifests fix the seed and task identifiers before execution, with stratification
+where declared. ChemBench instead uses a separately specified 280-item subset; Test of Time
+uses the existing balanced 280-question Codex set (10\% of 2{,}800), superseding its earlier
+700-question manifest. Only the ordering of that fixed set is shuffled, with seed 20260918.
+Codex is scored
+on the identical selected identifiers; the full-set published reference remains a separate
+comparison. Completed pilot stages are useful for fidelity and cost checks, but are not final
+25\% scores. \todo{Complete the sample runs and required judging; add per-row paired effects,
+uncertainty, sample coverage, tokens, cost, and wall-clock time.}
+
+\subsection{Analysis}
+\label{sec:analysis}
+
+We use the paired outcomes to locate disagreements and inspect saved intermediate artifacts,
+tool results, and submitted answers. The three completed comparisons contain 130 discordant
+questions: 101 in ELAIPBench, 20 in FinanceMath, and nine in IndustryOR. Below we inspect
+selected discordant pairs and a successful repair on a question both agents solve; these cases
+do not estimate how frequently each mechanism occurs. A trace can identify where two executions diverged; isolating the contribution of a
+workflow component additionally requires a matched intervention.
+
+\paragraph{RQ5: Do additional workflow stages improve accuracy?}
+MoCA$^*$ introduces a claim catalog, role-specific claim review, market clearing, and program
+synthesis, yet its FinanceMath accuracy equals direct Codex's 158/200. The tie masks ten unique
+successes per arm. ReLoop's extraction, code generation, and repair workflow scores 70/100 on
+IndustryOR versus Codex's 73/100, with six Codex-only and three comparator-only successes.
+Together these results show that a specialized workflow need not improve aggregate accuracy
+on the tested tasks; their intervals do not establish equivalence or a general penalty for
+complexity. AgentSPEX's advantage on ELAIPBench also rules out interpreting these examples as
+evidence that specialization is uniformly unhelpful.
+
+ReLoop's saved stage outputs yield 69, 70, 70, and 70 correct answers after initial generation,
+L1 execution verification and regeneration, L2 behavioral checks, and final repair, respectively.
+The one recovered case, problem 16, initially
+fails on a brittle string check for purchase timing; the repair allows the program to enforce
+the extracted purchases-before-sales condition. These are successive outputs of one execution,
+not controlled ablations. Later stages also leave unresolved errors: on IndustryOR
+problems 52, 80, 82, and 96, ReLoop makes three repair attempts but returns no numeric objective;
+Codex solves all four. On FinanceMath \texttt{validation-147}, MoCA$^*$'s initial catalog already
+contains the correct three-year return and the corresponding Calmar ratio. Subsequent review
+and synthesis nevertheless produce a different, incorrect calculation. These observations
+motivate measuring what each stage changes, rather than using the number of stages as a proxy
+for capability. \todo{Report paired model calls, executed tool calls, input/output tokens, and
+latency; compare full workflows with component ablations under matched budgets.}
+
+\paragraph{RQ6: How can decomposition lose information that Codex retains?}
+ReLoop's code generator receives a summary of extracted data that omits nested field names.
+For IndustryOR problem 82, the extractor records shop-count bounds under
+\texttt{minimum\_number\_of\_shops}, but the generator receives only
+\texttt{store\_types: list[5] of dict}. Its generated program guesses other key names and
+raises a \texttt{KeyError}. The original problem text remains available; the lost information
+is the schema of the extractor's own representation. Related handoff failures occur for the
+staffing requirements in problem 52 and cutting demands in problem 96. Problem 52 also encounters
+a missing SciPy dependency, so information loss is not its only failure source.
+
+Information can also be present but cease to constrain the downstream solution. In FinanceMath
+\texttt{validation-147}, the claim catalog identifies the three-year return as 6.2\% and computes
+$6.2/10.2\approx0.6078$. The review stage marks the three-year-return claim uncertain, and the
+final program instead averages returns across four distinct horizons, yielding 0.5049. Codex
+uses the three-year table entry directly and returns 0.607843, which passes the evaluator.
+This case exposes a failure to preserve the role of a relevant fact across stages, rather than
+a failure to extract the fact initially. It illustrates how retaining the relation between
+the question, table headers, and computation can matter more than adding review stages.
+\todo{Test full-schema handoffs and preservation of source-linked task conditions without
+changing the backbone, dependencies, or resource budget; measure repair success on all eligible
+cases, including cases where the original specialized workflow succeeds.}
+
+\paragraph{RQ7: When does domain-specific scaffolding add value?}
+The comparator-only successes show concrete conditions that a useful scaffold can preserve.
+On FinanceMath \texttt{validation-92}, MoCA$^*$ explicitly records that three months have elapsed
+on a one-year swap and values the remaining nine months, returning 100.753663. Codex uses four
+remaining quarters and returns 100.5241705. On \texttt{validation-121}, MoCA$^*$ represents the
+currency units explicitly and multiplies HKD/CNY by CNY/AUD, returning 5.96844105 HKD/AUD;
+Codex returns the inverse. Both specialized outputs pass the official evaluator. These examples
+connect the observed advantage to retaining a time condition and resolving a quote convention,
+although removing those explicit representations has not yet been tested.
+
+IndustryOR problem 6 supplies a complementary model-convention example. Codex first solves an
+integer model with objective 10755, then changes production, inventory, and backlog variables
+to continuous variables and submits 10750. ReLoop retains the integer formulation and obtains
+the reference objective 10755. This is a divergence in the selected model domain, not an inability
+to execute the correct integer program. A targeted verification step could check variable domains
+against the intended task before accepting the final model. \todo{Test convention checks,
+explicit preservation of task conditions, and targeted verification separately; do not infer
+their causal benefit from selected successful traces alone.}
+
+ELAIPBench provides the strongest current aggregate advantage for a specialized workflow:
+AgentSPEX has 67 unique successes versus Codex's 34. The deficit occurs in both question types:
+Codex solves 35/88 single-answer questions versus 44/88 and 116/315 multiple-answer questions
+versus 140/315. The stricter multiple-answer setting alone therefore cannot explain the gap.
+\todo{Annotate paper evidence selection, preservation of qualifications, and verification of the
+final choice across the discordant pairs; test the resulting mechanisms with controlled changes.}
+The scientific pilots add a distinct measurement of tool use: S1-NexusAgent invokes no web search
+on ten MatSciBench questions despite access, while its four-question Biomni pilot reaches
+Ensembl, NCBI, EBI, and OpenTargets. Tool availability alone does not establish either effective
+use or an accuracy benefit. The ongoing paired samples will test whether the selected tool
+supplies evidence needed for the specific task.
+
+\paragraph{Distinguishing reasoning from answer delivery.}
+IndustryOR problem 28 shows why final accuracy can hide a successful computation. Codex executes
+the correct objective 580000 twice, but its submitted objective field begins with the symbolic
+expression $V=1.2x_3+\cdots$; the grader reads the first number, 1.2, and marks it incorrect.
+This case is a delivery failure after successful computation. It remains an incorrect outcome
+under the declared main protocol, and a corrected submission would be a separate intervention.
+It does not establish that delivery failures are more common than reasoning errors across Codex
+runs. \todo{Complete a common annotation of both arms covering evidence selection, intermediate
+reasoning, execution, and final delivery; report counts and denominators before making prevalence
+claims.} Protocol repairs and the Test of Time format ablation remain reproducibility evidence
+(Section~\ref{sec:rigor}); they are not attributed to improved domain reasoning.

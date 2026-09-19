@@ -1,0 +1,121 @@
+{
+ "agent_execution": {
+  "finished_at": "2026-09-13T01:43:14.326553Z",
+  "started_at": "2026-09-13T01:42:38.104407Z"
+ },
+ "agent_info": {
+  "model_info": {
+   "name": "gpt-5.6-sol",
+   "provider": "openai"
+  },
+  "name": "codex",
+  "version": "0.149.1"
+ },
+ "agent_result": {
+  "cost_usd": 0.08759,
+  "metadata": null,
+  "n_cache_tokens": 28535,
+  "n_input_tokens": 38397,
+  "n_output_tokens": 390,
+  "rollout_details": null
+ },
+ "agent_setup": {
+  "finished_at": "2026-09-13T01:42:38.104071Z",
+  "started_at": "2026-09-13T01:40:59.483453Z"
+ },
+ "config": {
+  "agent": {
+   "concurrency_group": null,
+   "import_path": null,
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "load_trajectory": null,
+   "max_timeout_sec": null,
+   "mcp_servers": [],
+   "model_name": "azure/gpt-5.6-sol",
+   "n_concurrent": null,
+   "name": "codex",
+   "override_setup_timeout_sec": null,
+   "override_timeout_sec": null,
+   "resume_trajectory": false,
+   "skills": []
+  },
+  "agent_setup_timeout_multiplier": null,
+  "agent_timeout_multiplier": null,
+  "artifacts": [],
+  "environment": {
+   "cpu_enforcement_policy": "auto",
+   "delete": true,
+   "extra_docker_compose": [],
+   "force_build": false,
+   "import_path": null,
+   "kwargs": {},
+   "memory_enforcement_policy": "auto",
+   "mounts": null,
+   "override_cpus": null,
+   "override_gpus": null,
+   "override_memory_mb": null,
+   "override_storage_mb": null,
+   "override_tpu": null,
+   "type": "docker"
+  },
+  "environment_build_timeout_multiplier": null,
+  "extra_instruction_paths": [],
+  "install_only": false,
+  "job_id": "e9f425cb-2171-47d6-b403-2dab2490bb7f",
+  "source_trial": null,
+  "task": {
+   "download_dir": null,
+   "git_commit_id": null,
+   "git_url": null,
+   "name": null,
+   "overwrite": false,
+   "path": "quickstart/tasks/sstqa/sstqa-00058",
+   "ref": null,
+   "source": "sstqa"
+  },
+  "timeout_multiplier": 1.0,
+  "trial_name": "sstqa-00058__5XBd88h",
+  "trials_dir": "jobs/sstqa__2026-09-12__18-40-51",
+  "verifier": {
+   "disable": false,
+   "env": {
+    "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+    "OPENAI_BASE_URL": "<ENDPOINT_URL>",
+    "SSTQA_JUDGE_MODEL": "azure/gpt-5.6-luna"
+   },
+   "max_timeout_sec": null,
+   "override_timeout_sec": null
+  },
+  "verifier_timeout_multiplier": null
+ },
+ "environment_setup": {
+  "finished_at": "2026-09-13T01:40:59.483409Z",
+  "started_at": "2026-09-13T01:40:56.419802Z"
+ },
+ "exception_info": null,
+ "finished_at": "2026-09-13T01:43:40.561983Z",
+ "id": "a7508116-0843-4ac7-998c-f2c89ff0031f",
+ "source": "sstqa",
+ "started_at": "2026-09-13T01:40:56.294273Z",
+ "step_results": null,
+ "task_checksum": "0453c499595eef698f97dec98f68a0851ab50868e0cc6583cdb1de907d3887ce",
+ "task_id": {
+  "path": "quickstart/tasks/sstqa/sstqa-00058"
+ },
+ "task_name": "stanford/sstqa-00058",
+ "trial_name": "sstqa-00058__5XBd88h",
+ "verifier": {
+  "finished_at": "2026-09-13T01:43:28.379658Z",
+  "started_at": "2026-09-13T01:43:16.986930Z"
+ },
+ "verifier_environment_mode": "shared",
+ "verifier_result": {
+  "rewards": {
+   "reward": 0.0
+  }
+ }
+}

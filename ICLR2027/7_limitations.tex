@@ -1,0 +1,47 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{Coverage and selection.}
+The \StudyBenchmarkCount{} reported benchmarks were selected from 554 candidates through evidence,
+scope, testability, and evaluation-frame review, not sampled randomly. The candidate labels overlap,
+and the collection includes coding benchmarks outside the study scope. Benchmarks with accessible data,
+executable environments, and automated scoring are easier to include; hardware-dependent,
+embodied, and human-judged tasks are underrepresented. This selection may favor tasks that a
+coding agent can address through files and programs. Domain-level counts describe this suite
+and do not estimate performance over all tasks in a domain.
+
+\paragraph{One agent and incomplete controlled comparisons.}
+The direct-Codex arm uses a particular client, backbone, reasoning effort, and pass@1 protocol
+(Appendix~\ref{sec:appendix:setup}). Results do not establish the best achievable performance
+of either coding agents or specialized systems. The 25\%-subset comparator campaign is still
+running; preliminary runs, full-set historical measurements, and incomplete subsets cannot be
+combined as if they shared a denominator. Reference-informed and tool-library ablations remain
+pending. We therefore do not yet claim a general causal explanation for the observed gaps.
+
+\paragraph{Published scores and statistical interpretation.}
+A paper score can differ in backbone, dataset version, judge, resources, and inference budget.
+It is an external reference, not a shared-backbone replication. A confidence interval around
+Codex alone does not account for uncertainty in the published score, and failure to detect a
+difference does not establish equivalence. The benchmarks use different metrics, so we report
+per-benchmark results and explicit counting denominators rather than an average of raw scores.
+Multiple comparisons and single-run stochasticity further limit inferential claims.
+
+\paragraph{Protocol repairs and resource access.}
+Several initial Codex evaluations did not supply the intended environment or working web
+access. Updated runs replace earlier results where available; six scored variants remain
+explicitly labelled, while RareBench still lacks a valid network-enabled measurement. ChemBench's
+150-question open-web pilot is an intentionally scoped result, not a completed full-benchmark
+run. SSTQA's available score is an English-split judge variant; its Chinese-split primary
+evaluation remains pending. Comparator patches, unavailable case banks,
+different judges, and answer-key revisions are documented per row. Giving both arms the
+benchmark's environment does not eliminate differences in a comparator's own retrieval or tool
+implementation; those components are part of the method under study.
+
+\paragraph{Audit validity and exposure.}
+AI-assisted extraction and adversarial review can both make mistakes. The 2026-09-11 audit
+targeted 25 previously unassessed bindings and excluded five already verified bindings, so its
+finding rate is not a prevalence estimate for the 30 benchmarks in the task inventory or the literature.
+Findings describe artifacts at a particular date; their severity and expected score direction
+are not measured treatment effects. SOTA-finder accuracy against an independently adjudicated
+reference set remains pending. Isolation and trajectory scans reduce runtime answer leakage
+but cannot exclude pretraining contamination.

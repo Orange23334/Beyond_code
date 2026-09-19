@@ -1,0 +1,19 @@
+{
+ "agents": [
+  {
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "model_name": "azure/gpt-5.6-sol",
+   "name": "codex"
+  }
+ ],
+ "datasets": [
+  {
+   "path": "quickstart/tasks/_rerun_stark7"
+  }
+ ],
+ "job_name": "_rerun_stark7__2026-09-12__13-42-18"
+}

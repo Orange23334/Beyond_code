@@ -1,0 +1,116 @@
+{
+ "agent_execution": {
+  "finished_at": "2026-09-15T21:42:45.193937Z",
+  "started_at": "2026-09-15T21:42:12.225371Z"
+ },
+ "agent_info": {
+  "model_info": {
+   "name": "gpt-5.6-sol",
+   "provider": "openai"
+  },
+  "name": "codex",
+  "version": "0.149.1"
+ },
+ "agent_result": {
+  "cost_usd": 0.33732999999999996,
+  "metadata": null,
+  "n_cache_tokens": 48430,
+  "n_input_tokens": 97152,
+  "n_output_tokens": 287,
+  "rollout_details": null
+ },
+ "agent_setup": {
+  "finished_at": "2026-09-15T21:42:12.225233Z",
+  "started_at": "2026-09-15T21:41:07.778941Z"
+ },
+ "config": {
+  "agent": {
+   "concurrency_group": null,
+   "import_path": null,
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "load_trajectory": null,
+   "max_timeout_sec": null,
+   "mcp_servers": [],
+   "model_name": "azure/gpt-5.6-sol",
+   "n_concurrent": null,
+   "name": "codex",
+   "override_setup_timeout_sec": null,
+   "override_timeout_sec": null,
+   "resume_trajectory": false,
+   "skills": []
+  },
+  "agent_setup_timeout_multiplier": null,
+  "agent_timeout_multiplier": null,
+  "artifacts": [],
+  "environment": {
+   "cpu_enforcement_policy": "auto",
+   "delete": true,
+   "extra_docker_compose": [],
+   "force_build": false,
+   "import_path": null,
+   "kwargs": {},
+   "memory_enforcement_policy": "auto",
+   "mounts": null,
+   "override_cpus": null,
+   "override_gpus": null,
+   "override_memory_mb": null,
+   "override_storage_mb": null,
+   "override_tpu": null,
+   "type": "docker"
+  },
+  "environment_build_timeout_multiplier": null,
+  "extra_instruction_paths": [],
+  "install_only": false,
+  "job_id": "d0ad1d18-6f39-4809-9ef6-df7591062a50",
+  "source_trial": null,
+  "task": {
+   "download_dir": null,
+   "git_commit_id": null,
+   "git_url": null,
+   "name": null,
+   "overwrite": false,
+   "path": "quickstart/tasks/_rerun_elaipbench_4/elaipbench-00043",
+   "ref": null,
+   "source": "_rerun_elaipbench_4"
+  },
+  "timeout_multiplier": 1.0,
+  "trial_name": "elaipbench-00043__3aCUSQN",
+  "trials_dir": "jobs/_rerun_elaipbench_4__2026-09-15__14-41-04",
+  "verifier": {
+   "disable": false,
+   "max_timeout_sec": null,
+   "override_timeout_sec": null
+  },
+  "verifier_timeout_multiplier": null
+ },
+ "environment_setup": {
+  "finished_at": "2026-09-15T21:41:07.778893Z",
+  "started_at": "2026-09-15T21:41:05.847273Z"
+ },
+ "exception_info": null,
+ "finished_at": "2026-09-15T21:42:59.309335Z",
+ "id": "8626ae27-c14e-4d17-932d-df69e7692459",
+ "source": "_rerun_elaipbench_4",
+ "started_at": "2026-09-15T21:41:05.771158Z",
+ "step_results": null,
+ "task_checksum": "fd55a0879f646de687dd472ac348ed535c2718d60d5a7dfd283db0405f774fd5",
+ "task_id": {
+  "path": "quickstart/tasks/_rerun_elaipbench_4/elaipbench-00043"
+ },
+ "task_name": "stanford/elaipbench-00043",
+ "trial_name": "elaipbench-00043__3aCUSQN",
+ "verifier": {
+  "finished_at": "2026-09-15T21:42:48.042366Z",
+  "started_at": "2026-09-15T21:42:45.505612Z"
+ },
+ "verifier_environment_mode": "shared",
+ "verifier_result": {
+  "rewards": {
+   "reward": 0.0
+  }
+ }
+}

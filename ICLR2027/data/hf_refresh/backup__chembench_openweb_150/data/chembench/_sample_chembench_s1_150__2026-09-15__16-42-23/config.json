@@ -1,0 +1,19 @@
+{
+ "agents": [
+  {
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "live"
+   },
+   "model_name": "azure/gpt-5.6-sol",
+   "name": "codex"
+  }
+ ],
+ "datasets": [
+  {
+   "path": "quickstart/tasks/_sample_chembench_s1_150"
+  }
+ ],
+ "job_name": "_sample_chembench_s1_150__2026-09-15__16-42-23"
+}

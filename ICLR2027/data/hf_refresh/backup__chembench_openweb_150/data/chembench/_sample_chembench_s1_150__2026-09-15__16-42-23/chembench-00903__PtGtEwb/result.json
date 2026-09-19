@@ -1,0 +1,116 @@
+{
+ "agent_execution": {
+  "finished_at": "2026-09-16T01:11:25.457799Z",
+  "started_at": "2026-09-16T01:10:06.469467Z"
+ },
+ "agent_info": {
+  "model_info": {
+   "name": "gpt-5.6-sol",
+   "provider": "openai"
+  },
+  "name": "codex",
+  "version": "0.149.1"
+ },
+ "agent_result": {
+  "cost_usd": 0.202434,
+  "metadata": null,
+  "n_cache_tokens": 92168,
+  "n_input_tokens": 107008,
+  "n_output_tokens": 2121,
+  "rollout_details": null
+ },
+ "agent_setup": {
+  "finished_at": "2026-09-16T01:10:06.469193Z",
+  "started_at": "2026-09-16T01:08:35.748661Z"
+ },
+ "config": {
+  "agent": {
+   "concurrency_group": null,
+   "import_path": null,
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "live"
+   },
+   "load_trajectory": null,
+   "max_timeout_sec": null,
+   "mcp_servers": [],
+   "model_name": "azure/gpt-5.6-sol",
+   "n_concurrent": null,
+   "name": "codex",
+   "override_setup_timeout_sec": null,
+   "override_timeout_sec": null,
+   "resume_trajectory": false,
+   "skills": []
+  },
+  "agent_setup_timeout_multiplier": null,
+  "agent_timeout_multiplier": null,
+  "artifacts": [],
+  "environment": {
+   "cpu_enforcement_policy": "auto",
+   "delete": true,
+   "extra_docker_compose": [],
+   "force_build": false,
+   "import_path": null,
+   "kwargs": {},
+   "memory_enforcement_policy": "auto",
+   "mounts": null,
+   "override_cpus": null,
+   "override_gpus": null,
+   "override_memory_mb": null,
+   "override_storage_mb": null,
+   "override_tpu": null,
+   "type": "docker"
+  },
+  "environment_build_timeout_multiplier": null,
+  "extra_instruction_paths": [],
+  "install_only": false,
+  "job_id": "4d534a00-61c1-4163-b877-56e8bf388324",
+  "source_trial": null,
+  "task": {
+   "download_dir": null,
+   "git_commit_id": null,
+   "git_url": null,
+   "name": null,
+   "overwrite": false,
+   "path": "quickstart/tasks/_sample_chembench_s1_150/chembench-00903",
+   "ref": null,
+   "source": "_sample_chembench_s1_150"
+  },
+  "timeout_multiplier": 1.0,
+  "trial_name": "chembench-00903__PtGtEwb",
+  "trials_dir": "jobs/_sample_chembench_s1_150__2026-09-15__16-42-23",
+  "verifier": {
+   "disable": false,
+   "max_timeout_sec": null,
+   "override_timeout_sec": null
+  },
+  "verifier_timeout_multiplier": null
+ },
+ "environment_setup": {
+  "finished_at": "2026-09-16T01:08:35.748599Z",
+  "started_at": "2026-09-16T01:08:34.045364Z"
+ },
+ "exception_info": null,
+ "finished_at": "2026-09-16T01:11:38.156764Z",
+ "id": "cf22701a-55b2-4e45-841c-01b41afcab15",
+ "source": "_sample_chembench_s1_150",
+ "started_at": "2026-09-16T01:08:34.043595Z",
+ "step_results": null,
+ "task_checksum": "10f72fba033b08ac0e2b62f9ee746ac4ce524aef003a64795fab8093c2aa37ab",
+ "task_id": {
+  "path": "quickstart/tasks/_sample_chembench_s1_150/chembench-00903"
+ },
+ "task_name": "stanford/chembench-00903",
+ "trial_name": "chembench-00903__PtGtEwb",
+ "verifier": {
+  "finished_at": "2026-09-16T01:11:26.636299Z",
+  "started_at": "2026-09-16T01:11:26.008481Z"
+ },
+ "verifier_environment_mode": "shared",
+ "verifier_result": {
+  "rewards": {
+   "reward": 0.0
+  }
+ }
+}

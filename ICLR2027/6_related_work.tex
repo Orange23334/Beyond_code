@@ -1,0 +1,50 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Coding agents beyond software development.}
+SWE-agent studies interfaces for repository navigation, code editing, and execution
+\citep{yang2024sweagent}, while OpenHands provides a platform for agents that act through
+code, a command line, and a browser \citep{wang2025openhands}. SWE-bench evaluates issue
+resolution in real software repositories \citep{jimenez2024swebench}. Beyond software,
+GAIA and AgentBench assess information gathering, tool use, and interaction with diverse
+environments \citep{mialon2024gaia,liu2024agentbench}; ScienceAgentBench and MLE-bench
+evaluate scientific data analysis and machine-learning engineering
+\citep{chen2025scienceagentbench,chan2025mlebench}. These studies establish that agent
+evaluation extends beyond code generation. Our focus is the transfer of a general-purpose
+coding agent to tasks whose target outputs are non-coding, compared with domain specialists
+using both published scores and executions on a shared backbone.
+
+\paragraph{Domain-specific scaffolding.}
+AutoGen supports multi-agent conversations \citep{wu2024autogen}; DSPy and AFlow optimize
+language-model pipelines and agentic workflows \citep{khattab2024dspy,zhang2025aflow}.
+Domain-focused systems instantiate this structure through medical expert discussions in
+MedAgents \citep{tang2024medagents} and chemistry tool libraries in ChemCrow
+\citep{bran2024chemcrow}. Additional structure also creates failure points: MAST organizes
+observed multi-agent failures into system design, inter-agent misalignment, and task
+verification categories \citep{cemri2025mast}. Building on these perspectives, we examine
+whether longer workflows improve accuracy, whether decomposition preserves necessary
+information, and when explicit domain conventions, task conditions, or verification help.
+Our paired comparisons distinguish published performance from performance on our backbone;
+trace examples motivate mechanisms whose causal effects require targeted ablations.
+
+\paragraph{Reliable benchmark evaluation.}
+GSM1k probes overfitting to a widely used reasoning benchmark \citep{zhang2024gsm1k}, and
+prompt-format experiments show that meaning-preserving changes can alter measured performance
+\citep{sclar2024format}. HELM standardizes evaluation conditions across scenarios and metrics
+\citep{liang2023helm}, while the Language Model Evaluation Harness provides reusable task
+and scoring implementations \citep{gao2023harness}. The NeurIPS reproducibility program
+complements such infrastructure with code, checklists, and independent reproduction
+\citep{pineau2021reproducibility}. Our audit connects each published score to its reference
+implementation and the executable task used for comparison, checking instances, metrics,
+answer keys, judges, and resources. These checks establish the conditions for interpreting
+performance gaps; we treat them separately from findings about agent capabilities.
+
+\paragraph{AI-assisted evidence synthesis.}
+ASReview demonstrates how active learning can prioritize literature screening while retaining
+a transparent review process \citep{vandeschoot2021asreview}. Our \emph{meta-analysis pipeline}
+extends evidence collection to checking reported benchmark results and executing comparisons.
+It does not estimate a pooled effect across heterogeneous metrics, and it is not an exhaustive
+systematic review: the search was not preregistered and screening was not performed by two
+independent human reviewers. Source records, adversarial checks, and human adjudication make
+the process reviewable; an independent accuracy evaluation of the SOTA finder remains
+unfinished (Section~\ref{sec:rigor}).

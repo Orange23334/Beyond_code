@@ -1,0 +1,257 @@
+\section{Audit evidence and historical execution record}
+\label{app:audit-details}
+
+This appendix preserves the evidence behind the audit statistics and records which execution
+problems were known at the original 2026-09-11 snapshot. Its dated statuses are historical;
+subsequent repairs, new comparator runs, and the ongoing 25\% comparator samples are described
+in Section~\ref{sec:experiments}. A finding count is a count of recorded issues, not a measured
+change in benchmark score or a population estimate of reproducibility.
+
+\subsection{Alignment findings by severity, axis, and direction}
+\label{app:audit-breakdown}
+
+The 25 bindings were the 15 left unassessed by the 2026-09-10 synthesis plus 10 specifications
+without a full direct-Codex run. The five bindings previously verified by that synthesis
+(\texttt{stark}, \texttt{bright}, \texttt{scitab}, \texttt{llm\_srbench}, and
+\texttt{industryor}) were excluded. Thus 22 misaligned bindings out of 25 describes this
+selected audit set. Two bindings were closed (\texttt{hitab}, \texttt{longbench\_v2}) and one
+was unassessable (\texttt{critpt}). Each binding received an audit and an adversarial verification;
+308 findings were raised, 5 refuted or dropped, and 303 retained.
+
+\begin{table}[t]
+\caption{The 303 standing findings of the 2026-09-11 alignment audit of 25 comparator bindings
+(308 raised, 5 refuted or dropped on adversarial verification). Direction is the side a finding
+currently flatters, i.e.\ the side that correcting it would move the comparison away from; the last
+column restricts the direction split to the 62 blocking findings. The 25 are the 15 bindings a
+2026-09-10 synthesis left unassessed plus the 10 specifications with no full codex run
+(Section~\ref{sec:audit}).}
+\label{tab:audit}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lr@{\hskip 0.75em}lr@{\hskip 0.75em}lrr@{}}
+\toprule
+\multicolumn{2}{@{}l}{\emph{by severity}} & \multicolumn{2}{l}{\emph{by axis}} &
+\multicolumn{1}{l}{\emph{by direction}} & all 303 & of 62 blocking \\
+\midrule
+blocking & 62  & protocol             & 50 & currently flatters the comparator & 95  & 19 \\
+material & 145 & metric               & 38 & currently flatters the codex arm  & 65  & 15 \\
+minor    & 96  & staleness            & 35 & neutral or unknown                & 140 & 27 \\
+         &     & tool surface         & 33 & runs both ways                    & 3   & 1  \\
+         &     & undeclared deviation & 27 &                                   &     &    \\
+         &     & other                & 26 &                                   &     &    \\
+         &     & backbone             & 21 &                                   &     &    \\
+         &     & denominator          & 20 &                                   &     &    \\
+         &     & judge                & 16 &                                   &     &    \\
+         &     & dataset version      & 13 &                                   &     &    \\
+         &     & contamination        & 13 &                                   &     &    \\
+         &     & instances            & 8  &                                   &     &    \\
+         &     & embedding model      & 3  &                                   &     &    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What the pipeline caught about itself}
+\label{sec:selfaudit}
+
+At the 2026-09-11 snapshot, the pipeline log recorded 107 numbered failure
+cases, C21 through C129 (two of the log's headers, C21--C27 and C28--C34, each cover seven cases),
+each recording what the error was, what it actually cost the data, and the guard that now prevents
+it. The cases were made by the coding agents constructing the pipeline and by the people directing
+them, and they are published rather than removed, because a process that audits other people's
+evaluations has to be legible about its own. Three generalise beyond this project.
+
+\paragraph{A gate that checks the wrapper's status instead of the thing it guards (C103).}
+Two deployment gates recorded the container harness's exit code. The harness exits 0 whenever it
+ran, including when every trial inside it errored. Both gates reported \texttt{ok} for a benchmark
+whose evaluator died at \texttt{import pandas} on all three instances, and a paid smoke run went
+out on that task before anyone read a trial log. The second gate could not have caught it from
+rewards either: its rule is that the no-op solver must score 0.0, and a crashed verifier also
+scores 0.0. The guard is to check the error count, and the test of a gate is a task known to be
+broken. This is also why the oracle and no-op gates verify the grader and nothing else: they say
+nothing about whether an agent acted rather than recalled, which is recorded as an exposure flag
+and closed by no gate.
+
+\paragraph{The field named ``answer'' trusted without a round trip (C109).}
+A comparator's first complete run on a chemistry benchmark reported \texttt{status: ok}, all seven
+of its scaffold nodes, and 476{,}748 tokens --- and recorded the title of its own generated report
+as its answer to a multiple-choice question. The answer left the report node only as a custom
+stream event, which the runner subscribed to and discarded. Earlier runs of the same system had
+selected no tools at all because a content parse failed silently. Every one of these runs looked
+healthy from its summary. Before a runner scores anything, one instance with a known gold answer
+has to come back through it as that gold.
+
+\paragraph{Answer-format provenance changed the interpretation (C129 and its later correction).}
+In the original 280-trial temporal-reasoning run, 25 of 32 exact-match failures had a bare-integer
+gold answer and the same integer followed by a unit in the prediction. Treating those answers as
+correct would yield 97.50 instead of the measured 88.57, but that counterfactual was not published
+as a replacement score. An explicit answer-format sentence was tested in a separate run,
+producing 274/280 (97.86). The original diagnosis attributed the sentence to the comparator's
+prompt. A subsequent source check found that it belonged to the TISER baseline, not the selected
+REMem-I configuration. The 2026-09-16 decision therefore keeps the sentence as an ablation and
+uses the instruction without it for the main condition (Section~\ref{sec:rigor}). The case shows
+why a prompt modification needs source provenance even when its measured benefit is substantial.
+
+Two further logs sit beside the failure cases and are counted elsewhere in this paper without
+being shown: 41 findings about what it takes to make a published system execute at all, on the
+principle that a deployment is itself a measurement, and the comparability ledger's 16 case types
+for deciding whether a comparison is admissible. Table~\ref{tab:records} exhibits four of each,
+chosen because each does work somewhere in this section.
+
+\begin{table}[t]
+\caption{Four of the 41 findings on making published systems execute, and four of the 16 case
+types of the comparability ledger, each in one line. The findings are recorded when a comparator is
+deployed, whether or not it ever produces a score; the case types are the ledger's rulings, kept
+with the evidence that settled each and with the judgments it reversed.}
+\label{tab:records}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{3.3cm}p{9.9cm}@{}}
+\toprule
+\multicolumn{2}{@{}l}{\emph{Findings (41): what it took to make a published system run here}} \\
+\midrule
+A green run is not a measured run &
+One comparator reported 3 of 3 complete with every response the literal string
+\texttt{output\_file\_path}; on another benchmark a trial scored 1.000 by locating the prompt file
+the harness had uploaded and parsing it; the harness printed a mean of 1.000 on that trial. The
+check that catches this is per-trial, not per-run. \\
+Effort defaults written for one model id break on another &
+One comparator sends reasoning effort \texttt{minimal} to any model id containing ``gpt-5'' without
+a dot version, which this endpoint rejects; read the other way, its published number was earned at
+minimal effort, and re-running it at \texttt{medium} is a deviation in its favour. \\
+A 2{,}800-row benchmark with 560 distinct items &
+The rows are 560 items in five fact orderings, so a prefix of $N$ rows covers $N/5$ questions. A row
+count is not a sample size; any subset, on either arm, must stratify by ordering. \\
+The official FinanceMath matcher ignores the sign, and an order of magnitude &
+The vendored official matcher accepts 8184 against $-8184$ and any exact power-of-ten ratio. Both
+arms in Table~\ref{tab:l4l} are graded by it; 13 of the comparator's 200 answers are accepted by it
+and rejected by the comparator's own protocol. \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{Case types (16): whether a comparison is admissible}} \\
+\midrule
+7. Denominators, and the overlap check &
+A published 77.02 on a medical subset back-solves to 352/457 only if two files sharing 74
+questions --- with contradictory answer keys --- are concatenated; 295/383 fits as well. State the
+count the comparator scored, and check that candidate sets do not overlap before calling one
+unique. \\
+10. Discriminative power &
+At $n=41$, detecting a 10-point difference at 80\% power needs $n\approx268$. Low $n$ bounds what
+may be claimed rather than disqualifying; applied as a hard floor, the gate would have rejected five
+of the eleven benchmarks deployed at the time, which is how the miscalibration was found. \\
+15. Judgments reversed on evidence &
+Nine first judgments kept beside what overturned each: ``the agent has no vision'' fell to the
+binary's image tool; ``457 is the only denominator matching a real set'' fell to case 7; ``one
+harness spot-check validates all comparator runs'' fell to the fact that it validates shared
+plumbing, not per-comparator configuration. \\
+16. The published bar is guidance, and its backbone is not a blocker &
+The owner ruling Section~\ref{sec:setup} rests on, with the four shapes it does not cover: a
+comparator that cannot run on our backbone, an undeclared second backbone inside our run, a judge
+difference, and the two arms on different backbones from each other. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Historical incomplete-run ledger (2026-09-11)}
+\label{sec:pending}
+
+The following table retains the original 17-row ledger for provenance. Its labels describe
+what was known on 2026-09-11; they do not describe the current queue. In particular, AgentSPEX
+has since completed an explicit-medium run, answer-format and network repairs have progressed,
+and the 2026-09-16 sampling decision authorizes fixed 25\% subsets for unfinished comparator
+rows. Current paired results must use the selected task identifiers and the applicable judge,
+answer key, and environment for each arm.
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{2.8cm}p{2.4cm}p{1.0cm}p{1.5cm}p{\dimexpr\textwidth-7.7cm-24pt\relax}@{}}
+\caption{Historical snapshot on 2026-09-11: the 17 deployed benchmarks then lacking a comparator number on our backbone,
+one line each, from the benchmark's run contract (\texttt{run\_policy.json}) or the re-run ledger.
+\emph{Findings} is the 2026-09-11 audit's blocking/material count for the binding; ``---'' marks
+the four rows the audit excluded as already verified. $^{\dagger}$ marks the 12 run contracts that
+carry a \texttt{decision\_needed\_from\_owner} field. \emph{closed}: no comparator number can exist
+on our backbone. \emph{blocked}: a prerequisite other than an owner's ruling stands first.
+\emph{pending decision}: runnable now, waiting on the ruling named. Costs are projections from a
+metered one-instance probe unless stated; the cost gate refuses any comparator projection above
+\$50 until an owner raises it with the figure in hand.}
+\label{tab:pending} \\
+\toprule
+benchmark & comparator & findings & state & what stands between it and a number \\
+\midrule
+\endfirsthead
+\multicolumn{5}{@{}l}{\tablename~\thetable{} (continued)} \\
+\toprule
+benchmark & comparator & findings & state & what stands between it and a number \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r@{}}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\texttt{longbench\_v2} & DeLM & 0/7 & closed &
+The released repository holds a SWE-bench harness only; reconstruction abandoned 2026-09-09.
+No released driver was available at this snapshot. \\
+\addlinespace
+\texttt{frontierscience\_\allowbreak research} & FrontierAgent & 3/3 & blocked &
+Comparator repointed from EoM to FrontierAgent on 2026-09-11, but the recorded bar is still EoM's
+8.5 (EoM evolves on 40 of the 60 tasks and is recorded as not recommended to run); needs an agreed
+bar and an open-book codex arm that has not run. \\
+\texttt{oolong}$^{\dagger}$ & SLIDERS / EnSI-RAG & 3/8 & blocked &
+Codex run answered by file search and is invalid (re-run $\sim$\$1{,}100); bar undecided between
+SLIDERS 68.0 and EnSI-RAG 71.84; SLIDERS at its paper configuration projects to $\sim$\$15{,}400
+per 100 instances. \\
+\texttt{rarebench} & DeepRare & 4/6 & blocked &
+Codex run had no network (799 attempts, 0 successes; re-run \$31); the comparator's busiest
+auxiliary call is hard-coded to \texttt{gpt-4o-mini} (C96) and four of its six case banks were
+never released. \\
+\texttt{biomni\_eval1}$^{\dagger}$ & S1-NexusAgent & 3/6 & blocked &
+Codex run superseded by a task change the day after it ran (re-run \$48); tool surface unresolved
+(codex answered under ``there is no network'', the comparator is granted 15 hosts); 1 of 433
+instances run, projected at 4--69$\times$ the cost gate. \\
+\texttt{test\_of\_time}$^{\dagger}$ & REMem & 3/4 & blocked &
+Codex run is re-run for C129; the comparator keys its memory index by run-local position, so as
+configured it answers the wrong graph; the full 2{,}800 projects to $\sim$\$1{,}561 once indexing is
+included. \\
+\addlinespace
+\texttt{crag} & CacheRAG & 4/6 & pending decision &
+Comparator full run finished 2026-09-09 and is unscored; the judge chosen to regrade all three
+answer sets is the same model family as both arms, which the contract itself forbids. \\
+\texttt{insightbench}$^{\dagger}$ & DataSTORM & 3/5 & pending decision &
+Pin the judge (gateway \texttt{gpt-4o}); price the comparator, the only one of the 20 never probed;
+settle the denominator, 91 or 100, which decides the verdict (below). \\
+\texttt{medagentsbench}$^{\dagger}$ & GSEM & 2/7 & pending decision &
+\$508.36 projected against the \$50 gate; the static-vs-test-time-learning mode is unwritten; the
+comparator ships no evaluation code for this benchmark, so its judge and our exact-key scorer are
+different instruments. \\
+\texttt{multihiertt}$^{\dagger}$ & MoCA-Agent & 2/4 & pending decision &
+1 of 1{,}044 run; $\sim$\$600--650 to run the set; denominator 1{,}044 (comparator) against 1{,}042
+(codex headline). \\
+\texttt{earthbench}$^{\dagger}$ & Earth-Agent & 2/4 & pending decision &
+\$1{,}274 projected (\$5.16 per instance $\times$ 247) against the \$50 gate; the code also reads an
+unreachable path, so 60 of 247 instances would run without the expert-model layer the published
+figure used. \\
+\texttt{matscibench}$^{\dagger}$ & S1-NexusAgent & 3/6 & pending decision &
+0 of 1{,}025 run; \$769--\$8{,}119 projected; network parity unresolved (codex answered under ``there
+is no network'', the current tree grants 15 hosts). \\
+\texttt{chembench}$^{\dagger}$ & S1-NexusAgent & 2/6 & pending decision &
+1 of 2{,}785 run; \$3{,}900--\$25{,}800 projected against the \$50 gate; the tool-surface ruling
+(15-host allowlist on both arms or on neither) is unwritten. \\
+\texttt{bright}$^{\dagger}$ & RARG+ & --- & pending decision &
+$\sim$\$815 projected, more than the codex arm's \$330.40; one embedding model and three of four
+indices not yet built; the contract names RARG+ where the audit traces the bar to a different
+system (C77). \\
+\texttt{scitab}$^{\dagger}$ & CoT + MiPROv2 & --- & pending decision &
+Run as published, the comparator optimises on 80 of the 1{,}224 instances both arms are scored on;
+three options are recorded and none chosen. \\
+\texttt{llm\_srbench}$^{\dagger}$ & FunctionEvolve & --- & pending decision &
+$\sim$\$268 projected against the \$50 gate; multi-day occupancy of the shared host; denominator
+127 (codex headline) against 129 (comparator by construction). \\
+\texttt{stark} & AF-Retriever & --- & pending decision &
+The 2{,}801-query run awaits go-ahead ($\sim$34 h sequential); the comparator carries a dense index
+over every node and the codex arm none, an asymmetry recorded rather than resolved. \\
+\end{longtable}
+\endgroup

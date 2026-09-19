@@ -1,0 +1,10 @@
+{
+  "branch": {
+    "name": "backup/sstqa",
+    "ref": "refs/heads/backup/sstqa",
+    "targetCommit": "610e821527c5500839fe9505196b22231b477f29"
+  },
+  "jobs": [
+    "data/sstqa/sstqa__2026-09-12__18-40-51"
+  ]
+}

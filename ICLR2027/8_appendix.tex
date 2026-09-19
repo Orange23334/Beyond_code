@@ -1,0 +1,342 @@
+\section{Detailed benchmark selection and SOTA identification}
+\label{app:collection}
+
+This appendix documents the protocol and the artifact locations cited by the working draft.
+Paths are relative to the evaluation repository, whose release URL remains \todo{to be added}.
+The quantitative audit snapshots below are dated 2026-09-11 unless stated otherwise. They
+are historical evidence about the pipeline and must not be interpreted as the current completion
+status of the ongoing 25\%-subset comparator evaluations. The later protocol is governed by
+\texttt{experiment\_design.md} (2026-09-12) and the dated rulings in
+\texttt{4\_comparators/DECISIONS.md}; these supersede conflicting earlier contract prose.
+
+\paragraph{Collection artifacts and taxonomy.}
+\texttt{1\_collection/benchmark\_audit\_full.csv} contains the candidate records and
+\texttt{1\_collection/ready\_manifest.json} the archived 83-entry evidence shortlist. The filename
+is an implementation label: it does not certify execution readiness. The 30-task inventory
+records candidates brought into feasibility and task-fidelity review. These dated artifacts
+require reconciliation of their memberships and inclusion decisions before they can support
+exact exclusion counts between stages. The 554 records carry
+624 assignments across 33 overlapping domain labels. The largest labels are reasoning (93),
+agent (59), medical (38), math (37), multimodal (32), retrieval (28), web (26), clinical (26),
+chemistry (25), vision (22), biology (22), and code (20). These are candidate-pool labels, not the
+domain distribution of the updated evaluation suite. Coding-labeled candidates are included
+in the audit denominator but excluded from the non-coding deployment scope.
+
+\paragraph{Screening gates.}
+The scope gate checks whether a benchmark belongs to the non-coding study. The legitimacy gate
+records whether a usable comparator exists and whether independent papers have evaluated the
+benchmark. A comparator reported only by the benchmark's authors is marked
+\texttt{author\_reported\_only}, rather than silently discarded. The saturation gate checks
+whether a reproducible comparator and useful headroom remain. T1 requires a non-saturated
+benchmark with a reproducible multi-agent reference system; T2 admits more limited
+reproducibility or headroom; T3 has no agent reference above the bare-model reference; SKIP
+contains the remaining excluded cases. The historical evidence tiering has 122 T1, 126 T2,
+116 T3, and 190 SKIP records. A separate run-value tiering exists; the exact mapping from these
+two axes to the final study shortlist needs to be frozen in the selection manifest:
+\todo{reconcile the dated 83-entry shortlist, 30-task inventory, and current study suite;
+record each stage's predicate, benchmark IDs, and per-benchmark inclusion/exclusion reason}.
+At task and study review, unresolved reference identity, unavailable grading, incompatible
+metrics or instance sets, and study-scope decisions require distinct dispositions. They must
+not be collapsed into a single ``not run'' category. The reported suite can retain an explicitly
+labelled protocol variant or pending result; inclusion does not certify a completed, aligned
+comparison.
+
+Practical testability records three hard blockers: grading that requires human raters at scale,
+long-horizon simulations whose wall-clock requirements cannot be supported, and unavailable
+proprietary access. Paid APIs, live web access, GPU compute, and token demand are recorded as
+resource requirements rather than automatically treated as evidence of unsuitability. These
+rules do not eliminate practical selection effects from the final evaluated suite.
+
+\paragraph{Evidence validation.}
+Benchmark-defining papers must be distinguished from papers that merely use the benchmark.
+The source registry resolves identity through curated links, citation graphs, full-text search,
+and web confirmation; unresolved identities enter human review. Model-extracted labels that can
+exclude a candidate require a verbatim supporting quotation, validated against the retrieved
+source. An absent or invalid quotation makes the field \texttt{unknown}; unknown evidence cannot
+demote a benchmark. Tier assignment is deterministic given the validated fields. This safeguard
+was motivated by an earlier record set in which reproducibility evidence was null in all 6{,}058
+leaderboard rows even though it affected tiering.
+
+\paragraph{Search and extraction.}
+Citation retrieval combines Semantic Scholar paper identifiers, an OpenAlex citation sweep,
+and full-text benchmark-name and alias search. DOI or paper identifiers deduplicate records.
+Influence scores prioritize reading without excluding papers. Alias filtering precedes model
+extraction; rejected passages can be sampled to evaluate recall. Low-confidence results and
+candidate SOTA claims receive a stronger-model review. Full source evidence is retained for
+judgment. An earlier 12{,}000-character cap truncated 96\% of the reviewed paper bodies
+(median length 77{,}688 characters) and yielded 1{,}314 unknown labels; this is a pipeline
+failure observation, not an estimate of current finder accuracy.
+
+\paragraph{Score provenance and attribution.}
+Every leaderboard row records method, backbone, frame, metric, split, evaluated instance count,
+setting, date, quotation, and source location. Mechanical quotation checks do not guarantee
+correct attribution: a historical audit found 109 of 1{,}406 rows assigned to the wrong method
+after table row or column drift, although their quotations passed the mechanical check.
+Candidate SOTA claims therefore require source-table attribution and an adversarial search for
+a stronger claim. Official leaderboards are checked for denominator and protocol consistency.
+The records distinguish \texttt{full\_set\_sota} from \texttt{best\_any\_frame}; agent,
+bare-model, and classical-system reference scores are separate. Multi-agent methods are defined
+operationally as two or more agent roles or instances exchanging messages, rather than a lone
+tool-using agent or self-consistency procedure.
+
+\paragraph{Finder validation still required.}
+A human-adjudicated sample should evaluate benchmark identity, eligible-system retrieval,
+score and method attribution, and metric/frame correctness separately. Agreement between two
+model agents is not a substitute for that reference. \todo{Freeze the validation sample,
+adjudication procedure, sample sizes, accuracy estimates, and uncertainty intervals.}
+
+\section{Direct-Codex configuration and execution protocol}
+\label{app:codex-setup}
+\label{sec:appendix:setup}
+
+Table~\ref{tab:codex-config} separates the settings recorded in the existing draft from settings
+that need run-level provenance before the full submission. The direct-Codex arm denotes this
+specific configuration, rather than every possible coding-agent configuration.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}p{0.25\textwidth}p{0.69\textwidth}@{}}
+\toprule
+Field & Configuration or required record \\
+\midrule
+Agent & Codex CLI, version recorded per run; the original FinanceMath, ELAIPBench, and IndustryOR artifacts record 0.149.0; the ELAIPBench recovery and newer reruns record 0.149.1 \citep{openai2026codex} \\
+Model endpoint & \texttt{azure/gpt-5.6-sol}; \todo{archive the provider deployment revision} \\
+Reasoning effort & \texttt{medium} for the documented direct-Codex runs \\
+Attempts & $k=1$ (pass@1) by default; benchmark-specific departures must be explicit \\
+Scaffold & No intended domain-specific scaffold or per-benchmark tuning; instruction deviations are audited \\
+Task and grader & Benchmark-specific task and declared evaluator, pinned by the run contract \\
+Baseline environment & Benchmark-provided/permitted resources, each named in the prompt; superseded restricted runs are separate variants \\
+Agent visibility & Instance workspace and private credentials home; gold answers and sibling results excluded \\
+Network & Model-endpoint allowlist for closed-book/fixed-corpus tasks; public egress for declared web tasks \\
+Provider search & Audited independently of container egress and task wording \\
+Sampling & \todo{record resolved temperature, top-$p$, seed support, and endpoint defaults} \\
+Resource limits & Per-benchmark turn and compute budgets in the contract; \todo{export actual token, time, and retry limits} \\
+Runtime versions & \todo{export harness commit, image digests, adapter commits, and task-manifest hashes} \\
+Prompts and tools & \todo{archive complete system/task prompts, emitted instructions, and tool configuration per benchmark} \\
+Run provenance & \todo{freeze run IDs, execution dates, instance lists, and validity/supersession flags} \\
+\bottomrule
+\end{tabular}
+\caption{Detailed direct-Codex setup. A missing resolved setting remains an explicit TODO;
+endpoint defaults are not assumed equal to a comparator's configuration.}
+\label{tab:codex-config}
+\end{table}
+
+\subsection{Container execution and checks}
+\label{app:execution}
+
+A runner adapter supplies installation and execution entry points. Each trial runs inside a
+Docker container with the instance workspace and an ephemeral private credentials home. The
+agent phase excludes the answer key, dataset adapter, and other trials' outputs; grading is
+performed separately with access to the answer key. Comparator code must execute inside the
+same isolation boundary. Running it on the host and copying only its answer into the container
+does not enforce the task's environment or network restrictions.
+
+The stage runner executes the following checks in order and stops on failure:
+\begin{enumerate}
+\item \texttt{manifest}: compare emitted tasks with the digests in \texttt{dataset.toml}.
+\item \texttt{check}: validate task structure and whether instructions specify the required output.
+\item \texttt{delivery}: confirm that staged input data reach the container.
+\item \texttt{oracle}: submit a known-correct answer and verify the expected full score.
+\item \texttt{nop}: check whether taking no action receives unintended credit.
+\item \texttt{preflight}: verify model access through the configured network path.
+\item \texttt{run}: execute the selected agent adapter.
+\item \texttt{usable}: distinguish agent attempts and valid grades from sandbox or evaluator failure.
+\item \texttt{analyze}: inspect whether behavior follows the task and whether instructions were sufficient.
+\item \texttt{aggregate}: apply the benchmark-native headline metric and inspect the recorded traces.
+\end{enumerate}
+
+Oracle and no-action checks run after task changes without a model call. They do not replace
+checking evaluator errors. Failure case C103 recorded both controls passing an evaluator whose
+\texttt{pandas} import failed, because the check inspected the harness exit status instead of
+trial errors. A grader that cannot run is not a measured incorrect answer. Similarly, a valid
+execution does not establish freedom from training-data exposure; the run contract records a
+\texttt{post\_cutoff} exposure flag but cannot verify memorization absence.
+
+\paragraph{Null baseline and task fidelity.}
+The generator summary records a constant-answer baseline. In the historical deployment snapshot,
+29 of 30 benchmarks had a measured baseline; \texttt{critpt} had an ungraded preflight return,
+which must not be interpreted as a measured zero. Recorded examples are FinanceMath 0.02
+(4 of 200 answers within numeric tolerance), OOLONG 0.27 under its partial-credit scorer, and
+SciTab 0.4074 on 108 measured instances. SciTab's separately recorded expectation over its
+published task is 0.3734; the two quantities have different denominators and must not be
+interchanged. These controls characterize scoring floors rather than agent capability.
+Task-fidelity declarations cover search space, environment, outputs, and scope. For example,
+FinanceMath's output contract was expanded from a numeric answer to the program and answer
+needed to report the official accuracy and execution-rate metrics.
+
+\paragraph{Instance and score contracts.}
+Each task records both the intended evaluation count and the emission count. Prefix truncation,
+failed emissions, and failed trials are handled explicitly rather than absorbed into a score's
+denominator. The selected metric is validated against the exact published table column; using
+an upstream scorer alone is insufficient when a paper reports a different statistic, such as
+item-level F1 instead of exact match. Sampling is pass@1 unless a declared benchmark protocol
+requires a different $k$. Unstated sampling in a source paper remains unstated in the record.
+
+\paragraph{Network and tool access.}
+Container egress, provider-side tools, and task instructions are checked independently.
+Restricting container HTTP requests does not disable search performed by the model provider;
+provider search needs its own setting. Conversely, a task with open egress can discourage all
+browsing if its instructions claim that no network is available. A historical inspection found
+7 of 10 traces browsing on the one web task that invited browsing, versus 0 of 9 inspected
+traces across the other web tasks. This observation motivates configuration validation; it is
+not a controlled estimate of browsing's effect on score. Neither network restriction prevents
+information stored in model parameters.
+
+\section{Comparator adaptation and alignment declarations}
+\label{app:alignment}
+
+\paragraph{Method versus environment.}
+The baseline is determined from the benchmark's own paper or release, rather than the resources
+used by the first run or a comparator-derived host list. CRAG provides its mock API; Biomni's
+Eval1 uses its E1 environment; corpus-based benchmarks provide their staged corpus. Where
+public web search is permitted, Codex receives a plain search tool and its prompt states the
+permission. The 2026-09-12 design withdraws the old comparator-derived 15-host allowlist and
+labels older restrictive settings as separate variants.
+
+Method-specific components remain available to their own comparator: learned embeddings,
+indexes, caches, fitted prompts, evolved populations, or trained checkpoints. They are not
+removed to make the comparator resemble Codex or copied into the baseline. Runtime resources
+provided to every entrant belong in both arms. Declared method-specific tool asymmetries support
+only one-directional conclusions: Codex can match or exceed the bar, but a deficit cannot be
+reported as a loss. A comparator's fitted components require a record of fitting data and any
+overlap with evaluation instances.
+
+\paragraph{Optional reference-informed arm and exposure checks.}
+The reference-informed arm receives the comparator paper and a scrubbed code release, including
+hand-written procedures, on top of the baseline. It tests whether Codex can use that method's
+description. Scrubbing removes benchmark data, saved outputs, results, caches, tabular data,
+and any files carrying instances or answers; the exact removals are documented per comparator.
+An optional tool-library arm can separately expose callable method tools without the planner,
+but is not part of the default study. Neither optional arm is assumed complete.
+All open-web arms require scanning citations, fetched URLs, and response text for recorded gold
+sources or verbatim answers; detected exposure invalidates the item and its count is reported.
+Provider-side search cannot be fully constrained by container egress, so an allowlist is not a
+substitute for the scan. The actual scan output must accompany a reported open-web result.
+
+\paragraph{Protocol record.}
+The benchmark's \texttt{run\_policy.json} records the evaluated split, size, emitted count,
+metric, exact scoring implementation, selected published reference and source, tool access,
+network mode, sampling, turn budget, comparator binding, and protocol deviations. Provenance
+fields identify where web access and sampling were verified and whether the emitted metric
+matches the cited published column. The comparator binding includes the system name,
+repository URL, and pinned commit.
+
+The comparator's \texttt{alignment.json} names a reference arm and declares ten variables:
+instance set, answer key, grader, backbone, reasoning effort, sampling, execution environment,
+network policy, tool surface, and compute budget. Each variable carries both values, evidence,
+and a status of identical, equivalent, differs, or not applicable. An omitted variable is
+undeclared. A deliberate method difference is marked as such; other differences require a
+reported limitation or correction. \texttt{comparators/check\_alignment.py} checks the schema,
+missing axes, undeclared deviations, and selected cross-field constraints. This checker cannot
+establish that a declaration accurately describes executable code.
+
+\paragraph{Code audit.}
+A separate audit reads contracts against adapter code, upstream code, patches, and rendered
+run artifacts. A second agent attempts to refute each finding. The 2026-09-11 audit covered
+25 bindings: 15 left unassessed in the preceding synthesis and 10 without full direct-Codex
+runs. It deliberately excluded five bindings previously marked verified:
+\texttt{stark}, \texttt{bright}, \texttt{scitab}, \texttt{llm\_srbench}, and \texttt{industryor}.
+The population and findings are reported in Section~\ref{sec:audit}. This selected audit
+cannot estimate the error rate of the entire candidate corpus or deployed suite.
+
+\paragraph{Backbone substitution and patches.}
+In the historical snapshot, 28 comparator repositories were cloned and 20 had declared patch
+sets; 13 patch sets were wholly or partly motivated by an endpoint that rejected an explicit
+temperature. Replacing a requested temperature with endpoint-default sampling changes a method's
+operating conditions, especially when it votes or repeats attempts. Patches therefore record
+the upstream behavior, the change, its reason, and any supported directional implication.
+The score effect is unknown without measurement. Comparator calls pass through a logging proxy,
+and per-instance pricing precedes larger runs. The role-level model configuration must also be
+recorded: later decisions permit lower-cost auxiliary models for some extraction, rewriting, or
+page-summary roles, while benchmark judges can retain their specified models. For example, the
+2026-09-15 ruling retains Test of Time's Luna extraction and Sol question answering. Thus a
+shared principal backbone does not imply that every helper and judge call uses that backbone.
+
+\paragraph{Historical reasoning and denominator caveats.}
+The recorded ReLoop patch explicitly set \texttt{medium} effort. MoCA-Agent sent no effort;
+the 2026-09-15 decision treats that endpoint default as medium and retains the old run, while
+requiring future adapters to send and log the value explicitly. An assumed documented default
+and a logged request setting are distinct evidence. The earlier AgentSPEX run recorded
+\texttt{high} in all 403 workflows; a later medium-effort run was completed and its results
+belong in the current comparison. The original direct-Codex snapshot completed 399 of403 trials after four pre-agent failures.
+The HF recovery run re-executed those four IDs, allowing the updated paired analysis to use403.
+An answer-channel asymmetry was also recorded. Separately, the historical LongBench v2
+instruction supplied a hand-written retrieval strategy despite the intended absence of a domain
+scaffold. Qualifications apply to the affected run IDs, not automatically to later re-runs.
+
+\paragraph{Fixed evaluation subsets.}
+The ongoing comparator campaign uses versioned manifests in
+\texttt{4\_comparators/samples/}, with seed 20260917, explicit instance IDs, and recorded
+sampling order. The fraction denotes approximately one quarter of each benchmark's instance
+population, not one quarter of comparator systems. Examples are Biomni Eval1 (108/433),
+EarthBench (61/247), and FrontierScience Research (15/60). Where declared, samples preserve
+benchmark-specific strata: task family, modality subset, subject, label, or dataset subset.
+Rounding and the random-generator convention are stored in each manifest; not every manifest
+uses the same generator sequence. A separate draw order supports reuse of early probes in the
+formal sample. Completed direct-Codex results must be restricted to these same IDs for paired
+analysis; a 25\% comparator mean cannot be paired with the entire direct-Codex population.
+Partial completions within the selected sample remain provisional, and final aggregation follows
+the benchmark's native weighting. \todo{Freeze final coverage, completed paired IDs, missingness,
+resolved settings, and confidence intervals when the ongoing runs finish.}
+
+Two declared exceptions require separate denominators: ChemBench uses a 280-question
+subset, and Test of Time reuses the mentor's existing 280-question set (five per each of 56
+question-type/graph-generator cells, 10\% of 2{,}800). The Test of Time 700-question manifest
+was superseded on 2026-09-17; only the ordering of its fixed 280 IDs is shuffled, using seed
+20260918. Prefix pilots therefore extend to at most these 280 paired questions.
+
+\paragraph{Interpretation of reproduction accuracy.}
+A faithful reconstruction on the original configuration and an adapted evaluation on the shared
+backbone are separate quantities. A difference between the adapted comparator and its published
+score can reflect backbone, data, tool, sampling, or implementation changes. It cannot by itself
+measure reproduction error. Where original-setting reproduction is available, report the exact
+frame and residual score difference. Otherwise, report the adaptation and its unresolved
+variables. \todo{Add completed 25\%-subset runs with their run IDs, common-instance coverage,
+configuration checks, and separate original-setting reproduction results where available.}
+
+\section{Review artifacts, decisions, and trace analysis}
+\label{app:review}
+
+The review interface at \texttt{2\_audit/webtool/} exposes benchmark and method records,
+source evidence, and comments. Comments are anchored by benchmark identity, method identity,
+and source paper, rather than table position or numeric score. This preserves review context
+when records are inserted or corrected. A separate shortlist records human judgments. The
+historical interface does not authenticate commenters, so comments are a review channel rather
+than proof of reviewer identity.
+
+\paragraph{Decision provenance.}
+Unresolved choices belong next to the settings they govern, with a dated ruling once resolved.
+The historical contracts included owner-decision fields for 12 deployed benchmarks:
+\texttt{biomni\_eval1}, \texttt{bright}, \texttt{chembench}, \texttt{earthbench},
+\texttt{insightbench}, \texttt{llm\_srbench}, \texttt{matscibench}, \texttt{medagentsbench},
+\texttt{multihiertt}, \texttt{oolong}, \texttt{scitab}, and \texttt{test\_of\_time}.
+For example, SciTab's record describes comparator optimization using labels overlapping 80 of
+1{,}224 scored instances and the choices between declaring that overlap, excluding those
+examples from fitting, or retaining only the paper score as an external reference. These
+historical open fields must be reconciled with later rulings before finalizing the study.
+
+\paragraph{Logs and ledgers.}
+\texttt{comparators/COMPARABILITY\_CASES.md} records admissibility decisions and reversals
+supported by new evidence. Its 2026-09-11 Case 16 permits published scores on other backbones
+as external references, provided the distinction is labeled; it does not establish alignment
+between two locally executed arms. \texttt{3\_deploy\_run/RERUNS.md} records invalid or
+superseded runs, missing trials, prerequisites, and estimated recovery costs. The historical
+eight-row ledger contained four invalid/superseded runs, one additional arm, and three partial
+recoveries. Its old queue is not a current progress report.
+\texttt{2\_audit/PIPELINE\_FAILURE\_CASES.md} records failures, observed costs, and preventive
+changes. Deployment notes document the additional work needed to execute each specialist.
+A correction should update the relevant pipeline stage and version stamp so that affected
+records recompute, rather than alter only the displayed record.
+
+\paragraph{Trace-analysis protocol to complete.}
+The main analysis separates (i) domain-level outcome patterns, (ii) cases favoring the
+specialist, and (iii) cases favoring Codex. A paired case requires the same task instance,
+valid grades, and both execution traces. Candidate explanatory dimensions include access to
+relevant evidence, task decomposition or representation, domain constraints, verification,
+and error recovery. These dimensions are analysis questions, not established findings.
+Infrastructure failures, answer-channel defects, and instruction mismatches are labeled
+separately as threats to measurement. Each proposed explanation should cite the trace events
+that support it and the observations that could contradict it; causal claims require an
+intervention or ablation. \todo{Freeze the paired-trace sample, coding rubric, adjudication
+procedure, case counts, and targeted ablations after the comparator runs complete.}

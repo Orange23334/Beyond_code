@@ -1,0 +1,116 @@
+{
+ "agent_execution": {
+  "finished_at": "2026-09-12T20:46:50.440855Z",
+  "started_at": "2026-09-12T20:45:46.428551Z"
+ },
+ "agent_info": {
+  "model_info": {
+   "name": "gpt-5.6-sol",
+   "provider": "openai"
+  },
+  "name": "codex",
+  "version": "0.149.1"
+ },
+ "agent_result": {
+  "cost_usd": 0.25569749999999997,
+  "metadata": null,
+  "n_cache_tokens": 56820,
+  "n_input_tokens": 83550,
+  "n_output_tokens": 2008,
+  "rollout_details": null
+ },
+ "agent_setup": {
+  "finished_at": "2026-09-12T20:45:46.428414Z",
+  "started_at": "2026-09-12T20:44:54.854242Z"
+ },
+ "config": {
+  "agent": {
+   "concurrency_group": null,
+   "import_path": null,
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "load_trajectory": null,
+   "max_timeout_sec": null,
+   "mcp_servers": [],
+   "model_name": "azure/gpt-5.6-sol",
+   "n_concurrent": null,
+   "name": "codex",
+   "override_setup_timeout_sec": null,
+   "override_timeout_sec": null,
+   "resume_trajectory": false,
+   "skills": []
+  },
+  "agent_setup_timeout_multiplier": null,
+  "agent_timeout_multiplier": null,
+  "artifacts": [],
+  "environment": {
+   "cpu_enforcement_policy": "auto",
+   "delete": true,
+   "extra_docker_compose": [],
+   "force_build": false,
+   "import_path": null,
+   "kwargs": {},
+   "memory_enforcement_policy": "auto",
+   "mounts": null,
+   "override_cpus": null,
+   "override_gpus": null,
+   "override_memory_mb": null,
+   "override_storage_mb": null,
+   "override_tpu": null,
+   "type": "docker"
+  },
+  "environment_build_timeout_multiplier": null,
+  "extra_instruction_paths": [],
+  "install_only": false,
+  "job_id": "299e2fb9-87d8-4cb4-9a33-a9f20c20479a",
+  "source_trial": null,
+  "task": {
+   "download_dir": null,
+   "git_commit_id": null,
+   "git_url": null,
+   "name": null,
+   "overwrite": false,
+   "path": "quickstart/tasks/_rerun_stark7/stark-02750",
+   "ref": null,
+   "source": "_rerun_stark7"
+  },
+  "timeout_multiplier": 1.0,
+  "trial_name": "stark-02750__2esagsy",
+  "trials_dir": "jobs/_rerun_stark7__2026-09-12__13-42-18",
+  "verifier": {
+   "disable": false,
+   "max_timeout_sec": null,
+   "override_timeout_sec": null
+  },
+  "verifier_timeout_multiplier": null
+ },
+ "environment_setup": {
+  "finished_at": "2026-09-12T20:44:54.854182Z",
+  "started_at": "2026-09-12T20:44:52.532233Z"
+ },
+ "exception_info": null,
+ "finished_at": "2026-09-12T20:47:05.776922Z",
+ "id": "af5718a3-4d59-4de4-8af7-c10274c4308b",
+ "source": "_rerun_stark7",
+ "started_at": "2026-09-12T20:44:52.524677Z",
+ "step_results": null,
+ "task_checksum": "4cabdf058b9e25dd1ac64ea839081d6202c5e3f714915f1f5992de9b825a2f4a",
+ "task_id": {
+  "path": "quickstart/tasks/_rerun_stark7/stark-02750"
+ },
+ "task_name": "stanford/stark-02750",
+ "trial_name": "stark-02750__2esagsy",
+ "verifier": {
+  "finished_at": "2026-09-12T20:46:54.375962Z",
+  "started_at": "2026-09-12T20:46:50.915949Z"
+ },
+ "verifier_environment_mode": "shared",
+ "verifier_result": {
+  "rewards": {
+   "reward": 0.0
+  }
+ }
+}

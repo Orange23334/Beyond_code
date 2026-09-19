@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "study_benchmark_count": 20,
+  "benchmark_ids": [
+    "financemath",
+    "industryor",
+    "elaipbench",
+    "crag",
+    "sstqa",
+    "multihiertt",
+    "oolong",
+    "test_of_time",
+    "medagentsbench",
+    "earthbench",
+    "frontierscience_research",
+    "insightbench",
+    "stark",
+    "bright",
+    "scitab",
+    "llm_srbench",
+    "matscibench",
+    "biomni_eval1",
+    "chembench",
+    "rarebench"
+  ],
+  "replacement": {
+    "included": "sstqa",
+    "supplementary": "longbench_v2",
+    "reason": "SSTQA (ASTRA) takes the LongBench-v2 slot because DeLM's evaluation code is unreleased; preserve LongBench-v2 measurements as supplementary evidence."
+  },
+  "provenance": {
+    "path": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/4_comparators/FULL_RUN_ESTIMATES.md",
+    "sha256": "a5530cff444f3f277a1c5b362ad4cf3fe2795ae68d2afb217753da54d5b76bf3",
+    "source_line": 17,
+    "source_quote": "- **sstqa** (ASTRA) takes the longbench_v2 slot, because DeLM's LongBench-v2 code is unreleased.",
+    "scope_note": "User confirmed a20-benchmark main suite withSSTQA included; the local20-benchmark roster specifies the replaced item."
+  }
+}

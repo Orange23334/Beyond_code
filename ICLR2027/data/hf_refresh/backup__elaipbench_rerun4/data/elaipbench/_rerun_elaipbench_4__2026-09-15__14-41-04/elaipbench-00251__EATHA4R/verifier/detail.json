@@ -1,0 +1,25 @@
+{
+ "benchmark": "elaipbench",
+ "instance": 251,
+ "reward": 0.0,
+ "answer": {
+  "final_answer": "The correct answer is (B)",
+  "reasoning": "The ImageNet experiment was designed around loss of plasticity from warm-started sequential training. Cumulative training mitigates this by initializing from the previous checkpoint while training on a shuffled mixture of all old and new samples, preserving prior knowledge and adaptability; as a result, it stays within 0.9% of the Oracle even with eight splits under the fixed budget."
+ },
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "pattern": "official-parse-exact-match",
+   "scorer_source": "ScaleML/AgentSPEX @b36677cee53eb5f2557f13bdf25dfb906b862fd1 src/benchmarks/elaipbench/evaluate.py::parse_answer, vendored verbatim",
+   "question_type": "SA-MCQ",
+   "gold": "A",
+   "parsed_answer": "B",
+   "status": "ok",
+   "paper_id": "86",
+   "instance_index": 251,
+   "raw_len": 25
+  },
+  "detail": "SA-MCQ: parsed 'B' vs gold 'A' -> no match (status=ok)"
+ }
+}

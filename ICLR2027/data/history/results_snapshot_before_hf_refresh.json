@@ -1,0 +1,1136 @@
+{
+  "schema_version": 1,
+  "measurement_snapshot_date": "2026-09-09",
+  "audit_overlay_date": "2026-09-18",
+  "dashboard_source": "/home/jiacheng/RESULTS_DASHBOARD (1).html",
+  "dashboard_sha256": "d0370d84aae509b6d76eae12fa80d35e65612ad97e4fd1306288b1850a74ab7c",
+  "audit_sources": [
+    "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/experiment_design.md",
+    "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/RERUNS.md",
+    "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/4_comparators/DECISIONS.md"
+  ],
+  "audited_candidates": 554,
+  "ready_candidates": 83,
+  "completed_historical_score_rows": 20,
+  "provisional_external_point_comparisons": {
+    "n": 11,
+    "higher": 8,
+    "lower": 3,
+    "equal": 0,
+    "warning": "Descriptive relation to published point estimates only; not win/loss/par, no equivalence test, and not same-backbone attribution. Historical scores with current selected references; pending protocol repairs are omitted."
+  },
+  "rows": [
+    {
+      "slug": "stark",
+      "name": "STaRK-PRIME",
+      "domain": "Knowledge-graph retrieval",
+      "score": 74.04,
+      "n_measured": 2793,
+      "metric": "hit@1 (first-hit rate, x100, over the full 129,375-node candidate pool), 2,793 genuine measurements of 2,801 emitted",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        72.38,
+        75.63
+      ],
+      "se": 0.83,
+      "interval_description": "[72.38, 75.63] SE 0.83 — Wilson 95% on 2068/2793; the metric is binary, every per-trial reward is exactly 0.0 or 1.0",
+      "historical_verdict": "exceeds",
+      "historical_references": [
+        {
+          "system": "AF-Retriever",
+          "backbone": "GPT OSS 120B with an OpenAI text-embedding-3-small dense index",
+          "paper": "arXiv 2505.09246v4",
+          "score": 46.2,
+          "gap": "+27.84",
+          "gap_se": "+33.56",
+          "sampling": "no sampling protocol stated; the paper's only k is 20 reranking candidates, which is not a sampling k"
+        }
+      ],
+      "current_reference": {
+        "system": "ARK",
+        "backbone": "GPT-4.1",
+        "score": 48.2
+      },
+      "figure_published_reference": {
+        "system": "ARK",
+        "backbone": "GPT-4.1",
+        "score": 48.2,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/stark/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "ARK (Adaptive Retriever of Knowledge), Polonuer et al., Zitnik lab, 'Autonomous Knowledge Graph Exploration with Adaptive Breadth-Depth Retrieval', arXiv:2601.13969, ACL 2026 Main. Table 1, 'Retrieval performance on STaRK synthetic test sets': PRIME Hit@1 48.20 (R@20 69.46, MRR 57.68), GPT-4.1 backbone, n = 3 parallel agents, T_max = 20 (Appendix A.2). The table's own baselines (BM25 12.75, ada-002 12.63) are STaRK's canonical full-split values, so 48.20 is on the full n=2801 test split, not the paper's 10% ablation subset. Code mims-harvard/ark @8d3191b9de1e.",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Current selected reference is ARK (48.2), replacing AF-Retriever (46.2). Eight of 2,801 emitted trials excluded by the recorded measurement rule; seven have no grade. Tool asymmetry and published-backbone difference remain.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/stark/run_policy.json",
+      "policy_sha256": "57953eeb5da1ecb2db604dfe05950fe7a7be407f1bdb712254b5facb16d930b4",
+      "dashboard_anchor": "bm-stark"
+    },
+    {
+      "slug": "bright",
+      "name": "bright",
+      "domain": "Reasoning-intensive retrieval",
+      "score": 61.09,
+      "n_measured": 423,
+      "metric": "nDCG@10 (macro over 4 domains)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": null,
+      "se": 1.655,
+      "interval_description": "SE 1.655, no binomial interval — observed macro SE 1.6547 points across four domains, against a pre-registered 1.661; nDCG@10 is graded rather than binary so no binomial interval applies",
+      "historical_verdict": "exceeds",
+      "historical_references": [
+        {
+          "system": "RARG+",
+          "backbone": "GPT-5.4-mini",
+          "paper": "arXiv 2607.24223",
+          "score": 53.36,
+          "gap": "+7.73",
+          "gap_se": "+4.67",
+          "sampling": "unstated (verified absent from full text)"
+        }
+      ],
+      "current_reference": {
+        "system": "RARG",
+        "backbone": "GPT-5.4-mini",
+        "score": 51.75
+      },
+      "figure_published_reference": {
+        "system": "RARG",
+        "backbone": "GPT-5.4-mini",
+        "score": 51.75,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/bright/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "RARG (Relevance-Aware RipGrep Search Agent, relevance-ordered traversal) on GPT-5.4-mini at medium reasoning, with llama-nv-embed-reasoning-3b as retriever, arXiv:2607.24223 Table 3 row 'RARG' = 51.75, code LeqsNaN/RARG. CHANGED FROM RARG+ (53.36) BY OWNER RULING 2026-09-16 ('那就改比RARG'), and this is a reproducibility limit, not a downgrade of ambition: RARG+ adds query-relevant entry-point paragraphs, and the code that produces them was never published -- model_server.py:362-363 imports paragraph_splitter from RARG/qr_head_discovery, which is absent from the clone, from this host and from upstream main at 58ba60e, while pyproject declares only ordinary PyPI packages and setup.sh fetches nothing. The paper describes the mechanism in one sentence, too little to rebuild. Its absence is also silent: the call site at :473 sits inside a try/except that logs '[WARN] paragraph rerank (emb) failed, skipping', so the RARG+ wrapper would have scored with RARG's behaviour under RARG+'s name. RARG++ (50.55) is a third, distinct row and is not used.",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Current executable comparator is RARG (51.75), replacing RARG+ (53.36); the RARG+ entry-point implementation was not released. Published sampling protocol is unstated.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/bright/run_policy.json",
+      "policy_sha256": "848ab6e2f3f45d500c9429c1c1a5069acaf3cefa205dc3d8e1f4b02f3098a6ee",
+      "dashboard_anchor": "bm-bright"
+    },
+    {
+      "slug": "scitab",
+      "name": "SciTab",
+      "domain": "Scientific fact verification",
+      "score": 72.88,
+      "n_measured": 1224,
+      "metric": "accuracy (3-class)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        70.32,
+        75.29
+      ],
+      "se": 1.27,
+      "interval_description": "[70.32, 75.29] SE 1.27 — Wilson 95% on 892/1224",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "CoT + MiPROv2 (DSPy)",
+          "backbone": "GPT-4o",
+          "paper": "arXiv 2602.17937",
+          "score": 70.6,
+          "gap": "+2.28",
+          "gap_se": "+1.79",
+          "sampling": "one fixed call per instance"
+        }
+      ],
+      "current_reference": {
+        "system": "CoT + MiPROv2 (DSPy)",
+        "backbone": "GPT-4o",
+        "paper": "arXiv 2602.17937",
+        "score": 70.6,
+        "gap": "+2.28",
+        "gap_se": "+1.79",
+        "sampling": "one fixed call per instance"
+      },
+      "figure_published_reference": {
+        "system": "CoT + MiPROv2 (DSPy)",
+        "backbone": "GPT-4o",
+        "paper": "arXiv 2602.17937",
+        "score": 70.6,
+        "gap": "+2.28",
+        "gap_se": "+1.79",
+        "sampling": "one fixed call per instance",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/scitab/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "CoT module + MiPROv2 instruction optimizer (DSPy), GPT-4o backbone, arXiv:2602.17937 'Analyzing Instruction Optimization in LLM-based Pipelines for Tabular Fact Verification' (EACL Findings 2026), code xiaodu0123/tabfact-prompt-optimization",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Published result uses optimized prompts; no same-backbone completed comparator result in this score snapshot.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/scitab/run_policy.json",
+      "policy_sha256": "dcd2e9841a57f4b8c72946c6d5e7caa10368f7529f1e047318253d21b9451369",
+      "dashboard_anchor": "bm-scitab"
+    },
+    {
+      "slug": "llm_srbench",
+      "name": "LLM-SRBench",
+      "domain": "Symbolic regression",
+      "score": 91.34,
+      "n_measured": 127,
+      "metric": "acc_0.1 (worst-point, pass@1)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        85.16,
+        95.09
+      ],
+      "se": 2.5,
+      "interval_description": "[85.16, 95.09] SE 2.50 — Wilson 95% on 116/127",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "FunctionEvolve",
+          "backbone": "Claude Opus 4.6",
+          "paper": "arXiv 2606.07704v1",
+          "score": 87.6,
+          "gap": "+3.74",
+          "gap_se": "+1.50",
+          "sampling": "unstated"
+        }
+      ],
+      "current_reference": {
+        "system": "FunctionEvolve",
+        "backbone": "Claude Opus 4.6",
+        "paper": "arXiv 2606.07704v1",
+        "score": 87.6,
+        "gap": "+3.74",
+        "gap_se": "+1.50",
+        "sampling": "unstated"
+      },
+      "figure_published_reference": {
+        "system": "FunctionEvolve",
+        "backbone": "Claude Opus 4.6",
+        "paper": "arXiv 2606.07704v1",
+        "score": 87.6,
+        "gap": "+3.74",
+        "gap_se": "+1.50",
+        "sampling": "unstated",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/llm_srbench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "FunctionEvolve (Claude Opus 4.6), arXiv:2606.07704v1 Table 2, row 'FunctionEvolve (Ours) / Claude Opus 4.6', column group 'Total (129)', sub-column Acc: 113 of 129 = 87.60%. Code at github.com/Phoinikas03/FunctionEvolve @909beb01450297880bc8df599bf110d72d7d8430; the same commit ships the per-task verdicts behind that number in docs/results/full_opus4.6.csv, which this build reproduces exactly (113/129, and 120/129 for the ground-truth row).",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Dashboard uses 116/127 measured instances; registered denominator is 129 (116/129=89.92). Both must remain visible.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/llm_srbench/run_policy.json",
+      "policy_sha256": "b1ce4f6e326fee319e0c285abc6f5b372e2d876f14336a39b45496cb96aa1dfd",
+      "dashboard_anchor": "bm-llm_srbench"
+    },
+    {
+      "slug": "industryor",
+      "name": "IndustryOR",
+      "domain": "Operations research",
+      "score": 73.0,
+      "n_measured": 100,
+      "metric": "accuracy",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        63.57,
+        80.73
+      ],
+      "se": 4.44,
+      "interval_description": "[63.57, 80.73] SE 4.44 — Wilson 95% on 73/100",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "ReLoop",
+          "backbone": "Claude Opus 4.6",
+          "paper": "arXiv 2602.15983",
+          "score": 68.0,
+          "gap": "+5.00",
+          "gap_se": "+1.13",
+          "sampling": "pass@1, N=3 internal repair"
+        }
+      ],
+      "current_reference": {
+        "system": "ReLoop",
+        "backbone": "Claude Opus 4.6",
+        "paper": "arXiv 2602.15983",
+        "score": 68.0,
+        "gap": "+5.00",
+        "gap_se": "+1.13",
+        "sampling": "pass@1, N=3 internal repair"
+      },
+      "figure_published_reference": {
+        "system": "ReLoop",
+        "backbone": "Claude Opus 4.6",
+        "paper": "arXiv 2602.15983",
+        "score": 68.0,
+        "gap": "+5.00",
+        "gap_se": "+1.13",
+        "sampling": "pass@1, N=3 internal repair",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/industryor/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "ReLoop (CoT + L1-L2 behavioral verification with repair, N=3) on Claude Opus 4.6, greedy temp=0 pass@1, arXiv:2602.15983, code junbolian/ReLoop @176a79072312db335aaab5169301d98d118a2380",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "73.0 is on the original paper answer key; revised-key score is 80.0 and must not be compared to the original 68.0 bar.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/industryor/run_policy.json",
+      "policy_sha256": "3535058574daeb00c3376671ed34c23096e680dafe6ebb38f49071cbff54e0f6",
+      "dashboard_anchor": "bm-industryor"
+    },
+    {
+      "slug": "financemath",
+      "name": "FinanceMath",
+      "domain": "Financial mathematics",
+      "score": 79.0,
+      "n_measured": 200,
+      "metric": "accuracy",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        72.84,
+        84.07
+      ],
+      "se": 2.88,
+      "interval_description": "[72.84, 84.07] SE 2.88 — Wilson 95% on 158/200",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "MoCA-Agent",
+          "backbone": "Qwen3.6-27B",
+          "paper": "arXiv 2606.11537",
+          "score": 76.0,
+          "gap": "+3.00",
+          "gap_se": "+1.04",
+          "sampling": "pass@1, 6-10 calls in one pass"
+        }
+      ],
+      "current_reference": {
+        "system": "MoCA-Agent",
+        "backbone": "Qwen3.6-27B",
+        "paper": "arXiv 2606.11537",
+        "score": 76.0,
+        "gap": "+3.00",
+        "gap_se": "+1.04",
+        "sampling": "pass@1, 6-10 calls in one pass"
+      },
+      "figure_published_reference": {
+        "system": "MoCA-Agent",
+        "backbone": "Qwen3.6-27B",
+        "paper": "arXiv 2606.11537",
+        "score": 76.0,
+        "gap": "+3.00",
+        "gap_se": "+1.04",
+        "sampling": "pass@1, 6-10 calls in one pass",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/financemath/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "MoCA-Agent (Qwen3.6-27B via vLLM), arXiv:2606.11537",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Published-backbone comparison; a separate completed same-backbone reproduction is available.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/financemath/run_policy.json",
+      "policy_sha256": "a496df2de89388b1890d97a3ade74e4cdacd2fb0992d29c47196f3db336b59e9",
+      "dashboard_anchor": "bm-financemath"
+    },
+    {
+      "slug": "longbench_v2",
+      "name": "LongBench-v2",
+      "domain": "Long-context question answering",
+      "score": 61.54,
+      "n_measured": 125,
+      "metric": "macro accuracy over 5 Multi-Doc QA sub-domains, 125-row comparator slice",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        52.18,
+        70.89
+      ],
+      "se": 4.77,
+      "interval_description": "[52.18, 70.89] SE 4.77 — normal approximation on the macro's own SE — independent per-stratum binomial variances at equal fifths, 1.96 x 4.7725 = 9.3541 — not a Wilson interval and not a bootstrap",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "DeLM",
+          "backbone": "GPT-5.4 with a DeepSeek-V4-Flash summarizer",
+          "paper": "arXiv 2606.10662v1",
+          "score": 60.1,
+          "gap": "+1.44",
+          "gap_se": "+0.30",
+          "sampling": "not stated; the reference is +/-1.2 over 3 runs against this run's k = 1"
+        }
+      ],
+      "current_reference": {
+        "system": "DeLM",
+        "backbone": "GPT-5.4 with a DeepSeek-V4-Flash summarizer",
+        "paper": "arXiv 2606.10662v1",
+        "score": 60.1,
+        "gap": "+1.44",
+        "gap_se": "+0.30",
+        "sampling": "not stated; the reference is +/-1.2 over 3 runs against this run's k = 1"
+      },
+      "figure_published_reference": {
+        "system": "DeLM",
+        "backbone": "GPT-5.4 with a DeepSeek-V4-Flash summarizer",
+        "paper": "arXiv 2606.10662v1",
+        "score": 60.1,
+        "gap": "+1.44",
+        "gap_se": "+0.30",
+        "sampling": "not stated; the reference is +/-1.2 over 3 runs against this run's k = 1",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/longbench_v2/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "DeLM (Decentralized Language Models) on a GPT-5.4 backbone with a DeepSeek-V4-Flash summarizer, arXiv:2606.10662v1 Table 2, row \"GPT-5.4 / DeLM\", column \"Avg.\" (60.1 +/- 1.2 over 3 runs). \"Avg.\" is an unweighted macro-average over five Multi-Doc QA sub-domains, not the official micro accuracy; restated on the official metric the same cell is 58.1. No LongBench-v2 code was released with the paper (github.com/yuzhenmao/DeLM @2d0ea48e9940327c0526fd95f8fbb202874d4698 contains no loader, prompt, answer extractor or scorer for it), so the number cannot be re-run and is a reference point, not a re-derivable bar.",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "Five-domain macro on 125 Multi-Doc QA rows; paper bar is a mean over three runs, with no released benchmark driver.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/longbench_v2/run_policy.json",
+      "policy_sha256": "3a00a906917a61cd2357d0a1900f47bb0d7a08f5218115a40947c939879a3d35",
+      "dashboard_anchor": "bm-longbench_v2"
+    },
+    {
+      "slug": "multihiertt",
+      "name": "MultiHiertt",
+      "domain": "Financial table reasoning",
+      "score": 71.4,
+      "n_measured": 1042,
+      "metric": "moca_answer_accuracy (micro over 1042 genuine measurements of 1044)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        68.58,
+        74.06
+      ],
+      "se": 1.4,
+      "interval_description": "[68.58, 74.06] SE 1.40 — Wilson 95% on 744/1042",
+      "historical_verdict": "matches",
+      "historical_references": [
+        {
+          "system": "MoCA-Agent",
+          "backbone": "Qwen3.6-27B via vLLM",
+          "paper": "arXiv 2606.11537v2",
+          "score": 71.17,
+          "gap": "+0.23",
+          "gap_se": "+0.17",
+          "sampling": "not stated in the paper (absence verified)"
+        }
+      ],
+      "current_reference": {
+        "system": "MoCA-Agent",
+        "backbone": "Qwen3.6-27B via vLLM",
+        "paper": "arXiv 2606.11537v2",
+        "score": 71.17,
+        "gap": "+0.23",
+        "gap_se": "+0.17",
+        "sampling": "not stated in the paper (absence verified)"
+      },
+      "figure_published_reference": {
+        "system": "MoCA-Agent",
+        "backbone": "Qwen3.6-27B via vLLM",
+        "paper": "arXiv 2606.11537v2",
+        "score": 71.17,
+        "gap": "+0.23",
+        "gap_se": "+0.17",
+        "sampling": "not stated in the paper (absence verified)",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/multihiertt/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "MoCA-Agent (market-of-claims code agent: claim catalog, 4 trader roles, market clearing, python synthesizer, sandboxed executor, code-aware verifier, <=1 repair round, selector committee) on Qwen3.6-27B served via vLLM, arXiv:2606.11537v2, code UBC-NLP/MoCA-Agent @f8004486749f7061e4f426320f71283e66a649a2",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "744/1042 measured, versus 1044 emitted; same metric is answer accuracy, not the benchmark F1 column.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/multihiertt/run_policy.json",
+      "policy_sha256": "016f19d01e6d28a2b4ffcaaa15304725f09392f685ba1eb11c78fd103846fbda",
+      "dashboard_anchor": "bm-multihiertt"
+    },
+    {
+      "slug": "earthbench",
+      "name": "EarthBench",
+      "domain": "Earth science",
+      "score": 59.11,
+      "n_measured": 247,
+      "metric": "end_to_end_final_answer_accuracy (denominator pinned at 247)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        52.88,
+        65.06
+      ],
+      "se": 3.13,
+      "interval_description": "[52.88, 65.06] SE 3.13 — Wilson score interval on 146/247; the metric is binary, every reward is exactly 0.0 or 1.0",
+      "historical_verdict": "not separated",
+      "historical_references": [
+        {
+          "system": "Earth-Agent",
+          "backbone": "GPT-5",
+          "paper": "paper: Earth-Agent, v1/v2 Table 1",
+          "score": 65.59,
+          "gap": "-6.48",
+          "gap_se": "-2.07",
+          "sampling": "not stated in the paper"
+        }
+      ],
+      "current_reference": {
+        "system": "Earth-Agent",
+        "backbone": "GPT-5",
+        "paper": "paper: Earth-Agent, v1/v2 Table 1",
+        "score": 65.59,
+        "gap": "-6.48",
+        "gap_se": "-2.07",
+        "sampling": "not stated in the paper"
+      },
+      "figure_published_reference": {
+        "system": "Earth-Agent",
+        "backbone": "GPT-5",
+        "paper": "Earth-Agent, arXiv:2509.23141v3 Table 1",
+        "score": 65.99,
+        "gap": "-6.48",
+        "gap_se": "-2.07",
+        "sampling": "not stated in the paper",
+        "provenance": "Camera-ready paper cell. Versions 1/2 and released predictions give65.59; v3 appendix modality cells still reconstruct65.59.",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/earthbench/run_policy.json:sota_system"
+      },
+      "current_selected_system_description": "Earth-Agent with a GPT-5 backbone, Auto-Planning (AP) regime -- a LangGraph create_react_agent ReAct loop at temperature 0.1, k=1, over 104 tools served by five local stdio MCP servers. arXiv:2509.23141 v1/v2 Table 1, reproduced EXACTLY here as 162/247 = 65.59 by running the vendored official scorer over the repository's own released evaluate_langchain/gpt5_AP/results_summary_polished.json. The ICLR 2026 camera-ready (v3) prints 65.99 in the same cell; that figure is not reproducible from the released artifacts and contradicts v3's own Appendix Tables 8/9/10, which still carry the per-modality numbers 61.00/75.00/59.32 that weight-average over 247 to 65.59.",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "162/247 reproduces 65.59 from released reference outputs; camera-ready 65.99 conflicts with those outputs. Gold-version and modality findings require separate analysis; historical verdict used a 3-SE threshold.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/earthbench/run_policy.json",
+      "policy_sha256": "a346976b8e48a526299b2c1c2a06a8535adb4fa2010c8e284f6dc7bcdb17c832",
+      "dashboard_anchor": "bm-earthbench"
+    },
+    {
+      "slug": "insightbench",
+      "name": "InsightBench",
+      "domain": "Exploratory data analysis",
+      "score": 53.68,
+      "n_measured": 91,
+      "metric": "insight-level G-Eval (recall-only, judge-logprob weighted)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": null,
+      "se": 3.31,
+      "interval_description": "SE 3.31, no binomial interval — cluster-robust SE 3.31 against DataSTORM and 2.00 against AgentPoirot over 44 clusters, about twice the naive SE; a G-Eval score admits no binomial interval",
+      "historical_verdict": "not separated",
+      "historical_references": [
+        {
+          "system": "DataSTORM",
+          "backbone": "GPT-4o",
+          "paper": "no paper id recorded",
+          "score": 60.98,
+          "gap": "-7.30",
+          "gap_se": "-2.21",
+          "sampling": "unstated"
+        },
+        {
+          "system": "AgentPoirot",
+          "backbone": "GPT-4o",
+          "paper": "no paper id recorded",
+          "score": 45.72,
+          "gap": "+7.95",
+          "gap_se": "+3.98",
+          "sampling": "unstated"
+        }
+      ],
+      "current_reference": {
+        "system": "DataSTORM",
+        "backbone": "gpt-5-2025-08-07",
+        "score": 61.9
+      },
+      "figure_published_reference": {
+        "system": "DataSTORM",
+        "backbone": "gpt-5-2025-08-07",
+        "score": 61.9,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/insightbench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "DataSTORM (gpt-5-2025-08-07 exploration backbone, run with --no_warm_start --skip_final_article), insight-level recall under the gpt-4o judge, arXiv:2604.06474v2 Table 1; code stanford-oval/DataSTORM @29ba2031290e40a388ce548582d4e43bbac05d72, whose 100 released per-instance files average to 0.618670 (61.9). Same table's baseline row, AgentPoirot on a gpt-5 backbone, is 47.1 (reproduced: 0.470814).",
+      "reporting_status": "restricted_variant",
+      "caveat": "Old closed-web run and different judge; current DataSTORM bar corrected to 61.9. Sept17 open-web rerun has 35 recorded errors and an all-zero job summary, so no replacement score is promoted.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/insightbench/run_policy.json",
+      "policy_sha256": "6ab4e845a17f6a400ac3ee30ca956a87229ffa883ab2ef8aeec3cd0a5eb9daf7",
+      "dashboard_anchor": "bm-insightbench"
+    },
+    {
+      "slug": "test_of_time",
+      "name": "Test of Time",
+      "domain": "Temporal reasoning",
+      "score": 88.57,
+      "n_measured": 280,
+      "metric": "accuracy",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        84.31,
+        91.79
+      ],
+      "se": 1.9,
+      "interval_description": "[84.31, 91.79] SE 1.90 — Wilson 95% on 248/280",
+      "historical_verdict": "bracket",
+      "historical_references": [
+        {
+          "system": "REMem-I",
+          "backbone": "GPT-5-chat",
+          "paper": "arXiv 2602.13530",
+          "score": 99.0,
+          "gap": "-10.43",
+          "gap_se": "-5.48",
+          "sampling": "unstated k, bootstrap CIs"
+        },
+        {
+          "system": "REMem-I",
+          "backbone": "GPT-4.1-mini",
+          "paper": "arXiv 2602.13530",
+          "score": 93.1,
+          "gap": "-4.53",
+          "gap_se": "-2.38",
+          "sampling": "unstated k, bootstrap CIs"
+        },
+        {
+          "system": "Full-Context",
+          "backbone": "GPT-5-chat",
+          "paper": "arXiv 2602.13530",
+          "score": 84.5,
+          "gap": "+4.07",
+          "gap_se": "+2.14",
+          "sampling": "bare model"
+        },
+        {
+          "system": "Full-Context",
+          "backbone": "GPT-4.1-mini",
+          "paper": "arXiv 2602.13530",
+          "score": 79.7,
+          "gap": "+8.87",
+          "gap_se": "+4.67",
+          "sampling": "bare model"
+        }
+      ],
+      "current_reference": {
+        "system": "REMem-I",
+        "backbone": "GPT-4.1-mini-2025-04-14",
+        "score": 93.1
+      },
+      "figure_published_reference": {
+        "system": "REMem-I",
+        "backbone": "GPT-4.1-mini-2025-04-14",
+        "score": 93.1,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/test_of_time/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "EchoMem-I (REMem-Iterative), GPT-4.1-mini-2025-04-14 + NV-Embed-v2, max 5 agentic steps, arXiv:2602.13530, code intuit-ai-research/REMem @d87840be922c9815a3c97ec24d9c25e4af5c295a",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "280 balanced instances of a 2800-instance population. Current paper bar is 93.1, not the unsupported 99.0 prose value. Format-instruction ablation 274/280 is an ablation; original 248/280 is not post-corrected.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/test_of_time/run_policy.json",
+      "policy_sha256": "c1cb7e658b246738fbd41f9b217690a8b65c5de4f8c93412426901f3d52a6136",
+      "dashboard_anchor": "bm-test_of_time"
+    },
+    {
+      "slug": "elaipbench",
+      "name": "ELAIPBench",
+      "domain": "Scientific paper understanding",
+      "score": 37.84,
+      "n_measured": 399,
+      "metric": "accuracy",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        33.22,
+        42.7
+      ],
+      "se": 2.43,
+      "interval_description": "[33.22, 42.70] SE 2.43 — Wilson 95% on 151/399",
+      "historical_verdict": "below",
+      "historical_references": [
+        {
+          "system": "AgentSPEX",
+          "backbone": "GPT-5, high effort",
+          "paper": "arXiv 2604.13346",
+          "score": 43.7,
+          "gap": "-5.86",
+          "gap_se": "-2.41",
+          "sampling": "pass@1"
+        }
+      ],
+      "current_reference": {
+        "system": "AgentSPEX",
+        "backbone": "GPT-5, high effort",
+        "paper": "arXiv 2604.13346",
+        "score": 43.7,
+        "gap": "-5.86",
+        "gap_se": "-2.41",
+        "sampling": "pass@1"
+      },
+      "figure_published_reference": {
+        "system": "AgentSPEX",
+        "backbone": "GPT-5, high effort",
+        "paper": "arXiv 2604.13346",
+        "score": 43.7,
+        "gap": "-5.86",
+        "gap_se": "-2.41",
+        "sampling": "pass@1",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/elaipbench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "AgentSPEX (GPT-5, high reasoning effort, temperature 1.0, max_tokens 4000/step, enabled_tools:[]), arXiv:2604.13346, code ScaleML/AgentSPEX @b36677cee53eb5f2557f13bdf25dfb906b862fd1",
+      "reporting_status": "baseline_snapshot",
+      "caveat": "151/399 measured of 403 emitted. Published AgentSPEX used high effort; Codex used medium. Updated medium-effort comparator must be reported separately.",
+      "include_in_provisional_external_summary": true,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/elaipbench/run_policy.json",
+      "policy_sha256": "3718cf0a6fb2307ce758287b520e8a50d4d89f0990fd08c23ac842fe3da8d466",
+      "dashboard_anchor": "bm-elaipbench"
+    },
+    {
+      "slug": "biomni_eval1",
+      "name": "Biomni-Eval1",
+      "domain": "Biomedicine",
+      "score": 61.19,
+      "n_measured": 433,
+      "metric": "Overall Avg. (macro over 10 branches)",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": null,
+      "se": 2.723,
+      "interval_description": "SE 2.723, no binomial interval — pre-registered macro SE 2.723 points, a worst-case figure at p = 0.5; the macro headline is a mean of ten branch rates and admits no binomial interval",
+      "historical_verdict": "below",
+      "historical_references": [
+        {
+          "system": "S1-NexusAgent",
+          "backbone": "Claude-4.5-Sonnet",
+          "paper": "arXiv 2602.01550v2",
+          "score": 76.07,
+          "gap": "-14.89",
+          "gap_se": "-5.47",
+          "sampling": "unstated"
+        }
+      ],
+      "current_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "arXiv 2602.01550v2",
+        "score": 76.07,
+        "gap": "-14.89",
+        "gap_se": "-5.47",
+        "sampling": "unstated"
+      },
+      "figure_published_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "arXiv 2602.01550v2",
+        "score": 76.07,
+        "gap": "-14.89",
+        "gap_se": "-5.47",
+        "sampling": "unstated",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/biomni_eval1/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "S1-NexusAgent (CASIA-LM/S1-NexusAgent), Table 1 row 'Ours (Claude-4.5-Sonnet)'.",
+      "reporting_status": "restricted_variant",
+      "caveat": "Historical arm lacked the benchmark Biomni E1 environment/data lake. Current baseline repair and comparator run are separate pending work.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/biomni_eval1/run_policy.json",
+      "policy_sha256": "b246228cccfca66835bbf9c5945b0e6bfcb44b8bc5de3009771ad591ba3a8b48",
+      "dashboard_anchor": "bm-biomni_eval1"
+    },
+    {
+      "slug": "matscibench",
+      "name": "MatSciBench",
+      "domain": "Materials science",
+      "score": 73.37,
+      "n_measured": 1025,
+      "metric": "accuracy_text_only",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        70.58,
+        75.98
+      ],
+      "se": 1.38,
+      "interval_description": "[70.58, 75.98] SE 1.38 — Wilson 95% on 752/1025",
+      "historical_verdict": "below",
+      "historical_references": [
+        {
+          "system": "S1-NexusAgent",
+          "backbone": "Claude-4.5-Sonnet",
+          "paper": "no paper id recorded",
+          "score": 82.9,
+          "gap": "-9.53",
+          "gap_se": "-6.91",
+          "sampling": "not stated; the figure is a transcribed table row rather than a reproduced one"
+        }
+      ],
+      "current_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "no paper id recorded",
+        "score": 82.9,
+        "gap": "-9.53",
+        "gap_se": "-6.91",
+        "sampling": "not stated; the figure is a transcribed table row rather than a reproduced one"
+      },
+      "figure_published_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "no paper id recorded",
+        "score": 82.9,
+        "gap": "-9.53",
+        "gap_se": "-6.91",
+        "sampling": "not stated; the figure is a transcribed table row rather than a reproduced one",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/matscibench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "S1-NexusAgent (CASIA-LM/S1-NexusAgent), Table 3 row 'Ours (Claude-4.5-Sonnet)'.",
+      "reporting_status": "restricted_variant",
+      "caveat": "Sept18 policy records all 1025 historical prompts on a retired 15-host restricted surface. Neither the later closed prompt nor the newly selected open-web surface produced this score.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/matscibench/run_policy.json",
+      "policy_sha256": "fab7b154c491734fd8540dd7db276089d958bd97754c469663da17a6522ce920",
+      "dashboard_anchor": "bm-matscibench"
+    },
+    {
+      "slug": "chembench",
+      "name": "ChemBench",
+      "domain": "Chemistry",
+      "score": 71.89,
+      "n_measured": 2785,
+      "metric": "overall_score, micro over all 2785",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        70.22,
+        73.55
+      ],
+      "se": 0.85,
+      "interval_description": "[70.22, 73.55] SE 0.85 — Normal-approximation interval on 2002/2785; the metric is binary, every reward is exactly 0.0 or 1.0, and at this sample size it is indistinguishable from a Wilson interval",
+      "historical_verdict": "below",
+      "historical_references": [
+        {
+          "system": "S1-NexusAgent",
+          "backbone": "Claude-4.5-Sonnet",
+          "paper": "paper: no arXiv id recorded, so no audit join exists",
+          "score": 86.05,
+          "gap": "-14.16",
+          "gap_se": "-16.63",
+          "sampling": "not stated in the paper (absence verified)"
+        },
+        {
+          "system": "Intern-S1",
+          "backbone": "not stated",
+          "paper": "paper: same table as the designated comparator",
+          "score": 83.4,
+          "gap": "-11.51",
+          "gap_se": "-13.52",
+          "sampling": "not stated in the paper (absence verified)"
+        }
+      ],
+      "current_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "paper: no arXiv id recorded, so no audit join exists",
+        "score": 86.05,
+        "gap": "-14.16",
+        "gap_se": "-16.63",
+        "sampling": "not stated in the paper (absence verified)"
+      },
+      "figure_published_reference": {
+        "system": "S1-NexusAgent",
+        "backbone": "Claude-4.5-Sonnet",
+        "paper": "paper: no arXiv id recorded, so no audit join exists",
+        "score": 86.05,
+        "gap": "-14.16",
+        "gap_se": "-16.63",
+        "sampling": "not stated in the paper (absence verified)",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/chembench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "S1-NexusAgent (CASIA-LM/S1-NexusAgent), Table 2 row 'Ours (Claude-4.5-Sonnet)'.",
+      "reporting_status": "restricted_variant",
+      "caveat": "Historical full run was closed-web; benchmark baseline permits tools/web. Sept15 open-web pilot is 113/150=75.33, not a replacement full-suite result.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/chembench/run_policy.json",
+      "policy_sha256": "dc87ed9e08b2c3faa85be8e8c61b9e5281dd09d3d0620a3cfefd54b7addff821",
+      "dashboard_anchor": "bm-chembench"
+    },
+    {
+      "slug": "crag",
+      "name": "CRAG (KG subset)",
+      "domain": "Retrieval-augmented question answering",
+      "score": 0.5702,
+      "n_measured": 577,
+      "metric": "truthfulness = accuracy − hallucination, over 577 graded of 578 emitted",
+      "scale": [
+        -1,
+        1
+      ],
+      "ci95": null,
+      "se": null,
+      "interval_description": "no interval available — No binomial interval applies: truthfulness is a signed composite of three categories, not a proportion. Components are accuracy 435/577 = 0.7539 and hallucination 106/577 = 0.1837.",
+      "historical_verdict": "standalone",
+      "historical_references": [
+        {
+          "system": "CacheRAG",
+          "backbone": "DeepSeek-chat",
+          "paper": "arXiv 2604.26176v4",
+          "score": 0.3893,
+          "gap": "",
+          "gap_se": "",
+          "sampling": "single pass; no k and no temperature stated"
+        }
+      ],
+      "current_reference": {
+        "system": "CacheRAG",
+        "backbone": "DeepSeek-chat",
+        "paper": "arXiv 2604.26176v4",
+        "score": 0.3893,
+        "gap": "",
+        "gap_se": "",
+        "sampling": "single pass; no k and no temperature stated"
+      },
+      "figure_published_reference": {
+        "system": "CacheRAG",
+        "backbone": "DeepSeek-chat",
+        "paper": "CacheRAG, arXiv:2604.26176v4 Table 1",
+        "score": 0.711,
+        "gap": "",
+        "gap_se": "",
+        "sampling": "single pass; no k and no temperature stated",
+        "provenance": "Paper truthfulness=0.711; accuracy0.824/hallucination0.112/missing0.064. Registered0.3893 is a local regrade of released predictions under a different judge, not a paper score.",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/crag/run_policy.json:sota_system"
+      },
+      "current_selected_system_description": "CacheRAG (Sun & Chen, HKUST; arXiv:2604.26176v4; code ysunbp/CacheRAG-code @db58ba5f5cfdde70ea64080f0a5fc3020d48449e), its 578 RELEASED per-item answers (output/crag/full-backup-{head,torso,tail}-test-eval.jsonl) re-graded by THIS deployment's grader with judge Llama-3.3-70B-Instruct: truthfulness 0.3893, accuracy 0.6401, hallucination 0.2509, missing 0.1090, n=578 (370 correct / 145 hallucinated / 63 missing). Reproduced exactly across two independent runs. CacheRAG's PUBLISHED Table 1 row is 0.824 accuracy / 0.112 hallucination / 0.064 missing / 0.711 truthfulness; that was produced by CacheRAG's own scorer, whose line 161 marks an item correct whenever the gold string is a SUBSTRING of the answer -- 321/578 = 55.5% of its items were decided that way, against 0/578 for the official rule it claims to follow. 0.711 IS NOT THE BAR. The comparator was not re-run; only its released answers were re-graded, which is why its placeholder API credentials and 4x A100 requirement do not block this build.",
+      "reporting_status": "restricted_variant",
+      "caveat": "Historical input was pre-retrieved KG material rather than the benchmark mock API, and judge differs. Historical 0.3893 reference is a local regrade of released outputs, not the paper score.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/crag/run_policy.json",
+      "policy_sha256": "90fde0dcd7a53cce1a25bcd72ba166ad79daf76a0d8c7a83f7d26662db8b6f95",
+      "dashboard_anchor": "bm-crag"
+    },
+    {
+      "slug": "medagentsbench",
+      "name": "MedAgentsBench",
+      "domain": "Medical reasoning",
+      "score": 50.65,
+      "n_measured": 860,
+      "metric": "macro over 9 subsets",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": null,
+      "se": 1.7,
+      "interval_description": "SE 1.7, no binomial interval — binomial SE 1.70 on the micro average over the same 860; the macro headline is a mean of nine subset rates and admits no binomial interval",
+      "historical_verdict": "standalone",
+      "historical_references": [],
+      "current_reference": null,
+      "figure_published_reference": null,
+      "current_selected_system_description": "GSEM (Graph-based Self-Evolving Memory, arXiv:2603.22096), Qwen3.5-35B backbone",
+      "reporting_status": "no_comparable_reference",
+      "caveat": "GSEM publishes no nine-subset macro corresponding to this row; no aggregate reference is manufactured from the five published subsets.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/medagentsbench/run_policy.json",
+      "policy_sha256": "2b9aeb6589094f019a9badcb9fa8f6a9c2940279921ebc2223b9a208b8ab05cc",
+      "dashboard_anchor": "bm-medagentsbench"
+    },
+    {
+      "slug": "frontierscience_research",
+      "name": "FrontierScience",
+      "domain": "Scientific research",
+      "score": 50.85,
+      "n_measured": 59,
+      "metric": "rubric >= 7/10",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        38.44,
+        63.16
+      ],
+      "se": 6.51,
+      "interval_description": "[38.44, 63.16] SE 6.51 — Wilson 95% on 30/59",
+      "historical_verdict": "no usable reference",
+      "historical_references": [
+        {
+          "system": "EoM (Economy of Minds)",
+          "backbone": "Gemini-3-Flash",
+          "paper": "arXiv 2606.02859",
+          "score": 8.5,
+          "gap": "",
+          "gap_se": "",
+          "sampling": "mean across checkpoints"
+        }
+      ],
+      "current_reference": {
+        "system": "FrontierAgent (Agent Team)",
+        "backbone": "Apodex 1.1 (unreleased weights)",
+        "score": 63.3
+      },
+      "figure_published_reference": {
+        "system": "FrontierAgent (Agent Team)",
+        "backbone": "Apodex 1.1 (unreleased weights)",
+        "score": 63.3,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/frontierscience_research/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "FrontierAgent (Apodex 1.1, Agent Team mode), open book, arXiv:2608.23283 Table 4, code ApodexAI/FrontierAgent. Same 60 rows / 59 task_group_ids, same 10-point rubric, same >=7/10 threshold.",
+      "reporting_status": "restricted_variant",
+      "caveat": "Historical closed-book score; current reference is open-book FrontierAgent63.3. EoM8.5 is ineligible because of threshold/split/training overlap differences.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/frontierscience_research/run_policy.json",
+      "policy_sha256": "7a85492d8a427f3e87f5bd266bc57820efa8814de1290e29f1c184f6e6237d40",
+      "dashboard_anchor": "bm-frontierscience"
+    },
+    {
+      "slug": "oolong",
+      "name": "OOLONG",
+      "domain": "Long-context aggregation",
+      "score": 99.0,
+      "n_measured": 100,
+      "metric": "score_labels_on (staged_file delivery), n=100",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        94.55,
+        99.82
+      ],
+      "se": 0.99,
+      "interval_description": "[94.55, 99.82] SE 0.99 — Wilson 95% on 99/100",
+      "historical_verdict": "not comparable",
+      "historical_references": [
+        {
+          "system": "SLIDERS",
+          "backbone": "long-context system",
+          "paper": "no paper id recorded",
+          "score": 68.0,
+          "gap": "",
+          "gap_se": "",
+          "sampling": ""
+        }
+      ],
+      "current_reference": {
+        "system": "EnSI-RAG",
+        "backbone": "GPT-4.1-mini / GPT-4.1",
+        "score": 71.84
+      },
+      "figure_published_reference": {
+        "system": "EnSI-RAG",
+        "backbone": "GPT-4.1-mini / GPT-4.1",
+        "score": 71.84,
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/oolong/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "SLIDERS (contextualized chunking -> schema induction -> extraction -> reconciliation -> SQL answer synthesis), Qwen3.5 122B for all components; 64.67 with GPT-4.1-mini/GPT-4.1, which is the backbone the shipped config reproduces. arXiv:2604.22294, code stanford-oval/sliders",
+      "reporting_status": "invalid_for_current_comparison",
+      "caveat": "Historical labels-on staged-file100 score; current selected setting is labels-off in-prompt test192. EnSI-RAG71.84 cannot be subtracted from the old99.0.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/oolong/run_policy.json",
+      "policy_sha256": "e58e53ab489196e699f1e0dbb14b0cbb348000986b0b0bea2c62629203e1262d",
+      "dashboard_anchor": "bm-oolong"
+    },
+    {
+      "slug": "rarebench",
+      "name": "RareBench (LIRICAL)",
+      "domain": "Rare-disease diagnosis",
+      "score": 43.51,
+      "n_measured": 370,
+      "metric": "Recall@1 under the comparator's own top-five judge, 370 graded of 370 emitted",
+      "scale": [
+        0,
+        100
+      ],
+      "ci95": [
+        38.55,
+        48.61
+      ],
+      "se": 2.58,
+      "interval_description": "[38.55, 48.61] SE 2.58 — Wilson 95% on 161/370",
+      "historical_verdict": "not comparable",
+      "historical_references": [
+        {
+          "system": "DeepRare",
+          "backbone": "DeepSeek-V3",
+          "paper": "arXiv 2506.20430",
+          "score": 55.95,
+          "gap": "",
+          "gap_se": "",
+          "sampling": "not stated"
+        },
+        {
+          "system": "LiteOdyssey",
+          "backbone": "GPT-5.4",
+          "paper": "arXiv 2606.16149",
+          "score": 58.6,
+          "gap": "",
+          "gap_se": "",
+          "sampling": "not stated"
+        },
+        {
+          "system": "DeepRare without its similar-case bank",
+          "backbone": "not stated",
+          "paper": "arXiv 2606.16149",
+          "score": 39.5,
+          "gap": "",
+          "gap_se": "",
+          "sampling": "not stated"
+        }
+      ],
+      "current_reference": {
+        "system": "DeepRare",
+        "backbone": "DeepSeek-V3",
+        "paper": "arXiv 2506.20430",
+        "score": 55.95,
+        "gap": "",
+        "gap_se": "",
+        "sampling": "not stated"
+      },
+      "figure_published_reference": {
+        "system": "DeepRare",
+        "backbone": "DeepSeek-V3",
+        "paper": "arXiv 2506.20430",
+        "score": 55.95,
+        "gap": "",
+        "gap_se": "",
+        "sampling": "not stated",
+        "source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/rarebench/run_policy.json",
+        "provenance": "Selected published reference; may differ from the strongest unreproducible system."
+      },
+      "current_selected_system_description": "DeepRare (DS-V3) - multi-agent system, DeepSeek-V3 central host with specialized tools and a self-reflective loop, arXiv:2506.20430, code MAGIC-AI4Med/DeepRare",
+      "reporting_status": "invalid_measurement",
+      "caveat": "Historical370-run retrieval failed on every network attempt; no comparison against retrieval-enabled DeepRare is admissible.",
+      "include_in_provisional_external_summary": false,
+      "policy_source": "/data1/jiacheng/multiagent_repo_analysis/codex-generalization/3_deploy_run/quickstart/scenario1_specs/rarebench/run_policy.json",
+      "policy_sha256": "c26d152980b619cc35ae63b07185fe907fe171f497f0ddc989a405da0780b518",
+      "dashboard_anchor": "bm-rarebench"
+    }
+  ]
+}

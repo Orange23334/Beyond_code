@@ -1,0 +1,47 @@
+{
+ "benchmark": "stark",
+ "instance": 1153,
+ "reward": 0.0,
+ "answer": {
+  "ranked_ids": [
+   128285,
+   62653,
+   128286,
+   128284,
+   128283,
+   128310,
+   128535
+  ]
+ },
+ "ungraded_guard": {
+  "covered": false,
+  "headline_metric": null,
+  "headline_value_is_none": null,
+  "record_error": false
+ },
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "official_metric": "hit@1",
+   "scorer_source": "snap-stanford/stark @b246b9490b1dc216892ce78303140014506932c1 stark_qa/evaluator.py::Evaluator.evaluate, vendored verbatim as _stark_qa_evaluator.py and called, not reimplemented",
+   "leaderboard_source": "hf-space snap-stanford/stark-leaderboard @a4853d13040afec21215dfa629a7683825c46041 app.py lines 166, 181-185, 207",
+   "dataset": "prime",
+   "query_id": 7871,
+   "instance_index": 1153,
+   "n_candidates": 129375,
+   "n_gold": 1,
+   "n_submitted": 7,
+   "n_scored": 7,
+   "n_out_of_pool": 0,
+   "n_duplicate_ids": 0,
+   "parse_mode": "list",
+   "note": null,
+   "hit@1": 0.0,
+   "hit@5": 1.0,
+   "recall@20": 1.0,
+   "mrr": 0.5
+  },
+  "detail": "prime query 7871: hit@1=0.0000, hit@5=1.0000, recall@20=1.0000, mrr=0.5000 over 129375 candidates from 7 scored ids"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "benchmark": "chembench",
+ "instance": 903,
+ "reward": 0.0,
+ "answer": {
+  "answer": "A",
+  "rationale": "A is the stronger early-development choice for a conventional orally available small molecule: it has substantially lower molecular weight (about 319 versus 491 Da), fewer rotatable bonds, and a higher overall drug-likeness profile while remaining within standard oral-property limits. Although A is quite lipophilic and has very low polar surface area—liabilities that would need follow-up for solubility, promiscuity, and hERG risk—B sits close to the upper molecular-weight boundary and is considerably larger and more complex, making optimization and oral exposure less forgiving at this early stage."
+ },
+ "evaluator_record": {
+  "correct": false,
+  "score": 0.0,
+  "metrics": {
+   "pattern": "chembench-official-all-correct",
+   "scorer_source": "lamalab-org/chembench pypi 0.3.0 src/chembench/metrics.py::all_correct (+ mae, exact_str_match), vendored verbatim as _official_chembench_metrics.py; the micro average is the leaderboard Space's own src/submission/submit.py::compute_topic_scores, overall_score = total_correct / total_questions",
+   "source_url": "https://huggingface.co/datasets/jablonkagroup/ChemBench/tree/6e1d25748952393f44e35b8e85bbe567246a6430",
+   "headline_metric": "overall_score",
+   "uuid": "bea7abdc-fabb-a6ab-c454-794d26ef72ac",
+   "question_name": "preference_choung_764",
+   "topic": "chemical_preference",
+   "subfield": "preference",
+   "kind": "multiple_choice",
+   "preferred_score": "multiple_choice_grade",
+   "ground_truth": "{'A': 0, 'B': 1}",
+   "raw_prediction": "A",
+   "answer_key_used": "answer",
+   "answer_missing": false,
+   "scorer_error": null,
+   "instance_index": 903
+  },
+  "detail": "chembench[chemical_preference/multiple_choice] all_correct=False"
+ }
+}

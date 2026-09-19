@@ -1,0 +1,11 @@
+% Keep the ICLR Times family under pdfLaTeX and use its OpenType equivalent
+% under XeLaTeX/Tectonic or LuaLaTeX. Load after amsmath/amssymb.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{times}
+\else
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \setmainfont{TeX Gyre Termes}
+  \setmathfont{TeX Gyre Termes Math}
+\fi

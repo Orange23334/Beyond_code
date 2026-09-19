@@ -1,0 +1,19 @@
+{
+ "agents": [
+  {
+   "kwargs": {
+    "reasoning_effort": "medium",
+    "version": "0.149.1",
+    "web_search": "disabled"
+   },
+   "model_name": "azure/gpt-5.6-sol",
+   "name": "codex"
+  }
+ ],
+ "datasets": [
+  {
+   "path": "quickstart/tasks/_rerun_elaipbench_4"
+  }
+ ],
+ "job_name": "_rerun_elaipbench_4__2026-09-15__14-41-04"
+}

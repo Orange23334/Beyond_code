@@ -1,0 +1,5079 @@
+{
+  "snapshot": "2026-09-18",
+  "method": {
+    "paired_unit": "instance ID; ELAIPBench's four pre-agent failures replaced by completed same-instance September 15 reruns, without replacing any observed original answer",
+    "mcnemar": "two-sided exact conditional binomial; Holm across three benchmarks",
+    "bootstrap": "20000 paired percentile replicates; paper clusters for ELAIPBench, individual items otherwise",
+    "signflip": "50000 two-sided group sign-flip draws plus-one Monte Carlo correction; exploratory symmetry null",
+    "seed": 20260918
+  },
+  "rows": [
+    {
+      "benchmark": "financemath",
+      "direct_source": "/data1/jiacheng/mentor_results/branches/backup__financemath/data/financemath/2026-08-21__22-14-53",
+      "comparator_source": "/data1/jiacheng/comparators/_runs/financemath/full1/score/verdicts.jsonl",
+      "excluded_direct_trials": [],
+      "recovered_direct_trials": [],
+      "pairs": [
+        {
+          "instance": 0,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "0"
+        },
+        {
+          "instance": 1,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1"
+        },
+        {
+          "instance": 2,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "2"
+        },
+        {
+          "instance": 3,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "3"
+        },
+        {
+          "instance": 4,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "4"
+        },
+        {
+          "instance": 5,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "5"
+        },
+        {
+          "instance": 6,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "6"
+        },
+        {
+          "instance": 7,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "7"
+        },
+        {
+          "instance": 8,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "8"
+        },
+        {
+          "instance": 9,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "9"
+        },
+        {
+          "instance": 10,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "10"
+        },
+        {
+          "instance": 11,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "11"
+        },
+        {
+          "instance": 12,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "12"
+        },
+        {
+          "instance": 13,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "13"
+        },
+        {
+          "instance": 14,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "14"
+        },
+        {
+          "instance": 15,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "15"
+        },
+        {
+          "instance": 16,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "16"
+        },
+        {
+          "instance": 17,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "17"
+        },
+        {
+          "instance": 18,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "18"
+        },
+        {
+          "instance": 19,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "19"
+        },
+        {
+          "instance": 20,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "20"
+        },
+        {
+          "instance": 21,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "21"
+        },
+        {
+          "instance": 22,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "22"
+        },
+        {
+          "instance": 23,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "23"
+        },
+        {
+          "instance": 24,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "24"
+        },
+        {
+          "instance": 25,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "25"
+        },
+        {
+          "instance": 26,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "26"
+        },
+        {
+          "instance": 27,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "27"
+        },
+        {
+          "instance": 28,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "28"
+        },
+        {
+          "instance": 29,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "29"
+        },
+        {
+          "instance": 30,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "30"
+        },
+        {
+          "instance": 31,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "31"
+        },
+        {
+          "instance": 32,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "32"
+        },
+        {
+          "instance": 33,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "33"
+        },
+        {
+          "instance": 34,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "34"
+        },
+        {
+          "instance": 35,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35"
+        },
+        {
+          "instance": 36,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "36"
+        },
+        {
+          "instance": 37,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "37"
+        },
+        {
+          "instance": 38,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "38"
+        },
+        {
+          "instance": 39,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "39"
+        },
+        {
+          "instance": 40,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "40"
+        },
+        {
+          "instance": 41,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "41"
+        },
+        {
+          "instance": 42,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "42"
+        },
+        {
+          "instance": 43,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "43"
+        },
+        {
+          "instance": 44,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "44"
+        },
+        {
+          "instance": 45,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "45"
+        },
+        {
+          "instance": 46,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "46"
+        },
+        {
+          "instance": 47,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "47"
+        },
+        {
+          "instance": 48,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "48"
+        },
+        {
+          "instance": 49,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "49"
+        },
+        {
+          "instance": 50,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "50"
+        },
+        {
+          "instance": 51,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "51"
+        },
+        {
+          "instance": 52,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "52"
+        },
+        {
+          "instance": 53,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "53"
+        },
+        {
+          "instance": 54,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "54"
+        },
+        {
+          "instance": 55,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "55"
+        },
+        {
+          "instance": 56,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "56"
+        },
+        {
+          "instance": 57,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "57"
+        },
+        {
+          "instance": 58,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "58"
+        },
+        {
+          "instance": 59,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "59"
+        },
+        {
+          "instance": 60,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "60"
+        },
+        {
+          "instance": 61,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "61"
+        },
+        {
+          "instance": 62,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "62"
+        },
+        {
+          "instance": 63,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "63"
+        },
+        {
+          "instance": 64,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "64"
+        },
+        {
+          "instance": 65,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "65"
+        },
+        {
+          "instance": 66,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "66"
+        },
+        {
+          "instance": 67,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "67"
+        },
+        {
+          "instance": 68,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "68"
+        },
+        {
+          "instance": 69,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "69"
+        },
+        {
+          "instance": 70,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "70"
+        },
+        {
+          "instance": 71,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "71"
+        },
+        {
+          "instance": 72,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "72"
+        },
+        {
+          "instance": 73,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "73"
+        },
+        {
+          "instance": 74,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "74"
+        },
+        {
+          "instance": 75,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "75"
+        },
+        {
+          "instance": 76,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "76"
+        },
+        {
+          "instance": 77,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "77"
+        },
+        {
+          "instance": 78,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "78"
+        },
+        {
+          "instance": 79,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "79"
+        },
+        {
+          "instance": 80,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "80"
+        },
+        {
+          "instance": 81,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "81"
+        },
+        {
+          "instance": 82,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "82"
+        },
+        {
+          "instance": 83,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "83"
+        },
+        {
+          "instance": 84,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "84"
+        },
+        {
+          "instance": 85,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "85"
+        },
+        {
+          "instance": 86,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "86"
+        },
+        {
+          "instance": 87,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "87"
+        },
+        {
+          "instance": 88,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "88"
+        },
+        {
+          "instance": 89,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "89"
+        },
+        {
+          "instance": 90,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "90"
+        },
+        {
+          "instance": 91,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "91"
+        },
+        {
+          "instance": 92,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "92"
+        },
+        {
+          "instance": 93,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "93"
+        },
+        {
+          "instance": 94,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "94"
+        },
+        {
+          "instance": 95,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "95"
+        },
+        {
+          "instance": 96,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "96"
+        },
+        {
+          "instance": 97,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "97"
+        },
+        {
+          "instance": 98,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "98"
+        },
+        {
+          "instance": 99,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "99"
+        },
+        {
+          "instance": 100,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "100"
+        },
+        {
+          "instance": 101,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "101"
+        },
+        {
+          "instance": 102,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "102"
+        },
+        {
+          "instance": 103,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "103"
+        },
+        {
+          "instance": 104,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "104"
+        },
+        {
+          "instance": 105,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "105"
+        },
+        {
+          "instance": 106,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "106"
+        },
+        {
+          "instance": 107,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "107"
+        },
+        {
+          "instance": 108,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "108"
+        },
+        {
+          "instance": 109,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "109"
+        },
+        {
+          "instance": 110,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "110"
+        },
+        {
+          "instance": 111,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "111"
+        },
+        {
+          "instance": 112,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "112"
+        },
+        {
+          "instance": 113,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "113"
+        },
+        {
+          "instance": 114,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "114"
+        },
+        {
+          "instance": 115,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "115"
+        },
+        {
+          "instance": 116,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "116"
+        },
+        {
+          "instance": 117,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "117"
+        },
+        {
+          "instance": 118,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "118"
+        },
+        {
+          "instance": 119,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "119"
+        },
+        {
+          "instance": 120,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "120"
+        },
+        {
+          "instance": 121,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "121"
+        },
+        {
+          "instance": 122,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "122"
+        },
+        {
+          "instance": 123,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "123"
+        },
+        {
+          "instance": 124,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "124"
+        },
+        {
+          "instance": 125,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "125"
+        },
+        {
+          "instance": 126,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "126"
+        },
+        {
+          "instance": 127,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "127"
+        },
+        {
+          "instance": 128,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "128"
+        },
+        {
+          "instance": 129,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "129"
+        },
+        {
+          "instance": 130,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "130"
+        },
+        {
+          "instance": 131,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "131"
+        },
+        {
+          "instance": 132,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "132"
+        },
+        {
+          "instance": 133,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "133"
+        },
+        {
+          "instance": 134,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "134"
+        },
+        {
+          "instance": 135,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "135"
+        },
+        {
+          "instance": 136,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "136"
+        },
+        {
+          "instance": 137,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "137"
+        },
+        {
+          "instance": 138,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "138"
+        },
+        {
+          "instance": 139,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "139"
+        },
+        {
+          "instance": 140,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "140"
+        },
+        {
+          "instance": 141,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "141"
+        },
+        {
+          "instance": 142,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "142"
+        },
+        {
+          "instance": 143,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "143"
+        },
+        {
+          "instance": 144,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "144"
+        },
+        {
+          "instance": 145,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "145"
+        },
+        {
+          "instance": 146,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "146"
+        },
+        {
+          "instance": 147,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "147"
+        },
+        {
+          "instance": 148,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "148"
+        },
+        {
+          "instance": 149,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "149"
+        },
+        {
+          "instance": 150,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "150"
+        },
+        {
+          "instance": 151,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "151"
+        },
+        {
+          "instance": 152,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "152"
+        },
+        {
+          "instance": 153,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "153"
+        },
+        {
+          "instance": 154,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "154"
+        },
+        {
+          "instance": 155,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "155"
+        },
+        {
+          "instance": 156,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "156"
+        },
+        {
+          "instance": 157,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "157"
+        },
+        {
+          "instance": 158,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "158"
+        },
+        {
+          "instance": 159,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "159"
+        },
+        {
+          "instance": 160,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "160"
+        },
+        {
+          "instance": 161,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "161"
+        },
+        {
+          "instance": 162,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "162"
+        },
+        {
+          "instance": 163,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "163"
+        },
+        {
+          "instance": 164,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "164"
+        },
+        {
+          "instance": 165,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "165"
+        },
+        {
+          "instance": 166,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "166"
+        },
+        {
+          "instance": 167,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "167"
+        },
+        {
+          "instance": 168,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "168"
+        },
+        {
+          "instance": 169,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "169"
+        },
+        {
+          "instance": 170,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "170"
+        },
+        {
+          "instance": 171,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "171"
+        },
+        {
+          "instance": 172,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "172"
+        },
+        {
+          "instance": 173,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "173"
+        },
+        {
+          "instance": 174,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "174"
+        },
+        {
+          "instance": 175,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "175"
+        },
+        {
+          "instance": 176,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "176"
+        },
+        {
+          "instance": 177,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "177"
+        },
+        {
+          "instance": 178,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "178"
+        },
+        {
+          "instance": 179,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "179"
+        },
+        {
+          "instance": 180,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "180"
+        },
+        {
+          "instance": 181,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "181"
+        },
+        {
+          "instance": 182,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "182"
+        },
+        {
+          "instance": 183,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "183"
+        },
+        {
+          "instance": 184,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "184"
+        },
+        {
+          "instance": 185,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "185"
+        },
+        {
+          "instance": 186,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "186"
+        },
+        {
+          "instance": 187,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "187"
+        },
+        {
+          "instance": 188,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "188"
+        },
+        {
+          "instance": 189,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "189"
+        },
+        {
+          "instance": 190,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "190"
+        },
+        {
+          "instance": 191,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "191"
+        },
+        {
+          "instance": 192,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "192"
+        },
+        {
+          "instance": 193,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "193"
+        },
+        {
+          "instance": 194,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "194"
+        },
+        {
+          "instance": 195,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "195"
+        },
+        {
+          "instance": 196,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "196"
+        },
+        {
+          "instance": 197,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "197"
+        },
+        {
+          "instance": 198,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "198"
+        },
+        {
+          "instance": 199,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "199"
+        }
+      ],
+      "statistics": {
+        "n": 200,
+        "codex_correct": 158,
+        "comparator_correct": 158,
+        "codex_score": 79.0,
+        "comparator_score": 79.0,
+        "delta_pp": 0.0,
+        "discordance": {
+          "both_correct": 148,
+          "both_wrong": 32,
+          "codex_only": 10,
+          "comparator_only": 10
+        },
+        "mcnemar_exact_p": 1.0,
+        "bootstrap_95ci_pp": [
+          -4.5,
+          4.5
+        ],
+        "n_resampling_groups": 200,
+        "group_signflip_mc_p": 1.0,
+        "mcnemar_holm_p": 1.0
+      }
+    },
+    {
+      "benchmark": "elaipbench",
+      "direct_source": "/data1/jiacheng/mentor_results/branches/backup__elaipbench/data/elaipbench/2026-08-23__10-18-54",
+      "comparator_source": "/data1/jiacheng/comparators/_runs/elaipbench/medium_full1/score/verdicts.jsonl",
+      "excluded_direct_trials": [],
+      "recovered_direct_trials": [
+        {
+          "instance": 42,
+          "trial": "elaipbench-00042__KCd7cXk",
+          "hf_repository": "gvc-agent-analysis/benchmark-results",
+          "hf_branch": "backup/elaipbench_rerun4",
+          "hf_commit": "5ca90175dae2dad794ea845a3276c0acf280b1de",
+          "job": "data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04",
+          "detail_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/backup__elaipbench_rerun4/data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04/elaipbench-00042__KCd7cXk/verifier/detail.json",
+          "detail_sha256": "96e9f9ff54bc2673cca60dea332b436655e201af409d4e9a139a2ca88b61aa5c",
+          "manifest_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/new_jobs.json",
+          "manifest_sha256": "2ae05858e22025cffa4f8084e14d23344e3ed09936f6037daa6aa99f33c9a532",
+          "job_finished_at": "2026-09-15T14:43:14.751542",
+          "job_n_errors": 0,
+          "agent": {
+            "kwargs": {
+              "reasoning_effort": "medium",
+              "version": "0.149.1",
+              "web_search": "disabled"
+            },
+            "model_name": "azure/gpt-5.6-sol",
+            "name": "codex"
+          },
+          "replaces_trial": "elaipbench-00042__aKvAU92",
+          "original_exception": "NonZeroAgentExitCodeError",
+          "recovery_rule": "Replace only a pre-agent failure with its same-instance completed rerun; keep every original observed answer."
+        },
+        {
+          "instance": 43,
+          "trial": "elaipbench-00043__3aCUSQN",
+          "hf_repository": "gvc-agent-analysis/benchmark-results",
+          "hf_branch": "backup/elaipbench_rerun4",
+          "hf_commit": "5ca90175dae2dad794ea845a3276c0acf280b1de",
+          "job": "data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04",
+          "detail_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/backup__elaipbench_rerun4/data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04/elaipbench-00043__3aCUSQN/verifier/detail.json",
+          "detail_sha256": "3dd30aaeabc5a75f2b77ecca130690a300395831cf4c047ea91e6fb6854d83c0",
+          "manifest_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/new_jobs.json",
+          "manifest_sha256": "2ae05858e22025cffa4f8084e14d23344e3ed09936f6037daa6aa99f33c9a532",
+          "job_finished_at": "2026-09-15T14:43:14.751542",
+          "job_n_errors": 0,
+          "agent": {
+            "kwargs": {
+              "reasoning_effort": "medium",
+              "version": "0.149.1",
+              "web_search": "disabled"
+            },
+            "model_name": "azure/gpt-5.6-sol",
+            "name": "codex"
+          },
+          "replaces_trial": "elaipbench-00043__uAgjYc2",
+          "original_exception": "NonZeroAgentExitCodeError",
+          "recovery_rule": "Replace only a pre-agent failure with its same-instance completed rerun; keep every original observed answer."
+        },
+        {
+          "instance": 251,
+          "trial": "elaipbench-00251__EATHA4R",
+          "hf_repository": "gvc-agent-analysis/benchmark-results",
+          "hf_branch": "backup/elaipbench_rerun4",
+          "hf_commit": "5ca90175dae2dad794ea845a3276c0acf280b1de",
+          "job": "data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04",
+          "detail_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/backup__elaipbench_rerun4/data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04/elaipbench-00251__EATHA4R/verifier/detail.json",
+          "detail_sha256": "36b7d651c3d7d85741e69428b1015341a7c4752efb6fbd97a6e72af2a9dcef72",
+          "manifest_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/new_jobs.json",
+          "manifest_sha256": "2ae05858e22025cffa4f8084e14d23344e3ed09936f6037daa6aa99f33c9a532",
+          "job_finished_at": "2026-09-15T14:43:14.751542",
+          "job_n_errors": 0,
+          "agent": {
+            "kwargs": {
+              "reasoning_effort": "medium",
+              "version": "0.149.1",
+              "web_search": "disabled"
+            },
+            "model_name": "azure/gpt-5.6-sol",
+            "name": "codex"
+          },
+          "replaces_trial": "elaipbench-00251__hZoJcc4",
+          "original_exception": "NonZeroAgentExitCodeError",
+          "recovery_rule": "Replace only a pre-agent failure with its same-instance completed rerun; keep every original observed answer."
+        },
+        {
+          "instance": 252,
+          "trial": "elaipbench-00252__VSe6uCi",
+          "hf_repository": "gvc-agent-analysis/benchmark-results",
+          "hf_branch": "backup/elaipbench_rerun4",
+          "hf_commit": "5ca90175dae2dad794ea845a3276c0acf280b1de",
+          "job": "data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04",
+          "detail_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/backup__elaipbench_rerun4/data/elaipbench/_rerun_elaipbench_4__2026-09-15__14-41-04/elaipbench-00252__VSe6uCi/verifier/detail.json",
+          "detail_sha256": "74b74d0270be1106b99b38bb4ca022b5f378ebaccd2991ba254fc1dbd57fd4bd",
+          "manifest_source": "/home/jiacheng/iclr2027_paper/data/hf_refresh/new_jobs.json",
+          "manifest_sha256": "2ae05858e22025cffa4f8084e14d23344e3ed09936f6037daa6aa99f33c9a532",
+          "job_finished_at": "2026-09-15T14:43:14.751542",
+          "job_n_errors": 0,
+          "agent": {
+            "kwargs": {
+              "reasoning_effort": "medium",
+              "version": "0.149.1",
+              "web_search": "disabled"
+            },
+            "model_name": "azure/gpt-5.6-sol",
+            "name": "codex"
+          },
+          "replaces_trial": "elaipbench-00252__eohkh8b",
+          "original_exception": "NonZeroAgentExitCodeError",
+          "recovery_rule": "Replace only a pre-agent failure with its same-instance completed rerun; keep every original observed answer."
+        }
+      ],
+      "pairs": [
+        {
+          "instance": 0,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "0",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 1,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "0",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 2,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "0",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 3,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "0",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 4,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 5,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 6,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 7,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 8,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "2",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 9,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "2",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 10,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "3",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 11,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "3",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 12,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "3",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 13,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "3",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 14,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "4",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 15,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "4",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 16,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "5",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 17,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "6",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 18,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "6",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 19,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "7",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 20,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "7",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 21,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "8",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 22,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "9",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 23,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "9",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 24,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "10",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 25,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "10",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 26,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "10",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 27,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "11",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 28,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "11",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 29,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "11",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 30,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "12",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 31,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "13",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 32,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "13",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 33,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "13",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 34,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "13",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 35,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "14",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 36,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "14",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 37,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "14",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 38,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "14",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 39,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "15",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 40,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "16",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 41,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "16",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 42,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "17",
+          "question_type": "SA-MCQ",
+          "codex_recovery_trial": "elaipbench-00042__KCd7cXk"
+        },
+        {
+          "instance": 43,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "17",
+          "question_type": "MA-MCQ",
+          "codex_recovery_trial": "elaipbench-00043__3aCUSQN"
+        },
+        {
+          "instance": 44,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "18",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 45,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "18",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 46,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "18",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 47,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "19",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 48,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "19",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 49,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "19",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 50,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "19",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 51,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "20",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 52,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "20",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 53,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "20",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 54,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "20",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 55,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "21",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 56,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "21",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 57,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "21",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 58,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "21",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 59,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "22",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 60,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "22",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 61,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "22",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 62,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "22",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 63,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "23",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 64,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "23",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 65,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "23",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 66,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "24",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 67,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "25",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 68,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "26",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 69,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "26",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 70,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "26",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 71,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "26",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 72,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "27",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 73,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "27",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 74,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "27",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 75,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "27",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 76,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "28",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 77,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "28",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 78,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "28",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 79,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "28",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 80,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "29",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 81,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "29",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 82,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "29",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 83,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "30",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 84,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "30",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 85,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "30",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 86,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "30",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 87,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "31",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 88,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "31",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 89,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "31",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 90,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "31",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 91,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "32",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 92,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "32",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 93,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "32",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 94,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "33",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 95,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "33",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 96,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "33",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 97,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "33",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 98,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "34",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 99,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "34",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 100,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "34",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 101,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "34",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 102,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 103,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 104,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 105,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 106,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "35",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 107,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "36",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 108,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "36",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 109,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "36",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 110,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "36",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 111,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "37",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 112,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "37",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 113,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "37",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 114,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "38",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 115,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "38",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 116,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "38",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 117,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "38",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 118,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "39",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 119,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "39",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 120,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "39",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 121,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "39",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 122,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "40",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 123,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "40",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 124,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "40",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 125,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "40",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 126,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "41",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 127,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "41",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 128,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "41",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 129,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "41",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 130,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "42",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 131,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "42",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 132,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "42",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 133,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "43",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 134,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "43",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 135,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "43",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 136,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "44",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 137,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "44",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 138,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "44",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 139,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "45",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 140,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "45",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 141,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "45",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 142,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "45",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 143,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "46",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 144,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "46",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 145,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "46",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 146,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "47",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 147,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "47",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 148,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "47",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 149,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "48",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 150,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "48",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 151,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "48",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 152,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "49",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 153,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "49",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 154,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "50",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 155,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "50",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 156,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "51",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 157,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "52",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 158,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "52",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 159,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "52",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 160,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "52",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 161,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "53",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 162,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "53",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 163,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "53",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 164,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "53",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 165,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "54",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 166,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "55",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 167,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "55",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 168,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "56",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 169,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "56",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 170,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "57",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 171,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "57",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 172,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "57",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 173,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "57",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 174,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "58",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 175,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "58",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 176,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "58",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 177,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "58",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 178,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "59",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 179,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "60",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 180,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "60",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 181,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "61",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 182,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "62",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 183,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "62",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 184,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "63",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 185,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "63",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 186,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "63",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 187,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "63",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 188,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "64",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 189,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "64",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 190,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "65",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 191,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "65",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 192,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "65",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 193,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "66",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 194,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "66",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 195,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "66",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 196,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "67",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 197,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "67",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 198,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "67",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 199,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "68",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 200,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "68",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 201,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "69",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 202,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "69",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 203,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "69",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 204,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "69",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 205,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "70",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 206,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "70",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 207,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "70",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 208,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "70",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 209,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "71",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 210,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "71",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 211,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "72",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 212,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "73",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 213,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "73",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 214,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "73",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 215,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "74",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 216,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "74",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 217,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "74",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 218,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "75",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 219,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "75",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 220,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "75",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 221,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "76",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 222,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "76",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 223,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "76",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 224,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "77",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 225,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "77",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 226,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "77",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 227,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "78",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 228,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "78",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 229,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "78",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 230,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "79",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 231,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "79",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 232,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "79",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 233,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "80",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 234,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "80",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 235,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "80",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 236,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "81",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 237,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "81",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 238,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "81",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 239,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "82",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 240,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "82",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 241,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "82",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 242,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "83",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 243,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "83",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 244,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "83",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 245,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "84",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 246,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "84",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 247,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "84",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 248,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "85",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 249,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "85",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 250,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "85",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 251,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "86",
+          "question_type": "SA-MCQ",
+          "codex_recovery_trial": "elaipbench-00251__EATHA4R"
+        },
+        {
+          "instance": 252,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "86",
+          "question_type": "MA-MCQ",
+          "codex_recovery_trial": "elaipbench-00252__VSe6uCi"
+        },
+        {
+          "instance": 253,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "87",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 254,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "87",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 255,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "87",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 256,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "88",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 257,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "88",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 258,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "88",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 259,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "89",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 260,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "89",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 261,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "89",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 262,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "90",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 263,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "90",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 264,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "90",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 265,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "91",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 266,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "91",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 267,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "91",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 268,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "92",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 269,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "92",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 270,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "92",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 271,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "93",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 272,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "93",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 273,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "93",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 274,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "94",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 275,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "94",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 276,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "94",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 277,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "95",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 278,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "95",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 279,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "95",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 280,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "96",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 281,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "96",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 282,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "96",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 283,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "97",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 284,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "97",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 285,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "97",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 286,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "98",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 287,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "98",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 288,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "98",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 289,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "99",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 290,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "99",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 291,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "99",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 292,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "100",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 293,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "100",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 294,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "100",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 295,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "101",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 296,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "101",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 297,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "101",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 298,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "102",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 299,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "102",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 300,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "102",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 301,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "103",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 302,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "103",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 303,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "103",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 304,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "104",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 305,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "104",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 306,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "104",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 307,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "105",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 308,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "105",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 309,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "105",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 310,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "106",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 311,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "106",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 312,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "106",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 313,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "107",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 314,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "107",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 315,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "107",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 316,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "108",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 317,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "108",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 318,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "108",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 319,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "109",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 320,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "109",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 321,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "109",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 322,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "110",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 323,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "110",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 324,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "110",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 325,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "111",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 326,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "111",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 327,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "111",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 328,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "112",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 329,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "112",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 330,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "112",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 331,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "113",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 332,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "113",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 333,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "113",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 334,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "114",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 335,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "114",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 336,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "114",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 337,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "115",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 338,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "115",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 339,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "115",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 340,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "116",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 341,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "116",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 342,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "116",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 343,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "117",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 344,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "117",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 345,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "117",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 346,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "118",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 347,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "118",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 348,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "118",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 349,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "119",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 350,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "119",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 351,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "119",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 352,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "120",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 353,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "120",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 354,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "120",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 355,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "121",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 356,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "121",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 357,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "121",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 358,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "122",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 359,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "122",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 360,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "122",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 361,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "123",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 362,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "123",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 363,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "123",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 364,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "124",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 365,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "124",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 366,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "124",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 367,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "125",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 368,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "125",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 369,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "125",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 370,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "126",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 371,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "126",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 372,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "126",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 373,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "127",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 374,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "127",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 375,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "127",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 376,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "128",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 377,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "128",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 378,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "128",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 379,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "129",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 380,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "129",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 381,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "129",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 382,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "130",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 383,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "130",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 384,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "130",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 385,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "131",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 386,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "131",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 387,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "131",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 388,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "132",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 389,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "132",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 390,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "132",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 391,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "133",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 392,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "133",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 393,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "133",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 394,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "134",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 395,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "134",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 396,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "134",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 397,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "135",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 398,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "135",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 399,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "135",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 400,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "136",
+          "question_type": "SA-MCQ"
+        },
+        {
+          "instance": 401,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "136",
+          "question_type": "MA-MCQ"
+        },
+        {
+          "instance": 402,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "136",
+          "question_type": "MA-MCQ"
+        }
+      ],
+      "statistics": {
+        "n": 403,
+        "codex_correct": 151,
+        "comparator_correct": 184,
+        "codex_score": 37.468982630272954,
+        "comparator_score": 45.6575682382134,
+        "delta_pp": -8.188585607940446,
+        "discordance": {
+          "both_correct": 117,
+          "both_wrong": 185,
+          "codex_only": 34,
+          "comparator_only": 67
+        },
+        "mcnemar_exact_p": 0.0013318251141996125,
+        "bootstrap_95ci_pp": [
+          -12.871287128712872,
+          -3.4229828850855744
+        ],
+        "n_resampling_groups": 137,
+        "group_signflip_mc_p": 0.0014599708005839883,
+        "mcnemar_holm_p": 0.003995475342598837
+      },
+      "question_type_statistics": {
+        "MA-MCQ": {
+          "n": 315,
+          "codex_correct": 116,
+          "comparator_correct": 140,
+          "codex_score": 36.82539682539682,
+          "comparator_score": 44.44444444444444,
+          "delta_pp": -7.619047619047619,
+          "discordance": {
+            "both_correct": 85,
+            "both_wrong": 144,
+            "codex_only": 31,
+            "comparator_only": 55
+          },
+          "mcnemar_exact_p": 0.012672513952314864,
+          "bootstrap_95ci_pp": [
+            -13.225930521091811,
+            -1.8927444794952681
+          ],
+          "n_resampling_groups": 135,
+          "group_signflip_mc_p": 0.012959740805183896
+        },
+        "SA-MCQ": {
+          "n": 88,
+          "codex_correct": 35,
+          "comparator_correct": 44,
+          "codex_score": 39.77272727272727,
+          "comparator_score": 50.0,
+          "delta_pp": -10.227272727272727,
+          "discordance": {
+            "both_correct": 32,
+            "both_wrong": 41,
+            "codex_only": 3,
+            "comparator_only": 12
+          },
+          "mcnemar_exact_p": 0.03515625,
+          "bootstrap_95ci_pp": [
+            -18.6046511627907,
+            -2.272088866190046
+          ],
+          "n_resampling_groups": 86,
+          "group_signflip_mc_p": 0.034299314013719724
+        }
+      }
+    },
+    {
+      "benchmark": "industryor",
+      "direct_source": "/data1/jiacheng/mentor_results/branches/backup__industryor/data/industryor/2026-08-22__16-30-58",
+      "comparator_source": "/data1/jiacheng/comparators/_runs/industryor/full1/score/verdicts.jsonl",
+      "excluded_direct_trials": [],
+      "recovered_direct_trials": [],
+      "pairs": [
+        {
+          "instance": 0,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "0",
+          "comparator_final_objective": 219600.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 1,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "1",
+          "comparator_final_objective": 125.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 2,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "2",
+          "comparator_final_objective": 10349920.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 3,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "3",
+          "comparator_final_objective": 30400.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 4,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "4",
+          "comparator_final_objective": 18.95657142857143,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 5,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "5",
+          "comparator_final_objective": 10755.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 6,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "6",
+          "comparator_final_objective": 468510.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 7,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "7",
+          "comparator_final_objective": 14.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 8,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "8",
+          "comparator_final_objective": 623.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 9,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "9",
+          "comparator_final_objective": 3.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 10,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "10",
+          "comparator_final_objective": 4136.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 11,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "11",
+          "comparator_final_objective": 43200.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 12,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "12",
+          "comparator_final_objective": 180000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 13,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "13",
+          "comparator_final_objective": 123.8,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 14,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "14",
+          "comparator_final_objective": 134.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 15,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "15",
+          "comparator_final_objective": 4100.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 16,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "16",
+          "comparator_final_objective": 0.576592862316,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 17,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "17",
+          "comparator_final_objective": 0.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 18,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "18",
+          "comparator_final_objective": 4000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 19,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "19",
+          "comparator_final_objective": 956.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 20,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "20",
+          "comparator_final_objective": 15000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 21,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "21",
+          "comparator_final_objective": 270289.99999999994,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 22,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "22",
+          "comparator_final_objective": 24000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 23,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "23",
+          "comparator_final_objective": 1000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 24,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "24",
+          "comparator_final_objective": 410000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 25,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "25",
+          "comparator_final_objective": 53.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 26,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "26",
+          "comparator_final_objective": 1146.3855714285712,
+          "comparator_repair_changed_answer": true
+        },
+        {
+          "instance": 27,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "27",
+          "comparator_final_objective": 580000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 28,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "28",
+          "comparator_final_objective": 2500.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 29,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "29",
+          "comparator_final_objective": 32.43589743589744,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 30,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "30",
+          "comparator_final_objective": 1190.38,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 31,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "31",
+          "comparator_final_objective": 2924.1379310344823,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 32,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "32",
+          "comparator_final_objective": 1000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 33,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "33",
+          "comparator_final_objective": 7.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 34,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "34",
+          "comparator_final_objective": 14.099999998489997,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 35,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "35",
+          "comparator_final_objective": null,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 36,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "36",
+          "comparator_final_objective": 11250.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 37,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "37",
+          "comparator_final_objective": 14.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 38,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "38",
+          "comparator_final_objective": 640.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 39,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "39",
+          "comparator_final_objective": 43090833.33333331,
+          "comparator_repair_changed_answer": true
+        },
+        {
+          "instance": 40,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "40",
+          "comparator_final_objective": 964640.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 41,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "41",
+          "comparator_final_objective": 150.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 42,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "42",
+          "comparator_final_objective": 6800.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 43,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "43",
+          "comparator_final_objective": 685.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 44,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "44",
+          "comparator_final_objective": 700.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 45,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "45",
+          "comparator_final_objective": 715.7,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 46,
+          "codex": 0,
+          "comparator": 1,
+          "resampling_group": "46",
+          "comparator_final_objective": 20241.615384615387,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 47,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "47",
+          "comparator_final_objective": 1.0001e-06,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 48,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "48",
+          "comparator_final_objective": 208000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 49,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "49",
+          "comparator_final_objective": 9100.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 50,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "50",
+          "comparator_final_objective": 4240.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 51,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "51",
+          "comparator_final_objective": null,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 52,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "52",
+          "comparator_final_objective": 3050.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 53,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "53",
+          "comparator_final_objective": 135.26666666666668,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 54,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "54",
+          "comparator_final_objective": 4.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 55,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "55",
+          "comparator_final_objective": -700.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 56,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "56",
+          "comparator_final_objective": 600.0,
+          "comparator_repair_changed_answer": true
+        },
+        {
+          "instance": 57,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "57",
+          "comparator_final_objective": 240000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 58,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "58",
+          "comparator_final_objective": 6160.000000000002,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 59,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "59",
+          "comparator_final_objective": 153.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 60,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "60",
+          "comparator_final_objective": 37000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 61,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "61",
+          "comparator_final_objective": 90000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 62,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "62",
+          "comparator_final_objective": 640.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 63,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "63",
+          "comparator_final_objective": 38000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 64,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "64",
+          "comparator_final_objective": 27100.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 65,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "65",
+          "comparator_final_objective": 25000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 66,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "66",
+          "comparator_final_objective": 3160500.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 67,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "67",
+          "comparator_final_objective": 1030.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 68,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "68",
+          "comparator_final_objective": 20.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 69,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "69",
+          "comparator_final_objective": 35.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 70,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "70",
+          "comparator_final_objective": 630.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 71,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "71",
+          "comparator_final_objective": 135000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 72,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "72",
+          "comparator_final_objective": 1600.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 73,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "73",
+          "comparator_final_objective": 115000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 74,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "74",
+          "comparator_final_objective": 57.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 75,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "75",
+          "comparator_final_objective": -0.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 76,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "76",
+          "comparator_final_objective": 1005.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 77,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "77",
+          "comparator_final_objective": 0.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 78,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "78",
+          "comparator_final_objective": 9800.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 79,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "79",
+          "comparator_final_objective": null,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 80,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "80",
+          "comparator_final_objective": 28.6,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 81,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "81",
+          "comparator_final_objective": null,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 82,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "82",
+          "comparator_final_objective": 26.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 83,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "83",
+          "comparator_final_objective": 23000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 84,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "84",
+          "comparator_final_objective": 1866.379310344828,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 85,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "85",
+          "comparator_final_objective": 77499.99999999999,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 86,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "86",
+          "comparator_final_objective": 4170.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 87,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "87",
+          "comparator_final_objective": 1.25,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 88,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "88",
+          "comparator_final_objective": 146.66666666666669,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 89,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "89",
+          "comparator_final_objective": 3600.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 90,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "90",
+          "comparator_final_objective": 408.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 91,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "91",
+          "comparator_final_objective": 6200.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 92,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "92",
+          "comparator_final_objective": 3360.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 93,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "93",
+          "comparator_final_objective": 5000000.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 94,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "94",
+          "comparator_final_objective": 528.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 95,
+          "codex": 1,
+          "comparator": 0,
+          "resampling_group": "95",
+          "comparator_final_objective": null,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 96,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "96",
+          "comparator_final_objective": 115.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 97,
+          "codex": 0,
+          "comparator": 0,
+          "resampling_group": "97",
+          "comparator_final_objective": 165900.0,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 98,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "98",
+          "comparator_final_objective": 0.6075,
+          "comparator_repair_changed_answer": false
+        },
+        {
+          "instance": 99,
+          "codex": 1,
+          "comparator": 1,
+          "resampling_group": "99",
+          "comparator_final_objective": 84.0,
+          "comparator_repair_changed_answer": false
+        }
+      ],
+      "statistics": {
+        "n": 100,
+        "codex_correct": 73,
+        "comparator_correct": 70,
+        "codex_score": 73.0,
+        "comparator_score": 70.0,
+        "delta_pp": 3.0,
+        "discordance": {
+          "both_correct": 67,
+          "both_wrong": 24,
+          "codex_only": 6,
+          "comparator_only": 3
+        },
+        "mcnemar_exact_p": 0.5078125,
+        "bootstrap_95ci_pp": [
+          -3.0,
+          9.0
+        ],
+        "n_resampling_groups": 100,
+        "group_signflip_mc_p": 0.5067498650026999,
+        "mcnemar_holm_p": 1.0
+      }
+    }
+  ]
+}
